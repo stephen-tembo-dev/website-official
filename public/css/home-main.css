@@ -1,0 +1,167 @@
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    /*background-color: #f8f8f8;*/
+    /*font-family: 'Poppins', sans-serif;*/
+    display: flex;
+    min-height: 00vh; 
+    flex-direction: column;
+}
+
+.light-deca {
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 200;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+
+nav ul a {
+    color: black !important;
+}
+
+.brand-logo img{
+    width: 70px;
+    height: 70px;
+    margin-left: 0px;
+}
+
+.apply-button {
+    text-transform: capitalize !important;
+    border-radius: 15px !important;
+}
+
+.container {
+    width: 95% !important;
+}
+
+.counter {
+    font-size: 1.2em;
+    color: #000;
+    margin: 0px;
+    opacity: 0; /* Initially set opacity to 0 */
+    transform: translateY(20px); /* Initially move the counter down */
+    transition: opacity 1s, transform 1s;
+  }
+
+  /* Customize the tab background color to navy blue */
+    .tabs .tab a {
+      /*background-color: navy !important;*/
+      color: #000 !important;
+  }
+
+  /* Customize the tab text to lowercase */
+  .tabs .tab a {
+      text-transform: capitalize !important;
+  }
+
+  .mt {
+    margin-top:50px;
+  }
+
+  .mb {
+    margin-bottom:50px;
+  }
+
+  img{
+    border-radius: 10px !important;
+  }
+
+  nav {
+    position: relative !important;
+    z-index: 900;
+  }
+
+  #segment {
+    position: relative;
+    top: 100vh;
+    margin-bottom: 30%;
+  }
+
+  .nav-links li a {
+    color: #000;
+}
+
+.nav-links li a {
+    position: relative;
+    color: #000;
+    transition: color .3s,border-bottom-color .3s
+}
+
+.nav-links li a:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #dc7b12;
+    transition: width .3s;
+}
+
+.nav-links li a:hover:after {
+    width: 100%;
+}
+
+.nav-links li a:hover {
+    background-color: transparent;
+    color: #9d9d9f;
+}
+
+.heading {
+  margin-left: 10px;
+}
+
+.newsbody {
+  text-align: justify;
+}
+
+
+.slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.slides {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slides li {
+  position: relative;
+}
+
+.slides li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff; /* You can adjust the text color */
+}
+
+.slider .slides li .caption {
+    top: 50% !important;
+    border: #dc7b12 solid 3px;
+    border-radius: 2px;
+    border-bottom: transparent !important;
+    padding: 20px;
+ }
+
+
