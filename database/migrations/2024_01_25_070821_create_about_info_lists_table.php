@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('about_info_list', function (Blueprint $table) {
+        Schema::create('about_info_lists', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('text');
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('about_info_list');
+        Schema::dropIfExists('about_info_lists');
     }
 };

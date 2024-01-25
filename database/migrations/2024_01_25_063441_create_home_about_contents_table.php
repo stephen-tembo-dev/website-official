@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('home_about_content', function (Blueprint $table) {
+        Schema::create('home_about_contents', function (Blueprint $table) {
             $table->id();
             $table->string('image_path');
             $table->string('title');

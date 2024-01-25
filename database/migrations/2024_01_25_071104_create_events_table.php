@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('title');
             $table->text('text');
             $table->string('venue');
-            $table->string('attachment_path')->nullable();
             $table->date('date');
             $table->time('time');
             $table->enum('status', EventStatusEnum::toArray());
+            $table->string('attachment_path')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });

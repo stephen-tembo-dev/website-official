@@ -16,6 +16,7 @@ class Post extends Model
         'text',
         'status',
         'video_url',
+        'attachment_path',
         'published_at'
     ];
 }

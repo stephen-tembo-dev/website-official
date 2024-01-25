@@ -1,21 +1,16 @@
 <?php
 
-namespace App\Models\Home;
+namespace App\Models\About;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class HeroContent extends Model
+class AboutMainContent extends Model
 {
     use HasFactory;
 
-    protected $table = 'home_hero_content';
-
     protected $fillable = [
         'title',
-        'image_path',
-        'text',
-        'cta_text',
-        'cta_url',
+        'text'
     ];
 }

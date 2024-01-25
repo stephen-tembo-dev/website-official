@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Models\Home;
+namespace App\Models\About;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AnnouncementBanner extends Model
+class AboutInfoList extends Model
 {
     use HasFactory;
-
-    protected $table = 'home_announcement_banners';
 
     protected $fillable = [
         'title',
