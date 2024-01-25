@@ -88,14 +88,10 @@
 
 
         <div class="mt mb" style="margin-left:3%">
-<<<<<<< HEAD
-            <iframe height="400px" class="container z-depth-2 wow fadeIn " src="https://www.google.com/maps/embed/v1/place?q=Zambia+University+College+of+Technology+(ZUT),+Kalewa+Road,+Ndola,+Zambia&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" style="border: 0px; visibility: hidden; animation-name: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-=======
-            <iframe class="container wow fadeIn "
+            <iframe height="400px" class="container wow fadeIn z-depth-2 "
                 src="https://www.google.com/maps/embed/v1/place?q=Zambia+University+College+of+Technology+(ZUT),+Kalewa+Road,+Ndola,+Zambia&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
                 style="border: 0px; visibility: hidden; animation-name: none;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
->>>>>>> e3e73f8466b14a20dd30d3925ebb492bc69ca09d
         </div>
 
 
