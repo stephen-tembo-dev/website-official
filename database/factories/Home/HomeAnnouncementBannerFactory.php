@@ -5,9 +5,9 @@ namespace Database\Factories\Home;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Home\AboutContent>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Home\AnnouncementBanner>
  */
-class AboutContentFactory extends Factory
+class HomeAnnouncementBannerFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,10 +17,8 @@ class AboutContentFactory extends Factory
     public function definition(): array
     {
         return [
-            'image_path' => 'images/banner-zuct-' . rand(2, 5) . 'jpg',
             'title' => fake()->text(35),
-            'text' => fake()->paragraph(),
-            'video_url' => fake()->url()
+            'text' => fake()->text()
         ];
     }
 }
