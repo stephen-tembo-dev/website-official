@@ -23,16 +23,10 @@
                                 <div class="input-field col m6 s12">
                                     <input id="name" type="text" class="validate" maxlength="70" value="">
                                     <label for="name" class="active">Your name</label>
-
-                                    <!--[if BLOCK]><![endif]-->
-                                    <!--[if ENDBLOCK]><![endif]-->
                                 </div>
                                 <div class="input-field col m6 s12">
                                     <textarea id="email" class="materialize-textarea" maxlength="170"></textarea>
                                     <label for="email" class="active">Your email address</label>
-
-                                    <!--[if BLOCK]><![endif]-->
-                                    <!--[if ENDBLOCK]><![endif]-->
                                 </div>
                             </div>
 
@@ -41,15 +35,11 @@
                                 <div class="input-field col m6 s12">
                                     <textarea id="subject" class="materialize-textarea"></textarea>
                                     <label for="subject" class="active">Subject</label>
-                                    <!--[if BLOCK]><![endif]-->
-                                    <!--[if ENDBLOCK]><![endif]-->
                                 </div>
 
                                 <div class="input-field col m6 s12">
                                     <textarea id="phone" class="materialize-textarea"></textarea>
                                     <label for="phone" class="active">Your phone number</label>
-                                    <!--[if BLOCK]><![endif]-->
-                                    <!--[if ENDBLOCK]><![endif]-->
                                 </div>
 
                             </div>
@@ -59,8 +49,6 @@
                                     <textarea id="message"
                                         class="materialize-textarea">Hi, I would like to ...</textarea>
                                     <label for="message" class="active">Message</label>
-                                    <!--[if BLOCK]><![endif]-->
-                                    <!--[if ENDBLOCK]><![endif]-->
                                 </div>
 
 
