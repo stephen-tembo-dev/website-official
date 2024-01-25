@@ -13,6 +13,11 @@ Route::get('/about-us', AboutUs::class);
 Route::get('/programs/{category}', Programs::class);
 Route::get('/news-story/{id}', NewsStory::class);
 
+// Home editor routes
+Route::get('/create-marketing-info', AddMarketingInfo::class);
+Route::get('/create-slider-info', AddSliderInfo::class);
+Route::get('/edit-marketing-info/{id}', EditMarketingInfo::class);
+Route::get('/edit-slider-info/{id}', EditSliderInfo::class);
 
 
 
