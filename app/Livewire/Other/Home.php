@@ -9,18 +9,14 @@ use Livewire\Component;
 
 class Home extends Component
 {
-    public $heroSlides;
-    public $aboutContent;
-    public $announcementBanners;
+    public $pageInfo;
 
     public function mount()
     {
         try {
-            $this->heroSlides = HomeHeroContent::all();
-            $this->aboutContent = HomeAboutContent::all();
-            $this->announcementBanners = HomeAnnouncement::all();
-        } catch (\Throwable $th) {
-            throw $th;
+            $this->pageInfo = HomeAboutContent::first();
+        } catch (\Exception $e) {
+            // handle exception
         }
     }
 
