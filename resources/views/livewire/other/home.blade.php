@@ -251,26 +251,8 @@
                 </div>
             </div>
 
-            <ul class="pagination center mb">
-                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                <li class="active grey"><a href="#!">1</a></li>
-                <li class="waves-effect"><a href="#!">2</a></li>
-                <li class="waves-effect"><a href="#!">3</a></li>
-                <li class="waves-effect"><a href="#!">4</a></li>
-                <li class="waves-effect"><a href="#!">5</a></li>
-                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-            </ul>
 
-<<<<<<< HEAD
-</div>
-</div>
-
-
-
-    </div>
-=======
         </div>
->>>>>>> e3e73f8466b14a20dd30d3925ebb492bc69ca09d
 
 
         <footer class="page-footer black">
