@@ -33,11 +33,11 @@ Route::get('/edit-slider-info/{id}', EditSliderInfo::class);
 
 // About editor routes
 Route::get('/about-us/add-banner-content', AddBannerContent::class)->name('about.create.banner-content');
-Route::get('/about-us/edit-banner-content/{id}', EditBannerContent::class)->name('about.edit.banner-content');
+Route::get('/about-us/edit-banner-content/{banner}', EditBannerContent::class)->name('about.edit.banner-content');
 Route::get('/about-us/add-main-content', AddMainContent::class)->name('about.add.main-content');
-Route::get('/about-us/edit-main-content/{id}', EditMainContent::class)->name('about.edit.main-content');
+Route::get('/about-us/edit-main-content/{mainContent}', EditMainContent::class)->name('about.edit.main-content');
 Route::get('/about-us/add-info-list-content', AddInfoListContent::class)->name('about.add.info-list-content');
-Route::get('/about-us/edit-info-list-content/{id}', EditInfoListContent::class)->name('about.edit.info-list-content');
+Route::get('/about-us/edit-info-list-content/{listItem}', EditInfoListContent::class)->name('about.edit.info-list-content');
 
 Auth::routes();
 

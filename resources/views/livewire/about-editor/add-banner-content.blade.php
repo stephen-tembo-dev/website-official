@@ -1,7 +1,7 @@
 <div>
     <div class="container">
 
-        <h5 class="grey-text lighten-3 mt heading"><b>About Page: Add Banner Content</b></h5>
+        <h5 class="grey-text lighten-3 mt heading"><b>About Page: Add Banner</b></h5>
 
         <div class="row">
             <div class="col m8 s12 white">
@@ -9,48 +9,44 @@
                 <form wire:submit.prevent="processInfo">
                     <div>
                         <div class="row">
+                            <div class="col m12 s12">
+                                <label>Cover Image</label>
+                                <div class="file-field input-field">
+                                    <div class="btn">
+                                        <span>File</span>
+                                        <input wire:model="bannerContent.image_path" type="file">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text">
+                                    </div>
+                                    @error('bannerContent.image_path')
+                                        <span class="red-text">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
                             <div class="input-field col m12 s12">
-                                <input wire:model="marketingInfo.title" id="title" type="text" class="validate"
+                                <input wire:model="bannerContent.title" id="title" type="text" class="validate"
                                     maxlength="70">
                                 <label class="active" for="title">Title</label>
-                                @error('marketingInfo.title')
+                                @error('bannerContent.title')
                                     <span class="red-text">{{ $message }}</span>
                                 @enderror
                             </div>
 
                             <div class="input-field col m12 s12">
-                                <textarea wire:model="marketingInfo.text" id="message" class="materialize-textarea"></textarea>
-                                <label class="active" for="message">Message</label>
-                                @error('marketingInfo.text')
+                                <input wire:model="bannerContent.caption" id="caption" type="text" class="validate"
+                                    maxlength="70">
+                                <label class="active" for="caption">Caption</label>
+                                @error('bannerContent.caption')
                                     <span class="red-text">{{ $message }}</span>
                                 @enderror
                             </div>
-
-                            <div class="input-field col m12 s12">
-                                <textarea wire:model="marketingInfo.video_url" id="url" class="materialize-textarea"></textarea>
-                                <label class="active" for="url">Video URL</label>
-                                @error('marketingInfo.video_url')
-                                    <span class="red-text">{{ $message }}</span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="file-field input-field col m12 s12">
-                            <div class="btn">
-                                <span>File</span>
-                                <input wire:model="marketingInfo.image_path" type="file">
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text">
-                            </div>
-                            @error('marketingInfo.image_path')
-                                <span class="red-text">{{ $message }}</span>
-                            @enderror
                         </div>
 
                         <button style="border-radius: 8px;" class="btn btn-small waves-effect waves-light black"
                             type="submit" name="action">
-                            Submit
+                            Add Banner
                         </button>
                     </div>
                 </form>
