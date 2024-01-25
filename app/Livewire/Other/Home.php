@@ -2,20 +2,23 @@
 
 namespace App\Livewire\Other;
 
+use App\Models\Home\HomeAboutContent;
+use App\Models\Home\HomeAnnouncementBanner;
+use App\Models\Home\HomeHeroContent;
 use Livewire\Component;
 
 class Home extends Component
 {
     public $heroSlides;
-    public $programCards;
     public $aboutContent;
+    public $announcementBanners;
 
     public function mount()
     {
         try {
-            $this->heroSlides = \App\Models\Home\HeroContent::all();
-            $this->programCards = \App\Models\Home\ProgramsContent::all();
-            $this->aboutContent = \App\Models\Home\AboutContent::all();
+            $this->heroSlides = HomeHeroContent::all();
+            $this->aboutContent = HomeAboutContent::all();
+            $this->announcementBanners = HomeAnnouncementBanner::all();
         } catch (\Throwable $th) {
             throw $th;
         }
