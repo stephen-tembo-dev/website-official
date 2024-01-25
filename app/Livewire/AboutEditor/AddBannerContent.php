@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\HomeEditor;
+namespace App\Livewire\AboutEditor;
 
 use DB;
 use Livewire\Component;
@@ -8,7 +8,7 @@ use Livewire\WithFileUploads;
 use App\Models\Home\HomeAboutContent;
 use Intervention\Image\ImageManagerStatic as Image;
 
-class AddMarketingInfo extends Component
+class AddBannerContent extends Component
 {
     use WithFileUploads;
 
@@ -96,6 +96,6 @@ class AddMarketingInfo extends Component
 
     public function render()
     {
-        return view('livewire.home-editor.add-marketing-info');
+        return view('livewire.about-editor.add-banner-content');
     }
 }
