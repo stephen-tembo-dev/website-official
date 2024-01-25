@@ -15,13 +15,11 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', PostTypeEnum::toArray())
-                ->default(PostTypeEnum::News->value);
+            $table->enum('type', PostTypeEnum::toArray())->default(PostTypeEnum::News->value);
             $table->string('image_path');
             $table->string('title');
             $table->text('text');
-            $table->enum('status', PostStatusEnum::toArray())
-                ->default(PostStatusEnum::Draft->value);
+            $table->enum('status', PostStatusEnum::toArray())->default(PostStatusEnum::Draft->value);
             $table->string('video_url')->nullable();
             $table->string('attachment_path')->nullable();
             $table->timestamp('published_at')->nullable();
