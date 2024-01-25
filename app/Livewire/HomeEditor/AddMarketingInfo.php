@@ -34,7 +34,7 @@ class AddMarketingInfo extends Component
             $this->uploadImage();
 
             // Step 3: Store to DB
-            $user = $this->create();
+            $this->create();
 
             // commit
             DB::commit();
