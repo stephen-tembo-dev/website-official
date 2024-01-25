@@ -17,7 +17,8 @@ class AnnouncementBannerFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => fake()->text(35),
+            'text' => fake()->text()
         ];
     }
 }

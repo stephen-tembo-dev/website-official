@@ -17,7 +17,9 @@ class BannerFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'image_path' => 'images/banner-zuct-' . rand(2, 5) . 'jpg',
+            'title' => fake()->text(30),
+            'caption' => fake()->text('20')
         ];
     }
 }

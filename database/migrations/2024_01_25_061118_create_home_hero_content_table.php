@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('home_hero_content', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
             $table->string('image_path');
+            $table->string('title');
             $table->text('text');
-            $table->string('cta_text', 100);
-            $table->string('cta_url');
+            $table->string('cta_text', 100)->nullable();
+            $table->string('cta_url')->nullable();
             $table->timestamps();
         });
     }

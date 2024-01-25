@@ -17,7 +17,8 @@ class InfoListFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => fake()->text(30),
+            'text' => fake()->text(100)
         ];
     }
 }

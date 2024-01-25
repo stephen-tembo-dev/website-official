@@ -14,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->string('image_path');
             $table->string('title');
             $table->text('text');
             $table->string('venue');
@@ -21,6 +22,7 @@ return new class extends Migration
             $table->date('date');
             $table->time('time');
             $table->enum('status', EventStatusEnum::toArray());
+            $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
     }

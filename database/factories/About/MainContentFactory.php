@@ -17,7 +17,8 @@ class MainContentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => fake()->text(50),
+            'text' => fake()->paragraph(7)
         ];
     }
 }
