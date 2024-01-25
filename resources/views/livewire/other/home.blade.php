@@ -125,7 +125,7 @@
 
 
         <div class="parallax-container">
-            <div class="parallax"><img src="{{asset('images/CLASS.jpg')}}"></div>
+            <div class="parallax"><img src="{{asset('/storage/uploads/'.$pageInfo->image_path)}}"></div>
         </div>
 
 
@@ -135,30 +135,23 @@
             <div class="row mt">
                 <div class="col m6 s12 wow slideInLeft">
                     <h3>
-                        <b>Crafting Digital Excellence with Creative Ingenuity</b>
+                        <b>{{$pageInfo->title}}</b>
                     </h3>
                     <p class="newsbody light-deca">
-                        Leaders in educational sector, molding students into world class professionals.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nisi, iure eos necessitatibus
-                        autem culpa dolor minus.Enim nisi, iure eos necessitatibus Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit. Error asperiores voluptate tempore alias vitae nam similique quia
-                        eveniet eius modi incidunt aspernatur rem blanditiis eum consequatur dolorem repellendus, ad
-                        molestias?
-                        autem culpa dolor minus.
-                    </p>
+                         {{$pageInfo->text}}
                     <!--div class="row">
-                <div class="col m6 s12">
-                         <button class="btn btn-small white-text indigo darken-4 apply-buttonn" href="">get started </button>
-                    </div>
                     <div class="col m6 s12">
-                        <div class="counter" id="counter">0</div>
-                    </div>
-                </div-->
+                            <button class="btn btn-small white-text indigo darken-4 apply-buttonn" href="">get started </button>
+                        </div>
+                        <div class="col m6 s12">
+                            <div class="counter" id="counter">0</div>
+                        </div>
+                    </div-->
                 </div>
                 <div class="col m6 s12 wow slideInRight">
 
                     <div class="video-container">
-                        <iframe width="853" height="480" src="https://www.youtube.com/watch?v=YiSB9l96zYE&t=25s"
+                        <iframe width="853" height="480" src="{{$pageInfo->video_url}}"
                             frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>

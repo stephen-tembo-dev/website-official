@@ -66,14 +66,11 @@
 
                     </div>
                     <div class="col m12 s12">
-<<<<<<< HEAD
                     <div class="video-container">
                             <iframe width="853" height="480" src="https://www.youtube.com/watch?v=YiSB9l96zYE&t=25s" frameborder="0" allowfullscreen></iframe>
-=======
                         <div class="video-container">
                             <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0"
                                 frameborder="0" allowfullscreen></iframe>
->>>>>>> e3e73f8466b14a20dd30d3925ebb492bc69ca09d
                         </div>
                     </div>
                 </div>
