@@ -5,9 +5,9 @@ namespace Database\Factories\Home;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Home\AnnouncementBanner>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Home\HomeAnnouncement>
  */
-class HomeAnnouncementBannerFactory extends Factory
+class HomeAnnouncementFactory extends Factory
 {
     /**
      * Define the model's default state.
