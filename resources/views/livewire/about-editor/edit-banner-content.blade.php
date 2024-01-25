@@ -46,7 +46,7 @@
 
                         <button style="border-radius: 8px;" class="btn btn-small waves-effect waves-light black"
                             type="submit" name="action">
-                            Add Banner
+                            Update Banner
                         </button>
                     </div>
                 </form>
@@ -59,13 +59,13 @@
     <script>
         $wire.on('banner-content-updated', () => {
             M.toast({
-                html: 'created successfully'
+                html: 'Updated successfully'
             })
         });
 
         $wire.on('banner-content-update-failed', () => {
             M.toast({
-                html: 'creation unsuccessful'
+                html: 'Update unsuccessful'
             })
         });
     </script>

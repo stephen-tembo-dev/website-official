@@ -24,9 +24,7 @@ class EditBannerContent extends Component
     {
         try {
             $this->banner = $banner;
-            $this->bannerContent['title'] = $banner->title;
-            $this->bannerContent['caption'] = $banner->caption;
-            $this->bannerContent['image_path'] = $banner->image_path;
+            $this->bannerContent = $this->banner->toArray();
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -41,8 +39,14 @@ class EditBannerContent extends Component
             // Step 1 : validate info
             $validated = $this->validateInfo();
 
-            // Step 2: Upload and change format of image
-            $this->uploadImage();
+            // Step 2: Handle image upload
+            if (is_object($this->bannerContent['image_path'])) {
+                // Upload new image
+                $this->uploadImage();
+
+                // Delete old image
+                $this->deleteOldImage($this->banner->image_path);
+            }
 
             // Step 3: Update record
             $this->update();
@@ -84,7 +88,16 @@ class EditBannerContent extends Component
         $image->save(storage_path($imagePath), 100, 'webp');
 
         // update array with property with image name
-        $this->bannerContent['image_path'] = $imagePath;
+        $this->bannerContent['image_path'] = $imageName;
+    }
+
+    private function deleteOldImage($previousImage)
+    {
+        $filePath = storage_path("app/public/uploads/$previousImage");
+
+        if (file_exists($filePath)) {
+            unlink($filePath);
+        }
     }
 
     private function validateInfo()

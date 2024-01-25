@@ -71,7 +71,7 @@ class AddBannerContent extends Component
         $image->save(storage_path($imagePath), 100, 'webp');
 
         // update array with property with image name
-        $this->bannerContent['image_path'] = $imagePath;
+        $this->bannerContent['image_path'] = $imageName;
     }
 
     private function validateInfo()
