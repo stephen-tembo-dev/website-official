@@ -37,7 +37,7 @@ Route::get('/about-us/edit-banner-content/{banner}', EditBannerContent::class)->
 Route::get('/about-us/add-main-content', AddMainContent::class)->name('about.add.main-content');
 Route::get('/about-us/edit-main-content/{mainContent}', EditMainContent::class)->name('about.edit.main-content');
 Route::get('/about-us/add-info-list-content', AddInfoListContent::class)->name('about.add.info-list-content');
-Route::get('/about-us/edit-info-list-content/{listItem}', EditInfoListContent::class)->name('about.edit.info-list-content');
+Route::get('/about-us/edit-info-list-content/{listContent}', EditInfoListContent::class)->name('about.edit.info-list-content');
 
 Auth::routes();
 
