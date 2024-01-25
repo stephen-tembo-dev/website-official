@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         // Home Page
         \App\Models\Home\HomeHeroContent::factory(5)->create();
-        \App\Models\Home\HomeAnnouncementBanner::factory(1)->create();
+        \App\Models\Home\HomeAnnouncement::factory(1)->create();
         \App\Models\Home\HomeAboutContent::factory(1)->create();
 
         // About Page
