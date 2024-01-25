@@ -3,7 +3,7 @@
 namespace App\Livewire\Other;
 
 use App\Models\Home\HomeAboutContent;
-use App\Models\Home\HomeAnnouncementBanner;
+use App\Models\Home\HomeAnnouncement;
 use App\Models\Home\HomeHeroContent;
 use Livewire\Component;
 
@@ -18,7 +18,7 @@ class Home extends Component
         try {
             $this->heroSlides = HomeHeroContent::all();
             $this->aboutContent = HomeAboutContent::all();
-            $this->announcementBanners = HomeAnnouncementBanner::all();
+            $this->announcementBanners = HomeAnnouncement::all();
         } catch (\Throwable $th) {
             throw $th;
         }
