@@ -11,12 +11,14 @@ class Home extends Component
 {
     public $pageInfo;
     public $pageSliderInfo;
+    public $announcement;
 
     public function mount()
     {
         try {
             $this->pageInfo = HomeAboutContent::first();
             $this->pageSliderInfo = HomeHeroContent::all();
+            $this->announcement = HomeAnnouncement::latest('created_at')->first();
         } catch (\Exception $e) {
             // handle exception
         }
