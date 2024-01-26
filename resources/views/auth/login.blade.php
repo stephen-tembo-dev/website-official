@@ -36,7 +36,7 @@
                      
                         <div class="row">
                             <div class="col s12">
-                                <button style="border-radius:8px" type="submit" class="btn waves-effect waves-light z-depth-0 btn-primary btn-small ">
+                                <button style="border-radius:8px" type="submit" class="btn waves-effect waves-light z-depth-0 btn-primary btn-small black">
                                     {{ __('Login') }}
                                 </button>
 

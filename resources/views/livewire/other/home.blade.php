@@ -39,6 +39,11 @@
                 <h3>No title available</h3>
                 <h5 class="light grey-text text-lighten-3">No text available</h5>
                 <br>
+                @can('editor')
+                        <p class="right-align edit-pencil">
+                            <a class="btn-floating btn-small orange pulse" href="/create-slider-info"><i class="material-icons ">add</i></a>
+                        </p>
+                    @endcan
             </div>
         </li>
     @endif
@@ -180,7 +185,7 @@
                     <div class="col m6 s12 wow slideInRight">
 
                         <div class="video-container">
-                            <iframe width="853" height="480" src="{{$pageInfo ? $pageInfo->video_url : 'https://www.youtube.com/watch?v=UeX2CVLw3NQ'}}" frameborder="0"
+                            <iframe width="853" height="480" src="{{$pageInfo ? $pageInfo->video_url : 'https://www.youtube.com/embed/YiSB9l96zYE&t=25s' }}" frameborder="0"
                                 allowfullscreen></iframe>
                         </div>
                     </div>
@@ -188,11 +193,15 @@
             </div>
 
             @can('editor')
-            @if($pageInfo)
-                <p class="right-align">
-                    <a href="edit-marketing-info/{{$pageInfo->id}}" class="btn-floating btn-small orange pulse" href=""><i class="material-icons ">edit</i></a>
-                </p>
-            @endif
+                @if($pageInfo)
+                    <p class="right-align">
+                        <a href="edit-marketing-info/{{$pageInfo->id}}" class="btn-floating btn-small orange pulse" href=""><i class="material-icons ">edit</i></a>
+                    </p>
+                @else
+                    <p class="right-align edit-pencil">
+                        <a class="btn-floating btn-small orange pulse" href="/create-marketing-info"><i class="material-icons ">add</i></a>
+                    </p>
+                @endif
             @endcan
 
         </div>
