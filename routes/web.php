@@ -24,11 +24,11 @@ Route::get('/news-story/{id}', NewsStory::class);
 // Home editor routes
 Route::get('/create-marketing-info', AddMarketingInfo::class);
 Route::get('/create-slider-info', AddSliderInfo::class);
-Route::get('/edit-marketing-info/{id}', EditMarketingInfo::class);
-Route::get('/edit-slider-info/{id}', EditSliderInfo::class);
+Route::get('/edit-marketing-info/{info_id}', EditMarketingInfo::class);
+Route::get('/edit-slider-info/{slider_id}', EditSliderInfo::class);
 
 // About editor routes
-Route::get('/about-us/add-banner-content', AddBannerContent::class)->name('about.create.banner-content');
+Route::get('/about-us/add-banner-content', AddBannerContent::class)->name('about.add.banner-content');
 Route::get('/about-us/edit-banner-content/{banner}', EditBannerContent::class)->name('about.edit.banner-content');
 Route::get('/about-us/add-main-content', AddMainContent::class)->name('about.add.main-content');
 Route::get('/about-us/edit-main-content/{mainContent}', EditMainContent::class)->name('about.edit.main-content');

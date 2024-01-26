@@ -16,9 +16,9 @@ class AboutUs extends Component
     public function mount()
     {
         try {
-            $this->banner = AboutBanner::latest('created_at')->firstOrFail();
-            $this->mainContent = AboutMainContent::latest('created_at')->firstOrFail();
-            $this->infoList = AboutInfoList::latest('created_at')->limit(4)->get();
+            $this->banner = AboutBanner::latest('created_at')->first();
+            $this->mainContent = AboutMainContent::latest('created_at')->first();
+            $this->infoList = AboutInfoList::latest('created_at')->limit(2)->get();
         } catch (\Throwable $th) {
             dd($th);
         }
