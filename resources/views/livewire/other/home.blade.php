@@ -77,9 +77,6 @@
                                     <a class="btn-floating btn-small orange pulse"
                                         href="{{ route('home.edit.announcement', $announcement->id) }}"><i
                                             class="material-icons ">edit</i></a>
-                                    <a class="btn-floating btn-small orange pulse"
-                                        href="{{ route('home.create.announcement') }}"><i
-                                            class="material-icons ">add</i></a>
                                 </p>
                             @endcan
                         </div>
