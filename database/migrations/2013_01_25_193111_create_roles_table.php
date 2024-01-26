@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('home_hero_contents', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('image_path');
-            $table->string('title');
-            $table->text('text');
-            $table->string('button_name', 100)->nullable();
-            $table->string('button_url')->nullable();
+            $table->string('role_name');
             $table->timestamps();
         });
     }
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('home_hero_contents');
+        Schema::dropIfExists('roles');
     }
 };

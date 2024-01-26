@@ -42,6 +42,14 @@
                     <li><a href="#news">News</a></li>
                     <li><a href="/about-us">About</a></li>
                     <li><a href="/contact">Contact</a></li>
+                    @auth
+                    <li><a class="black-text" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign out</a></li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                    </form>
+                    @else
+                    <li><a href="/login">Sign in</a></li>
+                    @endauth
                     <li><a class="btn white-text black apply-button" href="">apply now</a></li>
                 </ul>
             </div>

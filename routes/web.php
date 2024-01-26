@@ -9,15 +9,10 @@ use App\Livewire\AboutEditor\{
     EditMainContent
 };
 use Illuminate\Support\Facades\Route;
-use App\Livewire\HomeEditor\{
-    AddSliderInfo,
-    AddMarketingInfo,
-    EditSliderInfo,
-    EditMarketingInfo
-};
-use App\Livewire\Other\{Home, Contact, AboutUs};
-use App\Livewire\Program\Programs;
 use App\Livewire\News\NewsStory;
+use App\Livewire\Program\Programs;
+use App\Livewire\Other\{Home, Contact, AboutUs};
+use App\Livewire\HomeEditor\{AddSliderInfo, AddMarketingInfo, EditSliderInfo, EditMarketingInfo};
 
 
 Route::get('/', Home::class);
@@ -77,3 +72,7 @@ Route::get('/', function () {
 });
 
 */
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
