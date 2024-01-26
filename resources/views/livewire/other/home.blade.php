@@ -1,55 +1,51 @@
 <div>
 
-
     <!-- carousel -->
 
     <div>
 
         <div class="slider fullscreen z-depth-0">
-        <ul class="slides">
-            
-    @if(count($pageSliderInfo) > 0)
+            <ul class="slides">
 
-        @foreach($pageSliderInfo as $slider)
-            <li>
-                <img class="responsive-img" src="{{asset('/storage/uploads/'.$slider->image_path)}}">
-                <div class="caption left-align">
-                    <h3>{{$slider->title}}</h3>
-                    <h5 class="light grey-text text-lighten-3">{{$slider->text}}.</h5>
-                    <br>
-                    @if($slider->button_name )
-                        <a href="{{$slider->button_url}}" class="btn  orange darken-3 apply-button">{{$slider->button_name}}</a>
-                    @endif
+                @if (count($pageSliderInfo) > 0)
 
-                    @can('editor')
-                        <p class="right-align edit-pencil">
-                            <a class="btn-floating btn-small orange pulse" href="/edit-slider-info/{{$slider->id}}"><i class="material-icons ">edit</i></a>
-                            <a class="btn-floating btn-small orange pulse" href="/create-slider-info"><i class="material-icons ">add</i></a>
-                        </p>
-                    @endcan
+                    @foreach ($pageSliderInfo as $slider)
+                        <li>
+                            <img class="responsive-img" src="{{ asset('/storage/uploads/' . $slider->image_path) }}">
+                            <div class="caption left-align">
+                                <h3>{{ $slider->title }}</h3>
+                                <h5 class="light grey-text text-lighten-3">{{ $slider->text }}.</h5>
+                                <br>
+                                @if ($slider->button_name)
+                                    <a href="{{ $slider->button_url }}"
+                                        class="btn  orange darken-3 apply-button">{{ $slider->button_name }}</a>
+                                @endif
 
-                </div>
-            </li>
-        @endforeach
+                                @can('editor')
+                                    <p class="right-align edit-pencil">
+                                        <a class="btn-floating btn-small orange pulse"
+                                            href="/edit-slider-info/{{ $slider->id }}"><i
+                                                class="material-icons ">edit</i></a>
+                                        <a class="btn-floating btn-small orange pulse" href="/create-slider-info"><i
+                                                class="material-icons ">add</i></a>
+                                    </p>
+                                @endcan
 
-    @else
-        <li>
-            <img class="responsive-img" src="{{asset('images/placeholder.webp')}}">
-            <div class="caption left-align">
-                <h3>No title available</h3>
-                <h5 class="light grey-text text-lighten-3">No text available</h5>
-                <br>
-                @can('editor')
-                        <p class="right-align edit-pencil">
-                            <a class="btn-floating btn-small orange pulse" href="/create-slider-info"><i class="material-icons ">add</i></a>
-                        </p>
-                    @endcan
-            </div>
-        </li>
-    @endif
-</ul>
+                            </div>
+                        </li>
+                    @endforeach
+                @else
+                    <li>
+                        <img class="responsive-img" src="{{ asset('images/placeholder.webp') }}">
+                        <div class="caption left-align">
+                            <h3>No title available</h3>
+                            <h5 class="light grey-text text-lighten-3">No text available</h5>
+                            <br>
+                        </div>
+                    </li>
+                @endif
+            </ul>
 
-  
         </div>
     </div>
 
@@ -58,7 +54,6 @@
         <div class="container">
 
             <!-- Announcements -->
-
 
             <div class="row mt">
 
@@ -79,13 +74,9 @@
                     </div>
                 </div>
 
-
             </div>
 
         </div>
-
-
-
 
         <div class="container">
 
@@ -95,12 +86,13 @@
                 <div class="col s12 m4">
                     <div class="card transparent z-depth-0">
                         <div class="card-image">
-                            <img src="{{asset('images/black.jpg')}}">
+                            <img src="{{ asset('images/black.jpg') }}">
                             <span class="card-title">Degree</span>
 
                         </div>
                         <div class="card-action">
-                            <a href="/programs/degree" class="btn btn-small black-text white apply-button" href="#">view
+                            <a href="/programs/degree" class="btn btn-small black-text white apply-button"
+                                href="#">view
                             </a>
                         </div>
                     </div>
@@ -109,36 +101,35 @@
                 <div class="col s12 m4">
                     <div class="card transparent z-depth-0">
                         <div class="card-image">
-                            <img src="{{asset('images/cyan.jpg')}}">
+                            <img src="{{ asset('images/cyan.jpg') }}">
                             <span class="card-title">Diploma</span>
                         </div>
                         <div class="card-action">
-                            <a href="/programs/degree" class="btn btn-small black-text white apply-button" href="#">view
+                            <a href="/programs/degree" class="btn btn-small black-text white apply-button"
+                                href="#">view
                             </a>
                         </div>
                     </div>
                 </div>
 
-
                 <div class="col s12 m4">
                     <div class="card transparent z-depth-0">
                         <div class="card-image">
-                            <img src="{{asset('images/green.jpg')}}">
+                            <img src="{{ asset('images/green.jpg') }}">
                             <span class="card-title">Certificate</span>
                         </div>
                         <div class="card-action">
-                            <a href="/programs/degree" class="btn btn-small black-text white apply-button" href="#">view
+                            <a href="/programs/degree" class="btn btn-small black-text white apply-button"
+                                href="#">view
                             </a>
                         </div>
                     </div>
                 </div>
 
-
-
                 <div class="col s12 m4">
                     <div class="card transparent z-depth-0">
                         <div class="card-image">
-                            <img src="{{asset('images/blue.jpg')}}">
+                            <img src="{{ asset('images/blue.jpg') }}">
                             <span class="card-title">Professional</span>
                         </div>
                         <div class="card-action">
@@ -151,28 +142,26 @@
 
         </div>
 
-
         <div @can('editor') class="edit-box" @endcan>
 
             <div class="parallax-container">
                 <div class="parallax">
-                    @if($pageInfo)
-                      <img src="{{asset('/storage/uploads/'.$pageInfo->image_path)}}">
+                    @if ($pageInfo)
+                        <img src="{{ asset('/storage/uploads/' . $pageInfo->image_path) }}">
                     @else
-                    <img class="responsive-img" src="{{asset('images/placeholder.webp')}}">
+                        <img class="responsive-img" src="{{ asset('images/placeholder.webp') }}">
                     @endif
                 </div>
             </div>
-
 
             <div class="container">
                 <div class="row mt">
                     <div class="col m6 s12 wow slideInLeft">
                         <h3>
-                            <b>{{$pageInfo ? $pageInfo->title : 'No title available' }}</b>
+                            <b>{{ $pageInfo ? $pageInfo->title : 'No title available' }}</b>
                         </h3>
                         <p class="newsbody light-deca">
-                            {{$pageInfo ? $pageInfo->text : 'No text available'}}
+                            {{ $pageInfo ? $pageInfo->text : 'No text available' }}
                             <!--div class="row">
                             <div class="col m6 s12">
                                     <button class="btn btn-small white-text indigo darken-4 apply-buttonn" href="">get started </button>
@@ -185,21 +174,19 @@
                     <div class="col m6 s12 wow slideInRight">
 
                         <div class="video-container">
-                            <iframe width="853" height="480" src="{{$pageInfo ? $pageInfo->video_url : 'https://www.youtube.com/embed/YiSB9l96zYE&t=25s' }}" frameborder="0"
-                                allowfullscreen></iframe>
+                            <iframe width="853" height="480"
+                                src="{{ $pageInfo ? $pageInfo->video_url : 'https://www.youtube.com/watch?v=UeX2CVLw3NQ' }}"
+                                frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
             </div>
 
             @can('editor')
-                @if($pageInfo)
+                @if ($pageInfo)
                     <p class="right-align">
-                        <a href="edit-marketing-info/{{$pageInfo->id}}" class="btn-floating btn-small orange pulse" href=""><i class="material-icons ">edit</i></a>
-                    </p>
-                @else
-                    <p class="right-align edit-pencil">
-                        <a class="btn-floating btn-small orange pulse" href="/create-marketing-info"><i class="material-icons ">add</i></a>
+                        <a href="edit-marketing-info/{{ $pageInfo->id }}" class="btn-floating btn-small orange pulse"
+                            href=""><i class="material-icons ">edit</i></a>
                     </p>
                 @endif
             @endcan
@@ -207,7 +194,6 @@
         </div>
 
         <div class="container">
-
 
             <!--- news -->
 
@@ -218,7 +204,7 @@
                     <div class="col s12 m4">
                         <div class="card ">
                             <div class="card-image">
-                                <img src="{{asset('images/CLASS.jpg')}}">
+                                <img src="{{ asset('images/CLASS.jpg') }}">
                                 <span class="card-title"></span>
                             </div>
                             <div class="card-content">
@@ -234,7 +220,8 @@
                                 </p>
                             </div>
                             <div class="card-action">
-                                <a href="news-story/1" class="btn btn-small black-text white apply-button" href="#">read
+                                <a href="news-story/1" class="btn btn-small black-text white apply-button"
+                                    href="#">read
                                     more</a>
                             </div>
                         </div>
@@ -243,7 +230,7 @@
                     <div class="col s12 m4">
                         <div class="card ">
                             <div class="card-image ">
-                                <img src="{{asset('images/CLASS.jpg')}}">
+                                <img src="{{ asset('images/CLASS.jpg') }}">
                                 <span class="card-title"></span>
                             </div>
                             <div class="card-content">
@@ -259,17 +246,17 @@
                                 </p>
                             </div>
                             <div class="card-action">
-                                <a href="news-story/1" class="btn btn-small black-text white apply-button" href="#">read
+                                <a href="news-story/1" class="btn btn-small black-text white apply-button"
+                                    href="#">read
                                     more</a>
                             </div>
                         </div>
                     </div>
 
-
                     <div class="col s12 m4">
                         <div class="card ">
                             <div class="card-image">
-                                <img src="{{asset('images/CLASS.jpg')}}">
+                                <img src="{{ asset('images/CLASS.jpg') }}">
                                 <span class="card-title"></span>
                             </div>
                             <div class="card-content">
@@ -285,19 +272,17 @@
                                 </p>
                             </div>
                             <div class="card-action">
-                                <a href="news-story/1" class="btn btn-small black-text white apply-button" href="#">read
+                                <a href="news-story/1" class="btn btn-small black-text white apply-button"
+                                    href="#">read
                                     more</a>
                             </div>
                         </div>
                     </div>
 
-
                 </div>
             </div>
 
-
         </div>
-
 
         <footer class="page-footer black">
             <div class="container">
@@ -332,6 +317,5 @@
         </footer>
 
     </div>
-
 
 </div>

@@ -5,7 +5,7 @@
                 <div class="newsbody mt mb wow fadeIn">
                     <div style="position: relative;">
                         <div
-                            style="width: 100%; height: 200px; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{asset('images/18.jpg')}}'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; border-radius:8px">
+                            style="width: 100%; height: 200px; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset('images/18.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; border-radius:8px">
                             <h5 class="center white-text"
                                 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">ZUT
                                 introduces new programs</h5>
@@ -66,11 +66,12 @@
 
                     </div>
                     <div class="col m12 s12">
-                    <div class="video-container">
-                            <iframe width="853" height="480" src="https://www.youtube.com/embed/YiSB9l96zYE&t=25s" frameborder="0" allowfullscreen></iframe>
+                        <div class="video-container">
+                            <iframe width="853" height="480" src="https://www.youtube.com/embed/YiSB9l96zYE&t=25s"
+                                frameborder="0" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

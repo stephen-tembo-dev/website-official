@@ -162,3 +162,22 @@ nav {
   padding:20px;
 
 }
+
+.edit-box {
+    border-radius: 2px;
+    border: #dc7b12 solid 2px;
+    padding: 5px;
+}
+
+.edit-pencil {
+    position: relative !important;
+    z-index: 900;
+}
+
+/* ABOUT PAGE */
+@media screen and (min-width: 768px) {
+    .about-main-content {
+        column-count: 2;
+        column-gap: 64px;
+    }
+}

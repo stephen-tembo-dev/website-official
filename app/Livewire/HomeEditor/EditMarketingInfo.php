@@ -18,7 +18,7 @@ class EditMarketingInfo extends Component
 
     public function mount($info_id)
     {
-        $this->info= HomeAboutContent::find($info_id);
+        $this->info = HomeAboutContent::find($info_id);
         $this->marketingInfo = HomeAboutContent::find($info_id)->toArray();
     }
 
@@ -41,9 +41,8 @@ class EditMarketingInfo extends Component
 
                 // upload image
                 $this->uploadImage();
-
             }
-            
+
             // Step 4: Update DB
             $this->updateDB();
 
@@ -54,8 +53,7 @@ class EditMarketingInfo extends Component
             $previousImage ? $this->deleteOldImage($previousImage) : '';
 
             // give user feedback
-            $this->dispatch('marketing-info-updated'); 
-
+            $this->dispatch('marketing-info-updated');
         } catch (\Exception $e) {
 
             // rollback DB changes
@@ -64,14 +62,13 @@ class EditMarketingInfo extends Component
             dd($e);
 
             // give user feedback
-            $this->dispatch('marketing-info-update-failed'); 
+            $this->dispatch('marketing-info-update-failed');
         }
-
     }
 
     private function updateDB()
     {
-       return $this->info->update($this->marketingInfo);
+        return $this->info->update($this->marketingInfo);
     }
 
 
@@ -87,11 +84,10 @@ class EditMarketingInfo extends Component
         $imagePath = 'app/public/uploads/' . $imageName;
 
         // save to storage path
-        $image->save(storage_path($imagePath ), 100, 'webp');
+        $image->save(storage_path($imagePath), 100, 'webp');
 
         // update array with property with image name
-        $this->marketingInfo['image_path'] = $imageName ;
-
+        $this->marketingInfo['image_path'] = $imageName;
     }
 
     private function validateInfo()
@@ -101,9 +97,9 @@ class EditMarketingInfo extends Component
             'marketingInfo.text' => 'required',
             'marketingInfo.video_url' => 'required',
             'marketingInfo.image_path' => 'required',
-            
+
         ];
-    
+
         $validated = $this->validate($rules);
 
         return $validated;
