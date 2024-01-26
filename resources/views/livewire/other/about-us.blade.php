@@ -27,20 +27,14 @@
                 </div>
             </div>
 
-            <div class="col m6 s12">
-                <p class="flow-text"><i class="material-icons">flag</i> <b>Our mission </b></p>
-                <p class="light-deca">
-                    To Provide Training and Solutions That Produce Graduates with Outstanding Technological Skills in
-                    Southern Africa through an Enabling Learning Environment.
-                </p>
-            </div>
-            <div class="col m6 s12">
-                <p class="flow-text"><i class="material-icons">remove_red_eye</i> <b>Our vision </b></p>
-                <p class="light-deca">
-                    To Be an Institution of Choice in innovation, ICT Talent Training and Smart Solutions in Southern
-                    Africa.
-                </p>
-            </div>
+            @foreach ($infoList as $item)
+                <div class="col m6 s12">
+                    <p class="flow-text"><b>{{ $item->title }}</b></p>
+                    <p class="light-deca">
+                        {!! nl2br($item->text) !!}
+                    </p>
+                </div>
+            @endforeach
 
         </div>
     </div>
