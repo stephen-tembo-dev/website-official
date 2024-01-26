@@ -685,21 +685,21 @@
         </div>
         <div id="test1" class="col m9 s12">
             <br>
-            <p>
+            <p class="light-deca">
                 Minimum entry requirement is grade 12 results with 5’ O Level credits or better including Mathematics
                 and English.
             </p>
         </div>
         <div id="test2" class="col m9 s12">
             <br>
-            <p>
+            <p class="light-deca">
                 Application forms for admission are available at our admissions office at a non-refundable fee of
                 K150.00.
             </p>
         </div>
         <div id="test3" class="col m9 s12">
             <br>
-            <p>
+            <p class="light-deca">
                 The Zambia University College of Technology (ZUT) is the fastest growing higher learning institution in
                 Zambia. The college is a government institution and is only specialized premier center of excellency for
                 research and training in ICTS in Zambia.
@@ -707,7 +707,7 @@
         </div>
         <div id="test4" class="col m9 s12">
             <br>
-            <p>
+            <p class="light-deca">
                 ZUT offers self- catering accommodation; all students are eligible to accommodation. Admission of
                 Residence for new students shall be by online booking upon receipt of an admission letter and payments
                 of fees. The college has limited accommodation so booking for accommodation online is based on first

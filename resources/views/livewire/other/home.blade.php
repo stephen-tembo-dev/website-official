@@ -3,26 +3,49 @@
 
     <!-- carousel -->
 
+    <div>
 
-    <div class="slider fullscreen z-depth-0">
+        <div class="slider fullscreen z-depth-0">
         <ul class="slides">
+            
+    @if(count($pageSliderInfo) > 0)
+
+        @foreach($pageSliderInfo as $slider)
             <li>
-                <img class="responsive-img" src="{{asset('images/18.jpg')}}">
+                <img class="responsive-img" src="{{asset('/storage/uploads/'.$slider->image_path)}}">
                 <div class="caption left-align">
-                    <h3>Zambia University of Technology</h3>
-                    <h5 class="light grey-text text-lighten-3">Worldclass educational facilities.</h5>
+                    <h3>{{$slider->title}}</h3>
+                    <h5 class="light grey-text text-lighten-3">{{$slider->text}}.</h5>
                     <br>
-                    <button class="btn  orange darken-3 apply-button">Apply now</button>
+                    @if($slider->button_name )
+                        <a href="{{$slider->button_url}}" class="btn  orange darken-3 apply-button">{{$slider->button_name}}</a>
+                    @endif
+
+                    @can('editor')
+                        <p class="right-align edit-pencil">
+                            <a class="btn-floating btn-small orange pulse" href="/edit-slider-info/{{$slider->id}}"><i class="material-icons ">edit</i></a>
+                            <a class="btn-floating btn-small orange pulse" href="/create-slider-info"><i class="material-icons ">add</i></a>
+                        </p>
+                    @endcan
+
                 </div>
             </li>
-            <li>
-                <img class="responsive-img" src="{{asset('images/20.jpg')}}">
-                <div class="caption left-align">
-                    <h3>Students are our pride</h3>
-                    <h5 class="light grey-text text-lighten-3">Moulding professionals of tomorrow.</h5>
-                </div>
-            </li>
-        </ul>
+        @endforeach
+
+    @else
+        <li>
+            <img class="responsive-img" src="{{asset('images/placeholder.webp')}}">
+            <div class="caption left-align">
+                <h3>No title available</h3>
+                <h5 class="light grey-text text-lighten-3">No text available</h5>
+                <br>
+            </div>
+        </li>
+    @endif
+</ul>
+
+  
+        </div>
     </div>
 
     <div id="segment">
@@ -41,7 +64,7 @@
                                 <i class="material-icons medium red-text">campaign</i>
                             </div>
                             <div class="col s10">
-                                <span class="black-text">
+                                <span class="black-text light-deca">
                                     Zambia University College of Technology (ZUT), officially opens on 22<sup>nd</sup>
                                     January , 2024.
                                     All members of staff are expected to be available to attend to returning students.
@@ -124,38 +147,57 @@
         </div>
 
 
-        <div class="parallax-container">
-            <div class="parallax"><img src="{{asset('/storage/uploads/'.$pageInfo->image_path)}}"></div>
-        </div>
+        <div @can('editor') class="edit-box" @endcan>
 
-
-        <div class="container">
-
-
-            <div class="row mt">
-                <div class="col m6 s12 wow slideInLeft">
-                    <h3>
-                        <b>{{$pageInfo->title}}</b>
-                    </h3>
-                    <p class="newsbody light-deca">
-                         {{$pageInfo->text}}
-                    <!--div class="row">
-                    <div class="col m6 s12">
-                            <button class="btn btn-small white-text indigo darken-4 apply-buttonn" href="">get started </button>
-                        </div>
-                        <div class="col m6 s12">
-                            <div class="counter" id="counter">0</div>
-                        </div>
-                    </div-->
+            <div class="parallax-container">
+                <div class="parallax">
+                    @if($pageInfo)
+                      <img src="{{asset('/storage/uploads/'.$pageInfo->image_path)}}">
+                    @else
+                    <img class="responsive-img" src="{{asset('images/placeholder.webp')}}">
+                    @endif
                 </div>
-                <div class="col m6 s12 wow slideInRight">
+            </div>
 
-                    <div class="video-container">
-                        <iframe width="853" height="480" src="{{$pageInfo->video_url}}"
-                            frameborder="0" allowfullscreen></iframe>
+
+            <div class="container">
+                <div class="row mt">
+                    <div class="col m6 s12 wow slideInLeft">
+                        <h3>
+                            <b>{{$pageInfo ? $pageInfo->title : 'No title available' }}</b>
+                        </h3>
+                        <p class="newsbody light-deca">
+                            {{$pageInfo ? $pageInfo->text : 'No text available'}}
+                            <!--div class="row">
+                            <div class="col m6 s12">
+                                    <button class="btn btn-small white-text indigo darken-4 apply-buttonn" href="">get started </button>
+                                </div>
+                                <div class="col m6 s12">
+                                    <div class="counter" id="counter">0</div>
+                                </div>
+                            </div-->
+                    </div>
+                    <div class="col m6 s12 wow slideInRight">
+
+                        <div class="video-container">
+                            <iframe width="853" height="480" src="{{$pageInfo ? $pageInfo->video_url : ''}}" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            @can('editor')
+            @if($pageInfo)
+                <p class="right-align">
+                    <a href="edit-marketing-info/{{$pageInfo->id}}" class="btn-floating btn-small orange pulse" href=""><i class="material-icons ">edit</i></a>
+                </p>
+            @endif
+            @endcan
+
+        </div>
+
+        <div class="container">
 
 
             <!--- news -->

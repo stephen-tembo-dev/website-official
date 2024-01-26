@@ -13,7 +13,7 @@ class HomeHeroContent extends Model
         'title',
         'image_path',
         'text',
-        'cta_text',
-        'cta_url',
+        'button_name',
+        'button_url',
     ];
 }

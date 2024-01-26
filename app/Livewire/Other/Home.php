@@ -10,11 +10,13 @@ use Livewire\Component;
 class Home extends Component
 {
     public $pageInfo;
+    public $pageSliderInfo;
 
     public function mount()
     {
         try {
             $this->pageInfo = HomeAboutContent::first();
+            $this->pageSliderInfo = HomeHeroContent::all();
         } catch (\Exception $e) {
             // handle exception
         }
