@@ -56,24 +56,60 @@
             <!-- Announcements -->
 
             <div class="row mt">
-
                 <div class="col s12 m12 wow fadeInLeft">
-                    <div class="card-panel grey lighten-5 z-depth-4">
-                        <div class="row valign-wrapper">
-                            <div class="col s2">
-                                <i class="material-icons medium red-text">campaign</i>
+                    @if ($announcement)
+                        <div @can('editor') class="edit-box" @endcan>
+                            <div class="card-panel grey lighten-5 z-depth-4">
+                                <div class="row valign-wrapper">
+                                    <div class="col s2">
+                                        <i class="material-icons medium red-text">campaign</i>
+                                    </div>
+                                    <div class="col s10">
+                                        <div class="black-text light-deca flow-text">{{ $announcement->title }}
+                                        </div>
+                                        <span class="light-deca">{{ $announcement->text }}</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col s10">
-                                <span class="black-text light-deca">
-                                    Zambia University College of Technology (ZUT), officially opens on 22<sup>nd</sup>
-                                    January , 2024.
-                                    All members of staff are expected to be available to attend to returning students.
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
+                            @can('editor')
+                                <p class="right-align edit-pencil">
+                                    <a class="btn-floating btn-small orange pulse"
+                                        href="{{ route('home.edit.announcement', $announcement->id) }}"><i
+                                            class="material-icons ">edit</i></a>
+                                    <a class="btn-floating btn-small orange pulse"
+                                        href="{{ route('home.create.announcement') }}"><i
+                                            class="material-icons ">add</i></a>
+                                </p>
+                            @endcan
+                        </div>
+                    @else
+                        <div @can('editor') class="edit-box" @endcan>
+                            <div class="card-panel grey lighten-5 z-depth-4">
+                                <div class="row valign-wrapper">
+                                    <div class="col s2">
+                                        <i class="material-icons medium red-text">campaign</i>
+                                    </div>
+                                    <div class="col s10">
+                                        <div class="black-text light-deca flow-text">Your Future
+                                            Awaits</div>
+                                        <span class="light-deca">The university is currently enrolling for the
+                                            {{ now()->format('Y') }} intake</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @can('editor')
+                                <p class="right-align edit-pencil">
+                                    <a class="btn-floating btn-small orange pulse"
+                                        href="{{ route('home.create.announcement') }}"><i
+                                            class="material-icons ">add</i></a>
+                                </p>
+                            @endcan
+                        </div>
+                    @endif
+
+                </div>
             </div>
 
         </div>

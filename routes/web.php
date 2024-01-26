@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\News\NewsStory;
 use App\Livewire\Program\Programs;
 use App\Livewire\Other\{Home, Contact, AboutUs};
-use App\Livewire\HomeEditor\{AddSliderInfo, AddMarketingInfo, EditSliderInfo, EditMarketingInfo};
+use App\Livewire\HomeEditor\{AddAnnouncement, AddSliderInfo, AddMarketingInfo, EditAnnouncement, EditSliderInfo, EditMarketingInfo};
 
 
 Route::get('/', Home::class);
@@ -26,6 +26,8 @@ Route::get('/create-marketing-info', AddMarketingInfo::class);
 Route::get('/create-slider-info', AddSliderInfo::class);
 Route::get('/edit-marketing-info/{info_id}', EditMarketingInfo::class);
 Route::get('/edit-slider-info/{slider_id}', EditSliderInfo::class);
+Route::get('/create-announcement', AddAnnouncement::class)->name('home.create.announcement');
+Route::get('/edit-announcement/{announcement_id}', EditAnnouncement::class)->name('home.edit.announcement');
 
 // About editor routes
 Route::get('/about-us/add-banner-content', AddBannerContent::class)->name('about.add.banner-content');
