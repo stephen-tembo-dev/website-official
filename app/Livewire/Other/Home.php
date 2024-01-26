@@ -3,7 +3,7 @@
 namespace App\Livewire\Other;
 
 use App\Models\Home\HomeAboutContent;
-use App\Models\Home\HomeAnnouncementBanner;
+use App\Models\Home\HomeAnnouncement;
 use App\Models\Home\HomeHeroContent;
 use Livewire\Component;
 
