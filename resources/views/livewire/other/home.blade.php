@@ -180,7 +180,7 @@
                     <div class="col m6 s12 wow slideInRight">
 
                         <div class="video-container">
-                            <iframe width="853" height="480" src="{{$pageInfo ? $pageInfo->video_url : ''}}" frameborder="0"
+                            <iframe width="853" height="480" src="{{$pageInfo ? $pageInfo->video_url : 'https://www.youtube.com/watch?v=UeX2CVLw3NQ'}}" frameborder="0"
                                 allowfullscreen></iframe>
                         </div>
                     </div>
