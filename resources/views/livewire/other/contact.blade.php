@@ -23,16 +23,10 @@
                                 <div class="input-field col m6 s12">
                                     <input id="name" type="text" class="validate" maxlength="70" value="">
                                     <label for="name" class="active">Your name</label>
-
-                                    <!--[if BLOCK]><![endif]-->
-                                    <!--[if ENDBLOCK]><![endif]-->
                                 </div>
                                 <div class="input-field col m6 s12">
                                     <textarea id="email" class="materialize-textarea" maxlength="170"></textarea>
                                     <label for="email" class="active">Your email address</label>
-
-                                    <!--[if BLOCK]><![endif]-->
-                                    <!--[if ENDBLOCK]><![endif]-->
                                 </div>
                             </div>
 
@@ -41,15 +35,11 @@
                                 <div class="input-field col m6 s12">
                                     <textarea id="subject" class="materialize-textarea"></textarea>
                                     <label for="subject" class="active">Subject</label>
-                                    <!--[if BLOCK]><![endif]-->
-                                    <!--[if ENDBLOCK]><![endif]-->
                                 </div>
 
                                 <div class="input-field col m6 s12">
                                     <textarea id="phone" class="materialize-textarea"></textarea>
                                     <label for="phone" class="active">Your phone number</label>
-                                    <!--[if BLOCK]><![endif]-->
-                                    <!--[if ENDBLOCK]><![endif]-->
                                 </div>
 
                             </div>
@@ -59,8 +49,6 @@
                                     <textarea id="message"
                                         class="materialize-textarea">Hi, I would like to ...</textarea>
                                     <label for="message" class="active">Message</label>
-                                    <!--[if BLOCK]><![endif]-->
-                                    <!--[if ENDBLOCK]><![endif]-->
                                 </div>
 
 
@@ -88,7 +76,7 @@
 
 
         <div class="mt mb" style="margin-left:3%">
-            <iframe class="container wow fadeIn "
+            <iframe height="400px" class="container wow fadeIn z-depth-2 "
                 src="https://www.google.com/maps/embed/v1/place?q=Zambia+University+College+of+Technology+(ZUT),+Kalewa+Road,+Ndola,+Zambia&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
                 style="border: 0px; visibility: hidden; animation-name: none;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>

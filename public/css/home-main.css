@@ -164,4 +164,16 @@ nav ul a {
     padding: 20px;
  }
 
+ .edit-box {
+  border-radius: 2px;
+  border: #dc7b12 solid 2px;
+  padding: 5px;
+ }
+
+
+ .edit-pencil {
+  position: relative !important;
+  z-index: 900;
+ }
+
 
