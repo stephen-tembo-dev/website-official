@@ -37,6 +37,10 @@ Route::get('/about-us/edit-main-content/{mainContent}', EditMainContent::class)-
 Route::get('/about-us/add-info-list-content', AddInfoListContent::class)->name('about.add.info-list-content');
 Route::get('/about-us/edit-info-list-content/{listContent}', EditInfoListContent::class)->name('about.edit.info-list-content');
 
+// Events editor routes
+Route::get('/events/create', AddBannerContent::class)->name('events.create');
+Route::get('/events/edit/{event}', AddBannerContent::class)->name('events.edit');
+
 Auth::routes();
 
 
