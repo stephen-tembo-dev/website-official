@@ -8,6 +8,8 @@ use App\Livewire\AboutEditor\{
     EditInfoListContent,
     EditMainContent
 };
+use App\Livewire\EventsEditor\CreateEvent;
+use App\Livewire\EventsEditor\EditEvent;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\News\NewsStory;
 use App\Livewire\Program\Programs;
@@ -38,8 +40,8 @@ Route::get('/about-us/add-info-list-content', AddInfoListContent::class)->name('
 Route::get('/about-us/edit-info-list-content/{listContent}', EditInfoListContent::class)->name('about.edit.info-list-content');
 
 // Events editor routes
-Route::get('/events/create', AddBannerContent::class)->name('events.create');
-Route::get('/events/edit/{event}', AddBannerContent::class)->name('events.edit');
+Route::get('/events/create', CreateEvent::class)->name('events.create');
+Route::get('/events/edit/{event}', EditEvent::class)->name('events.edit');
 
 Auth::routes();
 

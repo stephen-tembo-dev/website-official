@@ -16,6 +16,5 @@ class Event extends Model
         'venue',
         'date',
         'time',
-        'attachment_path',
     ];
 }
