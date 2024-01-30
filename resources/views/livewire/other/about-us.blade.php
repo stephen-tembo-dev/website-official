@@ -315,38 +315,42 @@ nodes = [
     {
       id: 1,
       tags: ["Exective Director"],
-      name: "Shitima Betty",
+      name: "Shitima Bweupe",
       title: "Executive Director",
-      Qualifications: " Executive Director , is a doctorate holder in business administration lorem",
+      Qualifications: "PhD, Msc, Bsc",
       img: "{{asset('images/ED.jpg')}}"
     },
     {
       id: 2,
       pid: 1,
-      name: "Mike Siyangwe",
-      title: "Director SMART",
+      name: "Gabriel Musonda",
+      title: "Head Academics",
+      Qualifications: "PhD, Msc, Bsc",
       img: "{{asset('images/ED2.jpg')}}"
     },
     {
       id: 3,
       pid: 1,
       tags: "",
-      name: "Caine Kapasa",
-      title: "Direct Academics",
+      name: "Mushanga",
+      title: "Head Finance",
+      Qualifications: "PhD, Msc, Bsc",
       img: "{{asset('images/ED3.jpg')}}"
     },
     {
       id: 4,
       pid: 1,
-      name: "Elliot Mudunda",
-      title: "Director Finance",
+      name: "Geofrey Mumba",
+      title: "Director Marketing",
+      Qualifications: "PhD, Msc, Bsc, Dip",
       img: "{{asset('images/ED4.jpg')}}"
     },
     {
       id: 5,
       pid: 1,
-      name: "Fred Gondwe",
-      title: "Director Marketing",
+      name: "John Silungwe",
+      title: "Director SMART",
+      Qualifications: "Msc, Bsc",
       img: "{{asset('images/ED5.jpg')}}"
     }
 ];

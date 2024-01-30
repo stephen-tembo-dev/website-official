@@ -35,7 +35,7 @@
 
         <h5 class="grey-text lighten-3 mt heading"><b>more news</b></h5>
 
-        <div class="row wow fadeIn mb">
+        <div id="paginated-news" class="row wow fadeIn mb section scrollspy">
 
             @foreach($news as $story)
 
@@ -67,9 +67,9 @@
 
         </div>
 
-        <p class="center">
-          
-        </p>
+        <div class=" mb">
+           {{ $news->links(data: ['scrollTo' => '#paginated-news']) }}
+        </div>
 
     </div>
 
