@@ -4,42 +4,19 @@
             <div class="col m8 s12">
                 <div class="newsbody mt mb wow fadeIn">
                     <div style="position: relative;">
-                        <div
-                            style="width: 100%; height: 200px; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset('images/18.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; border-radius:8px">
+                    <div style="width: 100%; height: 200px; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset('/storage/uploads/' . $story->image_path) }}'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; border-radius: 8px;">
                             <h5 class="center white-text"
                                 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">ZUT
-                                introduces new programs</h5>
+                                {{$story->title}}</h5>
                         </div>
                     </div>
 
-                    <p class="center"><small>published on , 21 <sup>st</sup> January , 2023</small></p>
+                    <p class="center"><small>published on , {{$story->created_at->format('j M, Y')}}</small></p>
 
                     <p class="light-deca wow fadeInUp">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium consequatur pariatur
-                        molestiae quia reiciendis, officia nam distinctio eum at in voluptatum accusantium maxime
-                        perspiciatis itaque voluptates cupiditate facere dolorum. Quo!
+                        {!! nl2br($story->text) !!}
                     </p>
 
-                    <p class="light-deca wow fadeInUp">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi fugiat porro voluptatum magni,
-                        esse, tenetur deserunt unde nobis nulla ex, autem reiciendis tempora mollitia eius recusandae
-                        necessitatibus? Debitis, corporis. Consequuntur?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium consequatur pariatur
-                        molestiae quia reiciendis, officia nam distinctio eum at in voluptatum accusantium maxime
-                        perspiciatis itaque voluptates cupiditate facere dolorum. Quo!
-                    </p>
-
-                    <p class="light-deca wow fadeInUp">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi fugiat porro voluptatum magni,
-                        esse, tenetur deserunt unde nobis nulla ex, autem reiciendis tempora mollitia eius recusandae
-                        necessitatibus? Debitis, corporis. Consequuntur?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi fugiat porro voluptatum magni,
-                        esse, tenetur deserunt unde nobis nulla ex, autem reiciendis tempora mollitia eius recusandae
-                        necessitatibus? Debitis, corporis. Consequuntur?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium consequatur pariatur
-                        molestiae quia reiciendis, officia nam distinctio eum at in voluptatum accusantium maxime
-                        perspiciatis itaque voluptates cupiditate facere dolorum. Quo!
-                    </p>
                 </div>
             </div>
 
@@ -50,15 +27,11 @@
 
                         <table class="highlight wow slideInRight">
                             <tbody>
+                                @foreach($other_stories as $other_story)
                                 <tr>
-                                    <td><a>President visits ZUT</a></td>
+                                    <td><a href="/news-story/{{$other_story->id}}" class="truncate">{{$other_story->title}}</a></td>
                                 </tr>
-                                <tr>
-                                    <td><a>Opening of college delayed</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a>Record student enrollment number recorded.</a></td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
 
@@ -66,10 +39,12 @@
 
                     </div>
                     <div class="col m12 s12">
+                        @if($other_story->video_url)
                         <div class="video-container">
-                            <iframe width="853" height="480" src="https://www.youtube.com/embed/YiSB9l96zYE&t=25s"
+                            <iframe width="853" height="480" src="{{ $other_story->video_url }}"
                                 frameborder="0" allowfullscreen></iframe>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>

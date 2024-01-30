@@ -1,7 +1,4 @@
 <div>
-
-    <!-- carousel -->
-
     <div>
 
         <div class="slider fullscreen z-depth-0">
@@ -116,62 +113,20 @@
             <h5 class="grey-text lighten-3 mt heading"><b>our programs</b></h5>
 
             <div class="row wow fadeIn">
-
-                <div class="col s12 m4">
-                    <div class="card transparent z-depth-0">
-                        <div class="card-image">
-                            <img src="{{ asset('images/black.jpg') }}">
-                            <span class="card-title">Degree</span>
-
-                        </div>
-                        <div class="card-action">
-                            <a href="/programs/degree" class="btn btn-small black-text white apply-button"
-                                href="#">view
-                            </a>
+                @foreach($qualifications as $q)
+                    <div class="col s12 m4">
+                        <div class="card transparent z-depth-0">
+                            <div class="card-image">
+                                <img src="{{ asset('images/blue.jpg') }}">
+                                <span class="card-title">{{ $q['name'] }}</span>
+                            </div>
+                            <div class="card-action">
+                                <a href="/programs/{{ $q['id'] }}/{{ $q['name'] }}" class="btn btn-small black-text white apply-button">view</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
 
-                <div class="col s12 m4">
-                    <div class="card transparent z-depth-0">
-                        <div class="card-image">
-                            <img src="{{ asset('images/cyan.jpg') }}">
-                            <span class="card-title">Diploma</span>
-                        </div>
-                        <div class="card-action">
-                            <a href="/programs/degree" class="btn btn-small black-text white apply-button"
-                                href="#">view
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="card transparent z-depth-0">
-                        <div class="card-image">
-                            <img src="{{ asset('images/green.jpg') }}">
-                            <span class="card-title">Certificate</span>
-                        </div>
-                        <div class="card-action">
-                            <a href="/programs/degree" class="btn btn-small black-text white apply-button"
-                                href="#">view
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="card transparent z-depth-0">
-                        <div class="card-image">
-                            <img src="{{ asset('images/blue.jpg') }}">
-                            <span class="card-title">Professional</span>
-                        </div>
-                        <div class="card-action">
-                            <a href="/programs/degree" class="btn btn-small black-text white apply-button"
-                                href="#">view</a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -235,83 +190,34 @@
             <div id="news" class="section scrollspy">
                 <div class="row wow fadeIn">
 
+
+                    @foreach($news as $story)
+
                     <div class="col s12 m4">
                         <div class="card ">
                             <div class="card-image">
-                                <img src="{{ asset('images/CLASS.jpg') }}">
+                            <img src="{{ asset('/storage/uploads/' . $story->image_path) }}" alt="Image">
                                 <span class="card-title"></span>
                             </div>
                             <div class="card-content">
                                 <p>
-                                    <b>President visits ZUT.</b><br>
+                                    <b class="truncate">{{$story->title}}</b><br>
                                 <div class="light-deca">
-                                    <small class="grey-text">01 jan 2024</small>
+                                    <small class="grey-text">{{$story->created_at->format('j M, Y')}}</small>
                                     <br><br>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eaque
-                                    voluptatem cum, voluptas cumque molestias quod! Delectus sapiente non harum
-                                    cupiditate, excepturi.
+                                    {{ \Illuminate\Support\Str::limit($story->text, 200, '...') }}
                                 </div>
                                 </p>
                             </div>
                             <div class="card-action">
-                                <a href="news-story/1" class="btn btn-small black-text white apply-button"
+                                <a href="news-story/{{$story->id}}" class="btn btn-small black-text white apply-button"
                                     href="#">read
                                     more</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col s12 m4">
-                        <div class="card ">
-                            <div class="card-image ">
-                                <img src="{{ asset('images/CLASS.jpg') }}">
-                                <span class="card-title"></span>
-                            </div>
-                            <div class="card-content">
-                                <p>
-                                    <b>ZUT introduces new programs</b><br>
-                                <div class="light-deca">
-                                    <small class="grey-text">01 jan 2024</small>
-                                    <br><br>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eaque
-                                    voluptatem cum, voluptas cumque molestias quod! Delectus sapiente non harum
-                                    cupiditate, excepturi.
-                                </div>
-                                </p>
-                            </div>
-                            <div class="card-action">
-                                <a href="news-story/1" class="btn btn-small black-text white apply-button"
-                                    href="#">read
-                                    more</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col s12 m4">
-                        <div class="card ">
-                            <div class="card-image">
-                                <img src="{{ asset('images/CLASS.jpg') }}">
-                                <span class="card-title"></span>
-                            </div>
-                            <div class="card-content">
-                                <p>
-                                    <b>ZUT becomes a university.</b><br>
-                                <div class="light-deca">
-                                    <small class="grey-text">01 jan 2024</small>
-                                    <br><br>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eaque
-                                    voluptatem cum, voluptas cumque molestias quod! Delectus sapiente non harum
-                                    cupiditate, excepturi.
-                                </div>
-                                </p>
-                            </div>
-                            <div class="card-action">
-                                <a href="news-story/1" class="btn btn-small black-text white apply-button"
-                                    href="#">read
-                                    more</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
             </div>
@@ -413,6 +319,7 @@
 
                 </div>
             </div>
+
             <div class="footer-copyright">
                 <div class="container">
                     © 2024 Zambia University College of Technology , All rights reserved.
