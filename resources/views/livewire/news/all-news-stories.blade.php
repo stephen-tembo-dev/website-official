@@ -12,7 +12,7 @@
         <h5 class="grey-text lighten-3 mt heading"><b>latest</b></h5>
 
         <div class="row">
-            <div class="col m10 s12">
+            <div class="col m10 s12 .show-on-small">
 
                 <div class="card horizontal z-depth-0 small">
                     <div class="card-image">
@@ -35,11 +35,11 @@
 
         <h5 class="grey-text lighten-3 mt heading"><b>more news</b></h5>
 
-        <div class="row wow fadeIn mb">
+        <div id="paginated-news" class="row wow fadeIn mb section scrollspy">
 
             @foreach($news as $story)
 
-            <div class="col s12 m4">
+            <div class="col s12 m3">
                 <div class="card ">
                     <div class="card-image">
                         <img src="{{ asset('/storage/uploads/' . $story->image_path) }}" alt="Image">
@@ -51,7 +51,7 @@
                         <div class="light-deca">
                             <small class="grey-text">{{$story->created_at->format('j M, Y')}}</small>
                             <br><br>
-                            {{ \Illuminate\Support\Str::limit($story->text, 200, '...') }}
+                            {{ \Illuminate\Support\Str::limit($story->text, 100, '...') }}
                         </div>
                         </p>
                     </div>
@@ -67,9 +67,9 @@
 
         </div>
 
-        <p class="center">
-          
-        </p>
+        <div class=" mb">
+           {{ $news->links(data: ['scrollTo' => '#paginated-news']) }}
+        </div>
 
     </div>
 

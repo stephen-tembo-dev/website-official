@@ -35,7 +35,7 @@
 
         <nav class="white z-depth-0">
             <div class="nav-wrapper container">
-                <a href="#!" class="brand-logo"><img class="responsive-img"
+                <a href="/" class="brand-logo"><img class="responsive-img"
                         src="{{ asset('images/logo-white-zuct.png') }}" alt=""></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down nav-options">

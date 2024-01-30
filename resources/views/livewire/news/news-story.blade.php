@@ -6,7 +6,7 @@
                     <div style="position: relative;">
                     <div style="width: 100%; height: 200px; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset('/storage/uploads/' . $story->image_path) }}'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; border-radius: 8px;">
                             <h5 class="center white-text"
-                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">ZUT
+                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
                                 {{$story->title}}</h5>
                         </div>
                     </div>
@@ -18,6 +18,10 @@
                     </p>
 
                 </div>
+
+                @if($story->attachment_path)
+                  <a wire:click="downloadFile()" class="waves-effect waves-light btn black apply-button btn-small"><i class="material-icons right">attach_file</i>download attachment</a>
+                @endif
             </div>
 
             <div class="col m4 s12 mt">
