@@ -93,7 +93,7 @@
                                         class="btn-floating btn-small orange pulse" href=""><i
                                             class="material-icons ">edit</i></a>
 
-                                    @if (($index === count($infoList)) === 1)
+                                    @if ((count($infoList)) === 1)
                                         <a href="{{ route('about.add.info-list-content') }}"
                                             class="btn-floating btn-small orange pulse" href=""><i
                                                 class="material-icons ">add</i></a>

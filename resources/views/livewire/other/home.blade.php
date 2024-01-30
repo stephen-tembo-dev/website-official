@@ -113,7 +113,7 @@
             <h5 class="grey-text lighten-3 mt heading"><b>our programs</b></h5>
 
             <div class="row wow fadeIn">
-                @foreach($qualifications as $q)
+                @foreach ($qualifications as $q)
                     <div class="col s12 m4">
                         <div class="card transparent z-depth-0">
                             <div class="card-image">
@@ -121,7 +121,8 @@
                                 <span class="card-title">{{ $q['name'] }}</span>
                             </div>
                             <div class="card-action">
-                                <a href="/programs/{{ $q['id'] }}/{{ $q['name'] }}" class="btn btn-small black-text white apply-button">view</a>
+                                <a href="/programs/{{ $q['id'] }}/{{ $q['name'] }}"
+                                    class="btn btn-small black-text white apply-button">view</a>
                             </div>
                         </div>
                     </div>
@@ -190,35 +191,112 @@
             <div id="news" class="section scrollspy">
                 <div class="row wow fadeIn">
 
-
-                    @foreach($news as $story)
-
-                    <div class="col s12 m4">
-                        <div class="card ">
-                            <div class="card-image">
-                            <img src="{{ asset('/storage/uploads/' . $story->image_path) }}" alt="Image">
-                                <span class="card-title"></span>
-                            </div>
-                            <div class="card-content">
-                                <p>
-                                    <b class="truncate">{{$story->title}}</b><br>
-                                <div class="light-deca">
-                                    <small class="grey-text">{{$story->created_at->format('j M, Y')}}</small>
-                                    <br><br>
-                                    {{ \Illuminate\Support\Str::limit($story->text, 200, '...') }}
+                    @foreach ($news as $story)
+                        <div class="col s12 m4">
+                            <div class="card ">
+                                <div class="card-image">
+                                    <img src="{{ asset('/storage/uploads/' . $story->image_path) }}" alt="Image">
+                                    <span class="card-title"></span>
                                 </div>
-                                </p>
-                            </div>
-                            <div class="card-action">
-                                <a href="news-story/{{$story->id}}" class="btn btn-small black-text white apply-button"
-                                    href="#">read
-                                    more</a>
+                                <div class="card-content">
+                                    <p>
+                                        <b class="truncate">{{ $story->title }}</b><br>
+                                    <div class="light-deca">
+                                        <small class="grey-text">{{ $story->created_at->format('j M, Y') }}</small>
+                                        <br><br>
+                                        {{ \Illuminate\Support\Str::limit($story->text, 200, '...') }}
+                                    </div>
+                                    </p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="news-story/{{ $story->id }}"
+                                        class="btn btn-small black-text white apply-button" href="#">read
+                                        more</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
                     @endforeach
 
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <!--- Events -->
+
+            <h5 class="grey-text lighten-3 mt heading"><b>Events</b></h5>
+
+            <div id="events" class="section scrollspy">
+                <div class="row wow fadeIn">
+                    @if (count($events) > 0)
+                        @foreach ($events as $index => $event)
+                            @php
+                                $imagePath = asset('storage/uploads/' . $event->image_path);
+                                $date = \Carbon\Carbon::create($event->date);
+                                $day = $date->format('d');
+                                $month = $date->format('M');
+                                $title = strlen($event->title) < 55 ? $event->title : str()->limit($event->title, 55);
+                                $venue = strlen($event->venue) < 35 ? $event->venue : str()->limit($event->venue, 35);
+                            @endphp
+
+                            <div class="col s12 l4">
+                                <div @can('editor') class="edit-box" @endcan>
+                                    <div class="event-card">
+                                        <a href="{{ route('events.show', $event) }}" class="event-card__link">
+                                            <div class="event-card__image-box">
+                                                <img class="event-card__image" src="{{ $imagePath }}">
+                                            </div>
+                                            <div class="event-card__content">
+                                                <div class="event-card__date">
+                                                    <p class="event-card__day">{{ $day }}</p>
+                                                    <p class="event-card__month">{{ $month }}</p>
+                                                    {{-- <p class="event-card__year">2024</p> --}}
+                                                </div>
+                                                <div class="event-card__details">
+                                                    <p class="event-card__title">{{ $title }}
+                                                    </p>
+                                                    <div class="event-card__location">
+                                                        <i class="tiny material-icons">location_on</i>
+                                                        <span class="event-card__venue light-deca grey-text">
+                                                            {{ $venue }}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {{-- <div class="event-card__footer"></div> --}}
+                                        </a>
+                                    </div>
+
+                                    @can('editor')
+                                        <p class="right-align">
+                                            <a href="{{ route('events.edit', $event->id) }}"
+                                                class="btn-floating btn-small orange pulse" href=""><i
+                                                    class="material-icons ">edit</i></a>
+
+                                            @if ($index === 0)
+                                                <a href="{{ route('events.create') }}"
+                                                    class="btn-floating btn-small orange pulse" href=""><i
+                                                        class="material-icons ">add</i></a>
+                                            @endif
+                                        </p>
+                                    @endcan
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <div class="col s12">
+                            <p class="left-align">
+                                <a href="{{ route('events.create') }}" class="btn-floating btn-small orange pulse"
+                                    href=""><i class="material-icons ">add</i></a>
+                            </p>
+                        </div>
+                    @endif
+
+                    <div class="col s12 mt-sm center-align">
+                        <a href="{{ route('events.index') }}">All Events &rarr;</a>
+                    </div>
                 </div>
             </div>
 

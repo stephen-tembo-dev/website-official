@@ -8,11 +8,12 @@ use Livewire\WithFileUploads;
 use App\Models\News\NewsStory;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
+use Livewire\Features\SupportFileUploads\WithFileUploads as SupportFileUploadsWithFileUploads;
 
 class AddNewsStory extends Component
 {
 
-    use WithFileUploads;
+    use SupportFileUploadsWithFileUploads;
 
     public $newsInfo = [
         'title' => '',
@@ -37,7 +38,7 @@ class AddNewsStory extends Component
             $this->uploadImage();
 
             // step 3 : check if attachment is present
-            if($this->newsInfo['attachment_path']){
+            if ($this->newsInfo['attachment_path']) {
                 $this->uploadAttachment();
             }
 
@@ -49,7 +50,6 @@ class AddNewsStory extends Component
 
             // give user feedback
             $this->dispatch('news-info-created');
-
         } catch (\Exception $e) {
 
             // rollback DB changes
