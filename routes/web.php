@@ -9,7 +9,7 @@ use App\Livewire\AboutEditor\{
     EditInfoListContent,
     EditMainContent
 };
-use App\Livewire\EventsEditor\{CreateEvent, EditEvent};
+use App\Livewire\Events\{CreateEvent, EditEvent};
 use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories};
 use App\Livewire\Program\Programs;
 use App\Livewire\Other\{Home, Contact, AboutUs};
@@ -23,6 +23,7 @@ Route::get('/programs/{category}', Programs::class);
 Route::get('/programs/{id}/{category}', Programs::class);
 Route::get('/news-story/{id}', NewsStory::class);
 Route::get('/events', Home::class)->name('events.index');
+Route::get('/event/{event}', Home::class)->name('events.show');
 
 // Home editor routes
 Route::get('/create-marketing-info', AddMarketingInfo::class);
@@ -33,7 +34,6 @@ Route::get('/create-announcement', AddAnnouncement::class)->name('home.create.an
 Route::get('/edit-announcement/{announcement_id}', EditAnnouncement::class)->name('home.edit.announcement');
 
 // News editor routes
-
 Route::get('/create-news-story', AddNewsStory::class);
 Route::get('/edit-news-story/{news_id}', EditNewsStory::class);
 Route::get('/news-story/{news_id}', NewsStory::class);

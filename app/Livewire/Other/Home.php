@@ -16,14 +16,14 @@ class Home extends Component
     public $pageSliderInfo;
     public $news;
     public $announcement;
-    public $qualifications;
-    public $events;
+    public $qualifications = [];
+    public $events = [];
 
     public function mount()
     {
         try {
-            $response = Http::get('http://127.0.0.1:8000/api/qualifications');
-            $this->qualifications = $response->json();
+            // $response = Http::get('http://127.0.0.1:8000/api/qualifications');
+            //  $this->qualifications = $response->json();
             // dd($response->json());
             $this->pageInfo = HomeAboutContent::first();
             $this->pageSliderInfo = HomeHeroContent::all();

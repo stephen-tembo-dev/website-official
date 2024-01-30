@@ -13,9 +13,7 @@ class NewsStory extends Component
     public function mount($news_id)
     {
         $this->story = Story::find($news_id);
-        $this->other_stories = Story::latest()->take(4)->where('id', '!=', $news_id)->get(['id','title']);
-
-        
+        $this->other_stories = Story::latest()->take(4)->where('id', '!=', $news_id)->get(['id', 'title']);
     }
 
     public function render()
