@@ -53,24 +53,57 @@
             <!-- Announcements -->
 
             <div class="row mt">
-
                 <div class="col s12 m12 wow fadeInLeft">
-                    <div class="card-panel grey lighten-5 z-depth-4">
-                        <div class="row valign-wrapper">
-                            <div class="col s2">
-                                <i class="material-icons medium red-text">campaign</i>
+                    @if ($announcement)
+                        <div @can('editor') class="edit-box" @endcan>
+                            <div class="card-panel grey lighten-5 z-depth-4">
+                                <div class="row valign-wrapper">
+                                    <div class="col s2">
+                                        <i class="material-icons medium red-text">campaign</i>
+                                    </div>
+                                    <div class="col s10">
+                                        <div class="black-text light-deca flow-text">{{ $announcement->title }}
+                                        </div>
+                                        <span class="light-deca">{{ $announcement->text }}</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col s10">
-                                <span class="black-text light-deca">
-                                    Zambia University College of Technology (ZUT), officially opens on 22<sup>nd</sup>
-                                    January , 2024.
-                                    All members of staff are expected to be available to attend to returning students.
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
+                            @can('editor')
+                                <p class="right-align edit-pencil">
+                                    <a class="btn-floating btn-small orange pulse"
+                                        href="{{ route('home.edit.announcement', $announcement->id) }}"><i
+                                            class="material-icons ">edit</i></a>
+                                </p>
+                            @endcan
+                        </div>
+                    @else
+                        <div @can('editor') class="edit-box" @endcan>
+                            <div class="card-panel grey lighten-5 z-depth-4">
+                                <div class="row valign-wrapper">
+                                    <div class="col s2">
+                                        <i class="material-icons medium red-text">campaign</i>
+                                    </div>
+                                    <div class="col s10">
+                                        <div class="black-text light-deca flow-text">Your Future
+                                            Awaits</div>
+                                        <span class="light-deca">The university is currently enrolling for the
+                                            {{ now()->format('Y') }} intake</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @can('editor')
+                                <p class="right-align edit-pencil">
+                                    <a class="btn-floating btn-small orange pulse"
+                                        href="{{ route('home.create.announcement') }}"><i
+                                            class="material-icons ">add</i></a>
+                                </p>
+                            @endcan
+                        </div>
+                    @endif
+
+                </div>
             </div>
 
         </div>
@@ -80,61 +113,20 @@
             <h5 class="grey-text lighten-3 mt heading"><b>our programs</b></h5>
 
             <div class="row wow fadeIn">
-                <div class="col s12 m4">
-                    <div class="card transparent z-depth-0">
-                        <div class="card-image">
-                            <img src="{{ asset('images/black.jpg') }}">
-                            <span class="card-title">Degree</span>
-
-                        </div>
-                        <div class="card-action">
-                            <a href="/programs/degree" class="btn btn-small black-text white apply-button"
-                                href="#">view
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="card transparent z-depth-0">
-                        <div class="card-image">
-                            <img src="{{ asset('images/cyan.jpg') }}">
-                            <span class="card-title">Diploma</span>
-                        </div>
-                        <div class="card-action">
-                            <a href="/programs/degree" class="btn btn-small black-text white apply-button"
-                                href="#">view
-                            </a>
+                @foreach($qualifications as $q)
+                    <div class="col s12 m4">
+                        <div class="card transparent z-depth-0">
+                            <div class="card-image">
+                                <img src="{{ asset('images/blue.jpg') }}">
+                                <span class="card-title">{{ $q['name'] }}</span>
+                            </div>
+                            <div class="card-action">
+                                <a href="/programs/{{ $q['id'] }}/{{ $q['name'] }}" class="btn btn-small black-text white apply-button">view</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
 
-                <div class="col s12 m4">
-                    <div class="card transparent z-depth-0">
-                        <div class="card-image">
-                            <img src="{{ asset('images/green.jpg') }}">
-                            <span class="card-title">Certificate</span>
-                        </div>
-                        <div class="card-action">
-                            <a href="/programs/degree" class="btn btn-small black-text white apply-button"
-                                href="#">view
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="card transparent z-depth-0">
-                        <div class="card-image">
-                            <img src="{{ asset('images/blue.jpg') }}">
-                            <span class="card-title">Professional</span>
-                        </div>
-                        <div class="card-action">
-                            <a href="/programs/degree" class="btn btn-small black-text white apply-button"
-                                href="#">view</a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -255,6 +247,7 @@
 
                 </div>
             </div>
+
             <div class="footer-copyright">
                 <div class="container">
                     © 2024 Zambia University College of Technology , All rights reserved.

@@ -13,19 +13,23 @@ use App\Livewire\AboutEditor\{
 use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories};
 use App\Livewire\Program\Programs;
 use App\Livewire\Other\{Home, Contact, AboutUs};
-use App\Livewire\HomeEditor\{AddSliderInfo, AddMarketingInfo, EditSliderInfo, EditMarketingInfo};
+use App\Livewire\HomeEditor\{AddAnnouncement, AddSliderInfo, AddMarketingInfo, EditAnnouncement, EditSliderInfo, EditMarketingInfo};
 
 
 Route::get('/', Home::class);
 Route::get('/contact', Contact::class);
 Route::get('/about-us', AboutUs::class);
 Route::get('/programs/{category}', Programs::class);
+Route::get('/programs/{id}/{category}', Programs::class);
+Route::get('/news-story/{id}', NewsStory::class);
 
 // Home editor routes
 Route::get('/create-marketing-info', AddMarketingInfo::class);
 Route::get('/create-slider-info', AddSliderInfo::class);
 Route::get('/edit-marketing-info/{info_id}', EditMarketingInfo::class);
 Route::get('/edit-slider-info/{slider_id}', EditSliderInfo::class);
+Route::get('/create-announcement', AddAnnouncement::class)->name('home.create.announcement');
+Route::get('/edit-announcement/{announcement_id}', EditAnnouncement::class)->name('home.edit.announcement');
 
 // News editor routes
 
