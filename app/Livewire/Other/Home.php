@@ -2,21 +2,24 @@
 
 namespace App\Livewire\Other;
 
-use App\Models\Home\HomeAboutContent;
-use App\Models\Home\HomeAnnouncement;
-use App\Models\Home\HomeHeroContent;
+use App\Models\Home\{HomeAboutContent, HomeAnnouncement, HomeHeroContent};
+use App\Models\News\NewsStory;
+
+
 use Livewire\Component;
 
 class Home extends Component
 {
     public $pageInfo;
     public $pageSliderInfo;
+    public $news;
 
     public function mount()
     {
         try {
             $this->pageInfo = HomeAboutContent::first();
             $this->pageSliderInfo = HomeHeroContent::all();
+            $this->news = NewsStory::latest()->take(3)->get();
         } catch (\Exception $e) {
             // handle exception
         }

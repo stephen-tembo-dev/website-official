@@ -40,7 +40,7 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down nav-options">
                     <li><a href="/">Home</a></li>
-                    <li><a href="#news">News</a></li>
+                    <li><a href="/all-news-stories">News</a></li>
                     <li><a href="/about-us">About</a></li>
                     <li><a href="/contact">Contact</a></li>
                     @auth

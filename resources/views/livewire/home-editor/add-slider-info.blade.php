@@ -39,7 +39,7 @@
 
                                 <div class="file-field input-field col m12 s12">
                                     <div class="btn btn-small grey">
-                                        <span>File</span>
+                                        <span>File - 2000w x 600h px</span>
                                         <input wire:model="sliderInfo.image_path" type="file">
                                     </div>
                                     <div class="file-path-wrapper">
