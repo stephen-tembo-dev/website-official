@@ -14,7 +14,7 @@ Route::get('/contact', Contact::class);
 Route::get('/about-us', AboutUs::class);
 Route::get('/programs/{category}', Programs::class);
 Route::get('/programs/{id}/{category}', Programs::class);
-Route::get('/news-story/{id}', NewsStory::class);
+Route::get('/news-story/{news_id}', NewsStory::class);
 
 // Home editor routes
 Route::get('/create-marketing-info', AddMarketingInfo::class);
