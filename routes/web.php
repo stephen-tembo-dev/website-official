@@ -9,6 +9,7 @@ use App\Livewire\AboutEditor\{
     EditInfoListContent,
     EditMainContent
 };
+use App\Livewire\EventsEditor\{CreateEvent, EditEvent};
 use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories};
 use App\Livewire\Program\Programs;
 use App\Livewire\Other\{Home, Contact, AboutUs};
@@ -45,3 +46,9 @@ Route::get('/about-us/add-main-content', AddMainContent::class)->name('about.add
 Route::get('/about-us/edit-main-content/{mainContent}', EditMainContent::class)->name('about.edit.main-content');
 Route::get('/about-us/add-info-list-content', AddInfoListContent::class)->name('about.add.info-list-content');
 Route::get('/about-us/edit-info-list-content/{listContent}', EditInfoListContent::class)->name('about.edit.info-list-content');
+
+// Events editor routes
+Route::get('/events/create', CreateEvent::class)->name('events.create');
+Route::get('/events/edit/{event}', EditEvent::class)->name('events.edit');
+
+Auth::routes();
