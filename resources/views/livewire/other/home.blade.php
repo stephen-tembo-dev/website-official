@@ -116,62 +116,20 @@
             <h5 class="grey-text lighten-3 mt heading"><b>our programs</b></h5>
 
             <div class="row wow fadeIn">
-
-                <div class="col s12 m4">
-                    <div class="card transparent z-depth-0">
-                        <div class="card-image">
-                            <img src="{{ asset('images/black.jpg') }}">
-                            <span class="card-title">Degree</span>
-
-                        </div>
-                        <div class="card-action">
-                            <a href="/programs/degree" class="btn btn-small black-text white apply-button"
-                                href="#">view
-                            </a>
+                @foreach($qualifications as $q)
+                    <div class="col s12 m4">
+                        <div class="card transparent z-depth-0">
+                            <div class="card-image">
+                                <img src="{{ asset('images/blue.jpg') }}">
+                                <span class="card-title">{{ $q['name'] }}</span>
+                            </div>
+                            <div class="card-action">
+                                <a href="/programs/{{ $q['id'] }}/{{ $q['name'] }}" class="btn btn-small black-text white apply-button">view</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
 
-                <div class="col s12 m4">
-                    <div class="card transparent z-depth-0">
-                        <div class="card-image">
-                            <img src="{{ asset('images/cyan.jpg') }}">
-                            <span class="card-title">Diploma</span>
-                        </div>
-                        <div class="card-action">
-                            <a href="/programs/degree" class="btn btn-small black-text white apply-button"
-                                href="#">view
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="card transparent z-depth-0">
-                        <div class="card-image">
-                            <img src="{{ asset('images/green.jpg') }}">
-                            <span class="card-title">Certificate</span>
-                        </div>
-                        <div class="card-action">
-                            <a href="/programs/degree" class="btn btn-small black-text white apply-button"
-                                href="#">view
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="card transparent z-depth-0">
-                        <div class="card-image">
-                            <img src="{{ asset('images/blue.jpg') }}">
-                            <span class="card-title">Professional</span>
-                        </div>
-                        <div class="card-action">
-                            <a href="/programs/degree" class="btn btn-small black-text white apply-button"
-                                href="#">view</a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -341,6 +299,7 @@
 
                 </div>
             </div>
+
             <div class="footer-copyright">
                 <div class="container">
                     © 2024 Zambia University College of Technology , All rights reserved.
@@ -352,8 +311,4 @@
 
     </div>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 23d2f2c80684ee9f22163e43cc01fa4e454f1e94
 </div>

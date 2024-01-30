@@ -5,6 +5,7 @@ namespace App\Livewire\Other;
 use App\Models\Home\HomeAboutContent;
 use App\Models\Home\HomeAnnouncement;
 use App\Models\Home\HomeHeroContent;
+use Illuminate\Support\Facades\Http;
 use Livewire\Component;
 
 class Home extends Component
@@ -12,10 +13,15 @@ class Home extends Component
     public $pageInfo;
     public $pageSliderInfo;
     public $announcement;
+    public $qualifications;
 
     public function mount()
     {
         try {
+            $response = Http::get('http://127.0.0.1:8000/api/qualifications');
+            $this->qualifications = $response->json();
+
+           // dd($response->json());
             $this->pageInfo = HomeAboutContent::first();
             $this->pageSliderInfo = HomeHeroContent::all();
             $this->announcement = HomeAnnouncement::latest('created_at')->first();

@@ -18,7 +18,7 @@ use App\Livewire\HomeEditor\{AddAnnouncement, AddSliderInfo, AddMarketingInfo, E
 Route::get('/', Home::class);
 Route::get('/contact', Contact::class);
 Route::get('/about-us', AboutUs::class);
-Route::get('/programs/{category}', Programs::class);
+Route::get('/programs/{id}/{category}', Programs::class);
 Route::get('/news-story/{id}', NewsStory::class);
 
 // Home editor routes
