@@ -286,3 +286,9 @@ nav {
 .event-card__venue {
     font-size: 14px;
 }
+
+/* PAGINATION */
+.active-pagination-link {
+    border-radius: 100px !important;
+    background: #012f5b !important;
+}
