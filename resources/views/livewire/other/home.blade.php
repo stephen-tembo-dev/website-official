@@ -318,6 +318,78 @@
 
         </div>
 
+        <div class="container">
+
+            <!--- Events -->
+
+            <h5 class="grey-text lighten-3 mt heading"><b>Events</b></h5>
+            <div id="news" class="section scrollspy">
+                <div class="row wow fadeIn">
+                    @if (count($events) > 0)
+                        @foreach ($events as $index => $event)
+                            @php
+                                $imagePath = asset('storage/uploads/' . $event->image_path);
+                                $date = \Carbon\Carbon::create($event->date);
+                                $day = $date->format('d');
+                                $month = $date->format('M');
+                                $title = strlen($event->title) < 55 ? $event->title : str()->limit($event->title, 55);
+                                $venue = strlen($event->venue) < 35 ? $event->venue : str()->limit($event->venue, 35);
+                            @endphp
+
+                            <div class="col s12 l4">
+                                <div @can('editor') class="edit-box" @endcan>
+                                    <div class="event-card">
+                                        <a href="" class="event-card__link">
+                                            <div class="event-card__image-box">
+                                                <img class="event-card__image" src="{{ $imagePath }}">
+                                            </div>
+                                            <div class="event-card__content">
+                                                <div class="event-card__date">
+                                                    <p class="event-card__day">{{ $day }}</p>
+                                                    <p class="event-card__month">{{ $month }}</p>
+                                                    {{-- <p class="event-card__year">2024</p> --}}
+                                                </div>
+                                                <div class="event-card__details">
+                                                    <p class="event-card__title">{{ $title }}
+                                                    </p>
+                                                    <div class="event-card__location">
+                                                        <i class="tiny material-icons">location_on</i>
+                                                        <span class="event-card__venue light-deca grey-text">
+                                                            {{ $venue }}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {{-- <div class="event-card__footer"></div> --}}
+                                        </a>
+                                    </div>
+
+                                    @can('editor')
+                                        <p class="right-align">
+                                            <a href="{{ route('events.edit', $event->id) }}"
+                                                class="btn-floating btn-small orange pulse" href=""><i
+                                                    class="material-icons ">edit</i></a>
+
+                                            @if ($index === 0)
+                                                <a href="{{ route('events.create') }}"
+                                                    class="btn-floating btn-small orange pulse" href=""><i
+                                                        class="material-icons ">add</i></a>
+                                            @endif
+                                        </p>
+                                    @endcan
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+
+                    <div class="col s12 mt center-align">
+                        <a href="{{ route('events.index') }}">All Events &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
         <footer class="page-footer black">
             <div class="container">
                 <div class="row">
