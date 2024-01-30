@@ -21,12 +21,20 @@ class Home extends Component
 
     public function mount()
     {
+
+        //   $response = Http::get('http://127.0.0.1:8000/api/qualifications');
+        //   $this->qualifications = $response->json();
+
+
         try {
-            // $response = Http::get('http://127.0.0.1:8000/api/qualifications');
-            //  $this->qualifications = $response->json();
+            $response = Http::get('http://127.0.0.1:8000/api/qualifications');
+            $this->qualifications = $response->json();
+
             // dd($response->json());
             $this->pageInfo = HomeAboutContent::first();
             $this->pageSliderInfo = HomeHeroContent::all();
+
+
             $this->news = NewsStory::latest()->take(3)->get();
             $this->announcement = HomeAnnouncement::latest('created_at')->first();
             $this->events = Event::latest('created_at')->limit(3)->get();

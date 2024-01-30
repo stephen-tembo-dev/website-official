@@ -23,7 +23,7 @@
                             <p class="flow-text"><b>{{$story->title}}</b></p>
                             <p class="light-deca newsbody"> {{ \Illuminate\Support\Str::limit($story->text, 230, '...') }}</p>
                             <br>
-                            <a href="news-story/" class="btn btn-small black-text white apply-button" href="#">read
+                            <a href="news-story/{{$story->id}}" class="btn btn-small black-text white apply-button" href="#">read
                                 more</a>
                         </div>
 
