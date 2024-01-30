@@ -1,19 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Livewire\AboutEditor\{
-    AddBannerContent,
-    AddInfoListContent,
-    AddMainContent,
-    EditBannerContent,
-    EditInfoListContent,
-    EditMainContent
-};
-
-use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories};
 use App\Livewire\Program\Programs;
 use App\Livewire\Other\{Home, Contact, AboutUs};
+use App\Livewire\ProgramEditor\{AddAdmissionInfo, EditAdmissionInfo };
+use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories};
 use App\Livewire\HomeEditor\{AddAnnouncement, AddSliderInfo, AddMarketingInfo, EditAnnouncement, EditSliderInfo, EditMarketingInfo};
+use App\Livewire\AboutEditor\{AddBannerContent, AddInfoListContent, AddMainContent, EditBannerContent, EditInfoListContent, EditMainContent};
 
 
 Route::get('/', Home::class);
@@ -32,11 +25,14 @@ Route::get('/create-announcement', AddAnnouncement::class)->name('home.create.an
 Route::get('/edit-announcement/{announcement_id}', EditAnnouncement::class)->name('home.edit.announcement');
 
 // News editor routes
-
 Route::get('/create-news-story', AddNewsStory::class);
 Route::get('/edit-news-story/{news_id}', EditNewsStory::class);
 Route::get('/news-story/{news_id}', NewsStory::class);
 Route::get('/all-news-stories', AllNewsStories::class);
+
+// Program editor routes
+Route::get('/create-admission-info', AddAdmissionInfo::class);
+Route::get('/edit-admission-info/{admission_info_id}', EditAdmissionInfo::class);
 
 // About editor routes
 Route::get('/about-us/add-banner-content', AddBannerContent::class)->name('about.add.banner-content');
