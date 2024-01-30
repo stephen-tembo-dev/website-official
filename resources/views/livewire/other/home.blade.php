@@ -243,7 +243,7 @@
                             <div class="col s12 l4">
                                 <div @can('editor') class="edit-box" @endcan>
                                     <div class="event-card">
-                                        <a href="" class="event-card__link">
+                                        <a href="{{ route('events.show', $event) }}" class="event-card__link">
                                             <div class="event-card__image-box">
                                                 <img class="event-card__image" src="{{ $imagePath }}">
                                             </div>

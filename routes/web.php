@@ -1,32 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Livewire\AboutEditor\{
-    AddBannerContent,
-    AddInfoListContent,
-    AddMainContent,
-    EditBannerContent,
-    EditInfoListContent,
-    EditMainContent
-};
-use App\Livewire\Events\{CreateEvent, EditEvent};
+use App\Livewire\AboutEditor\{AddBannerContent, AddInfoListContent, AddMainContent, EditBannerContent, EditInfoListContent, EditMainContent};
+use App\Livewire\Events\{CreateEvent, EditEvent, ListEvents, ShowEvent};
 use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories};
 use App\Livewire\Program\Programs;
 use App\Livewire\Other\{Home, Contact, AboutUs};
 use App\Livewire\ProgramEditor\{AddAdmissionInfo, EditAdmissionInfo};
-use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories};
 use App\Livewire\HomeEditor\{AddAnnouncement, AddSliderInfo, AddMarketingInfo, EditAnnouncement, EditSliderInfo, EditMarketingInfo};
-use App\Livewire\AboutEditor\{AddBannerContent, AddInfoListContent, AddMainContent, EditBannerContent, EditInfoListContent, EditMainContent};
-
 
 Route::get('/', Home::class);
 Route::get('/contact', Contact::class);
 Route::get('/about-us', AboutUs::class);
 Route::get('/programs/{category}', Programs::class);
 Route::get('/programs/{id}/{category}', Programs::class);
-Route::get('/news-story/{id}', NewsStory::class);
-Route::get('/events', Home::class)->name('events.index');
-Route::get('/event/{event}', Home::class)->name('events.show');
+Route::get('/news-story/{news_id}', NewsStory::class);
+Route::get('/events', ListEvents::class)->name('events.index');
+Route::get('/event/{event}', ShowEvent::class)->name('events.show');
 
 // Home editor routes
 Route::get('/create-marketing-info', AddMarketingInfo::class);

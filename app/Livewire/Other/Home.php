@@ -17,18 +17,14 @@ class Home extends Component
     public $news;
     public $announcement;
     public $qualifications = [];
-    public $events = [];
+    public $events;
 
     public function mount()
     {
 
-        //   $response = Http::get('http://127.0.0.1:8000/api/qualifications');
-        //   $this->qualifications = $response->json();
-
-
         try {
-            $response = Http::get('http://127.0.0.1:8000/api/qualifications');
-            $this->qualifications = $response->json();
+            // $response = Http::get('http://127.0.0.1:8000/api/qualifications');
+            // $this->qualifications = $response->json();
 
             // dd($response->json());
             $this->pageInfo = HomeAboutContent::first();
