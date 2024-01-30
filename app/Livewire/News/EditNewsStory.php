@@ -34,6 +34,7 @@ class EditNewsStory extends Component
             $validated = $this->validateInfo();
 
             $previousImage = null;
+            $previousAttachment = null;
 
             // Step 2: determine if theres need to upload 
             if (is_object($this->newsInfo['image_path'])) {
@@ -47,6 +48,11 @@ class EditNewsStory extends Component
 
             // step 3 : check if attachment is present
             if(is_object($this->newsInfo['attachment_path'])){
+
+                 // reference for previous image
+                 $previousAttachment = NewsStory::find($this->story->id)->attachment_path;
+
+                 // upload attachment
                 $this->uploadAttachment();
             }
 
@@ -55,6 +61,12 @@ class EditNewsStory extends Component
 
             // commit
             DB::commit();
+
+            // delete any old image, if image was updated
+            $previousImage ? $this->deleteOldImage($previousImage) : '';
+
+            // delete any old attachment, if attachment was updated
+            $previousAttachment ? $this->deleteOldAttachment($previousAttachment) : '';
 
             // give user feedback
             $this->dispatch('news-info-updated');
@@ -76,11 +88,40 @@ class EditNewsStory extends Component
         return $this->story->update($this->newsInfo);
     }
 
+    private function deleteOldImage($previousImage)
+    {
+        // if previous pimage exists delete it from storage
+        if ($previousImage) {
+            $filePath = storage_path("app/public/uploads/$previousImage");
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+    }
+
+
+    private function deleteOldAttachment($previousAttachment)
+    {
+        // if previous pimage exists delete it from storage
+        if ($previousAttachment) {
+            $filePath = storage_path("app/public/attachments/$previousAttachment");
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+    }
+
 
     private function uploadImage()
     {
         // image object
         $image = Image::make($this->newsInfo['image_path']->getRealPath());
+
+        // resize image
+        $image->fit(500, 500, function ($constraint) {
+            $constraint->aspectRatio();
+            $constraint->upsize();
+        });
 
         // construct unique image name
         $imageName = time() . '-' . $this->newsInfo['image_path']->getClientOriginalName();
@@ -112,6 +153,7 @@ class EditNewsStory extends Component
         // update array with property with attachment name
         $this->newsInfo['attachment_path'] = $fileName;
     }
+
 
     private function validateInfo()
     {

@@ -30,7 +30,7 @@
 
                             <button style="border-radius: 8px;" class="btn btn-small waves-effect waves-light black"
                                 type="submit" name="action">
-                                Update List Content
+                                Save
                             </button>
                         </div>
                     </form>

@@ -6,6 +6,7 @@ use DB;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\News\NewsStory;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class AddNewsStory extends Component
@@ -72,6 +73,12 @@ class AddNewsStory extends Component
         // image object
         $image = Image::make($this->newsInfo['image_path']->getRealPath());
 
+        // resize image
+        $image->fit(500, 500, function ($constraint) {
+            $constraint->aspectRatio();
+            $constraint->upsize();
+        });
+
         // construct unique image name
         $imageName = time() . '-' . $this->newsInfo['image_path']->getClientOriginalName();
 
@@ -89,17 +96,14 @@ class AddNewsStory extends Component
     {
         // attachment object
         $file = $this->newsInfo['attachment_path'];
-
+    
         // construct unique attachment name
-        $fileName = time() . '-' . $this->newsInfo['attachment_path']->getClientOriginalName();
-
-        // construct path to save attachment to
-        $filePath = 'app/public/attachments/' . $fileName;
-
-        // save to storage path
-        $file->save(storage_path($filePath));
-
-        // update array with property with attachment name
+        $fileName = time() . '-' . $file->getClientOriginalName();
+    
+        // store the file in the specified directory
+        $filePath = $file->storeAs('public/attachments', $fileName);
+    
+        // update array property with attachment name
         $this->newsInfo['attachment_path'] = $fileName;
     }
 

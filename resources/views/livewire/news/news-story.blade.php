@@ -18,6 +18,10 @@
                     </p>
 
                 </div>
+
+                @if($story->attachment_path)
+                  <a wire:click="downloadFile()" class="waves-effect waves-light btn black apply-button btn-small"><i class="material-icons right">attach_file</i>download attachment</a>
+                @endif
             </div>
 
             <div class="col m4 s12 mt">

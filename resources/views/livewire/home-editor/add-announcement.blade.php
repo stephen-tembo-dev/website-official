@@ -1,11 +1,11 @@
 <div>
     <div class="container">
 
-        <h5 class="grey-text lighten-3 mt heading"><b>Home Page: Add Announcement</b></h5>
+        <h5 class="grey-text lighten-3 mt heading"><b>Add Announcement</b></h5>
 
         <div class="row">
             <div class="col m8 s12 white">
-
+            <div class="custom-form z-depth-1">
                 <form wire:submit.prevent="processInfo">
                     <div>
                         <div class="row">
@@ -29,10 +29,11 @@
 
                         <button style="border-radius: 8px;" class="btn btn-small waves-effect waves-light black"
                             type="submit" name="action">
-                            Add Announcement
+                            Submit
                         </button>
                     </div>
                 </form>
+                </div>
             </div>
         </div>
     </div>

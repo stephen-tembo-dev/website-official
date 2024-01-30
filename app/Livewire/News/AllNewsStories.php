@@ -20,6 +20,6 @@ class AllNewsStories extends Component
 
     public function render()
     {
-        return view('livewire.news.all-news-stories', [ 'news' => Story::latest()->take(4)->where('id', '!=',  $this->story->id)->paginate(3)]);
+        return view('livewire.news.all-news-stories', [ 'news' => Story::latest()->where('id', '!=',  $this->story->id)->paginate(8)]);
     }
 }
