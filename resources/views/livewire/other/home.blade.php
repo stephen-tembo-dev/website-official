@@ -227,7 +227,8 @@
             <!--- Events -->
 
             <h5 class="grey-text lighten-3 mt heading"><b>Events</b></h5>
-            <div id="news" class="section scrollspy">
+
+            <div id="events" class="section scrollspy">
                 <div class="row wow fadeIn">
                     @if (count($events) > 0)
                         @foreach ($events as $index => $event)
@@ -293,11 +294,9 @@
                         </div>
                     @endif
 
-                    @if (count($events) > 3)
-                        <div class="col s12 mt center-align">
-                            <a href="{{ route('events.index') }}">All Events &rarr;</a>
-                        </div>
-                    @endif
+                    <div class="col s12 mt-sm center-align">
+                        <a href="{{ route('events.index') }}">All Events &rarr;</a>
+                    </div>
                 </div>
             </div>
 

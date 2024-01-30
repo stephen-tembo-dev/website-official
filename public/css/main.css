@@ -1,3 +1,10 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "Lexend Deca", sans-serif;
     /*background-color: #f8f8f8;*/
@@ -54,8 +61,16 @@ nav ul a {
     margin-top: 50px;
 }
 
+.mt-sm {
+    margin-top: 25px;
+}
+
 .mb {
     margin-bottom: 50px;
+}
+
+.mb-sm {
+    margin-bottom: 25px;
 }
 
 img {
@@ -158,9 +173,8 @@ nav {
 }
 
 .custom-form {
-  border-radius: 10px; 
-  padding:20px;
-
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .edit-box {
@@ -183,7 +197,92 @@ nav {
 }
 
 #tree {
-  /* width: 100%;
+    /* width: 100%;
     height: 100%;
     position: relative;*/
-  }
+}
+
+/* EVENTS */
+.event-card {
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fafafa;
+    box-shadow: 2px 4px 16px rgba(55, 55, 55, 0.15);
+}
+
+.event-card__link {
+    color: unset;
+    display: inline;
+}
+
+.event-card__image {
+    width: 100%;
+    border-radius: 0 !important;
+    aspect-ratio: 3/1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.event-card__content {
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+    margin-top: -6px;
+}
+
+.event-card__date {
+    text-align: center;
+    background: #012f5b;
+    color: #fff;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+.event-card__day {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.event-card__month {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.event-card__details {
+    padding: 8px;
+    flex-grow: 1;
+}
+
+.event-card__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.event-card__location {
+    display: none;
+}
+
+@media screen and (min-width: 390px) {
+    .event-card__title {
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #dadada;
+    }
+
+    .event-card__location {
+        display: flex;
+        column-gap: 2px;
+    }
+}
+
+.event-card__location .material-icons {
+    transform: translateY(4px);
+}
+
+.event-card__venue {
+    font-size: 14px;
+}

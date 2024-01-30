@@ -5,18 +5,31 @@
                 <div class="newsbody mt mb wow fadeIn">
                     <div style="position: relative;">
                         <div
-                            style="width: 100%; height: 200px; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset('/storage/uploads/' . $event->image_path) }}'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; border-radius: 8px;">
-                            <h5 class="center white-text"
-                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">ZUT
-                                {{ $event->title }}</h5>
+                            style="width: 100%; height: 200px; background-image: url('{{ asset('/storage/uploads/' . $event->image_path) }}'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; border-radius: 8px;">
                         </div>
                     </div>
 
-                    <p class="center"><small>published on , {{ $event->created_at->format('j M, Y') }}</small></p>
+                    <div>
+                        <h5 class="">ZUT
+                            {{ $event->title }}</h5>
 
-                    <p class="light-deca wow fadeInUp">
-                        {!! nl2br($event->text) !!}
-                    </p>
+                        <div class="mb-sm mt-sm">
+                            <p>
+                                <b>Event Date:</b> {{ \Carbon\Carbon::create($event->date)->format('j M, Y') }}
+                            </p>
+                            <p>
+                                <b>Event Venue:</b> {{ $event->venue }}
+                            </p>
+                            <p>
+                                <b>Published On:</b> {{ $event->created_at->format('j M, Y') }}
+                            </p>
+                        </div>
+
+                        <p class="light-deca wow fadeInUp">
+                            {!! nl2br($event->text) !!}
+                        </p>
+
+                    </div>
 
                 </div>
             </div>
@@ -31,7 +44,7 @@
                                 @foreach ($events as $event)
                                     <tr>
                                         <td>
-                                            <a href="/news-event/{{ $event->id }}"
+                                            <a href="{{ route('events.show', $event) }}"
                                                 class="truncate">{{ $event->title }}</a>
                                         </td>
                                     </tr>
