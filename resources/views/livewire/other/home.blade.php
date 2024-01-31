@@ -190,7 +190,7 @@
             <h5 class="grey-text lighten-3 mt heading"><b>news</b></h5>
             <div id="news" class="section scrollspy">
                 <div class="row wow fadeIn">
-
+                @if(count($news) > 0)
                     @foreach ($news as $story)
                         <div class="col s12 m4">
                             <div class="card ">
@@ -216,6 +216,16 @@
                             </div>
                         </div>
                     @endforeach
+                    @else
+                    @can('editor')
+                        <div class="col s12">
+                            <p class="left-align">
+                                <a href="{{ route('news.create') }}" class="btn-floating btn-small orange pulse"
+                                    ><i class="material-icons ">add</i></a>
+                            </p>
+                        </div>
+                    @endcan
+                    @endif
 
                 </div>
             </div>
@@ -289,7 +299,7 @@
                         <div class="col s12">
                             <p class="left-align">
                                 <a href="{{ route('events.create') }}" class="btn-floating btn-small orange pulse"
-                                    href=""><i class="material-icons ">add</i></a>
+                                    ><i class="material-icons ">add</i></a>
                             </p>
                         </div>
                     @endif

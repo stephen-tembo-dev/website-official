@@ -16,14 +16,14 @@
 
                 <div class="card horizontal z-depth-0 small">
                     <div class="card-image">
-                        <img class="responsive-img" src="{{ asset('/storage/uploads/' . $story->image_path) }}">
+                        <img class="responsive-img" src="{{ $story ? asset('/storage/uploads/' . $story->image_path) : asset('images/placeholder.webp') }}">
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
-                            <p class="flow-text"><b>{{$story->title}}</b></p>
-                            <p class="light-deca newsbody"> {{ \Illuminate\Support\Str::limit($story->text, 230, '...') }}</p>
+                            <p class="flow-text"><b>{{$story ? $story->title : 'No title available'}}</b></p>
+                            <p class="light-deca newsbody"> {{ $story ?  \Illuminate\Support\Str::limit($story->text, 230, '...' ) : 'No story available' }}</p>
                             <br>
-                            <a href="news-story/{{$story->id}}" class="btn btn-small black-text white apply-button" href="#">read
+                            <a @if(!$story) disable @endif href="news-story/{{$story ? $story->id : ''}}" class="btn btn-small black-text white apply-button" href="#">read
                                 more</a>
                         </div>
 
@@ -37,6 +37,7 @@
 
         <div id="paginated-news" class="row wow fadeIn mb section scrollspy">
 
+        @if(count($news) > 0)
             @foreach($news as $story)
 
             <div class="col s12 m3">
@@ -64,11 +65,14 @@
             </div>
 
             @endforeach
+            @endif
 
         </div>
 
         <div class=" mb">
-           {{ $news->links(data: ['scrollTo' => '#paginated-news']) }}
+            @if(count($news) > 0)
+               {{ $news->links(data: ['scrollTo' => '#paginated-news']) }}
+           @endif
         </div>
 
     </div>
