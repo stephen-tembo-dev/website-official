@@ -38,7 +38,7 @@
             <div class="nav-wrapper container">
                 <a href="/" class="brand-logo"><img class="responsive-img"
                         src="{{ asset('images/logo-white-zuct.png') }}" alt=""></a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down nav-options">
                     <li><a href="/">Home</a></li>
                     <li><a href="/all-news-stories">News</a></li>
@@ -59,7 +59,7 @@
 
     </div>
 
-    <ul class="sidenav" id="mobile-demo">
+    <ul class="sidenav" id="mobile-nav">
         <li><a href="/">Sass</a></li>
         <li><a href="badges.html">Components</a></li>
         <li><a href="collapsible.html">Javascript</a></li>

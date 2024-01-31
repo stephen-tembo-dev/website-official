@@ -82,6 +82,10 @@ nav {
     z-index: 900;
 }
 
+.menu-icon {
+    color: #000;
+}
+
 #segment {
     position: relative;
     top: 100vh;

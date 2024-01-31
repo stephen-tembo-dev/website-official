@@ -52,16 +52,16 @@
 
             <!-- Announcements -->
 
-            <div class="row mt">
+            <div class="row mt-sm">
                 <div class="col s12 m12 wow fadeInLeft">
                     @if ($announcement)
                         <div @can('editor') class="edit-box" @endcan>
                             <div class="card-panel grey lighten-5 z-depth-4">
                                 <div class="row valign-wrapper">
-                                    <div class="col s2">
+                                    <div class="col m2 hide-on-small-only">
                                         <i class="material-icons medium red-text">campaign</i>
                                     </div>
-                                    <div class="col s10">
+                                    <div class="col m10">
                                         <div class="black-text light-deca flow-text">{{ $announcement->title }}
                                         </div>
                                         <span class="light-deca">{{ $announcement->text }}</span>
@@ -81,10 +81,10 @@
                         <div @can('editor') class="edit-box" @endcan>
                             <div class="card-panel grey lighten-5 z-depth-4">
                                 <div class="row valign-wrapper">
-                                    <div class="col s2">
+                                    <div class="col m2 hide-on-small-only">
                                         <i class="material-icons medium red-text">campaign</i>
                                     </div>
-                                    <div class="col s10">
+                                    <div class="col m10">
                                         <div class="black-text light-deca flow-text">Your Future
                                             Awaits</div>
                                         <span class="light-deca">The university is currently enrolling for the
@@ -110,7 +110,7 @@
 
         <div class="container">
 
-            <h5 class="grey-text lighten-3 mt heading"><b>our programs</b></h5>
+            <h5 class="grey-text lighten-3 mt heading"><b>Programs</b></h5>
 
             <div class="row wow fadeIn">
                 @foreach ($qualifications as $q)
@@ -187,12 +187,12 @@
 
             <!--- news -->
 
-            <h5 class="grey-text lighten-3 mt heading"><b>news</b></h5>
+            <h5 class="grey-text lighten-3 mt heading"><b>News</b></h5>
             <div id="news" class="section scrollspy">
                 <div class="row wow fadeIn">
 
                     @foreach ($news as $story)
-                        <div class="col s12 m4">
+                        <div class="col s12 m6 l4">
                             <div class="card ">
                                 <div class="card-image">
                                     <img src="{{ asset('/storage/uploads/' . $story->image_path) }}" alt="Image">
@@ -241,7 +241,7 @@
                                 $venue = strlen($event->venue) < 35 ? $event->venue : str()->limit($event->venue, 35);
                             @endphp
 
-                            <div class="col s12 l4">
+                            <div class="col s12 m6 l4 mb-sm">
                                 <div @can('editor') class="edit-box" @endcan>
                                     <div class="event-card">
                                         <a href="{{ route('events.show', $event) }}" class="event-card__link">
@@ -286,12 +286,14 @@
                             </div>
                         @endforeach
                     @else
-                        <div class="col s12">
-                            <p class="left-align">
-                                <a href="{{ route('events.create') }}" class="btn-floating btn-small orange pulse"
-                                    href=""><i class="material-icons ">add</i></a>
-                            </p>
-                        </div>
+                        @can('editor')
+                            <div class="col s12">
+                                <p class="left-align">
+                                    <a href="{{ route('events.create') }}" class="btn-floating btn-small orange pulse"
+                                        href=""><i class="material-icons ">add</i></a>
+                                </p>
+                            </div>
+                        @endcan
                     @endif
 
                     <div class="col s12 mt-sm center-align">
