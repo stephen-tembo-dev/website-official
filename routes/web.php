@@ -32,7 +32,7 @@ Route::get('/all-news-stories', AllNewsStories::class);
 
 // Program editor routes
 Route::get('/create-admission-info', AddAdmissionInfo::class);
-Route::get('/edit-admission-info/{admission_info_id}', EditAdmissionInfo::class);
+Route::get('/edit-admission-info/{admission_info_id}', EditAdmissionInfo::class)->name('admission-infor');
 
 // About editor routes
 Route::get('/about-us/add-banner-content', AddBannerContent::class)->name('about.add.banner-content');

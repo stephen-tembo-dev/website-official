@@ -9,5 +9,5 @@ class Admission extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['entry_requirements', 'acommodation', 'fees_and_scholarships', 'how_to_apply', 'category'];
+    protected $fillable = ['entry_requirements', 'accomodation', 'fees_and_scholarships', 'how_to_apply', 'category'];
 }
