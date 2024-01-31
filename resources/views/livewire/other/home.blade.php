@@ -190,32 +190,43 @@
             <h5 class="grey-text lighten-3 mt heading"><b>News</b></h5>
             <div id="news" class="section scrollspy">
                 <div class="row wow fadeIn">
-
-                    @foreach ($news as $story)
-                        <div class="col s12 m6 l4">
-                            <div class="card ">
-                                <div class="card-image">
-                                    <img src="{{ asset('/storage/uploads/' . $story->image_path) }}" alt="Image">
-                                    <span class="card-title"></span>
-                                </div>
-                                <div class="card-content">
-                                    <p>
-                                        <b class="truncate">{{ $story->title }}</b><br>
-                                    <div class="light-deca">
-                                        <small class="grey-text">{{ $story->created_at->format('j M, Y') }}</small>
-                                        <br><br>
-                                        {{ \Illuminate\Support\Str::limit($story->text, 200, '...') }}
+                    @if (count($news) > 0)
+                        @foreach ($news as $story)
+                            <div class="col s12 m6 l4">
+                                <div class="card ">
+                                    <div class="card-image">
+                                        <img src="{{ asset('/storage/uploads/' . $story->image_path) }}"
+                                            alt="Image">
+                                        <span class="card-title"></span>
                                     </div>
-                                    </p>
-                                </div>
-                                <div class="card-action">
-                                    <a href="news-story/{{ $story->id }}"
-                                        class="btn btn-small black-text white apply-button" href="#">read
-                                        more</a>
+                                    <div class="card-content">
+                                        <p>
+                                            <b class="truncate">{{ $story->title }}</b><br>
+                                        <div class="light-deca">
+                                            <small class="grey-text">{{ $story->created_at->format('j M, Y') }}</small>
+                                            <br><br>
+                                            {{ \Illuminate\Support\Str::limit($story->text, 200, '...') }}
+                                        </div>
+                                        </p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a href="news-story/{{ $story->id }}"
+                                            class="btn btn-small black-text white apply-button" href="#">read
+                                            more</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    @else
+                        @can('editor')
+                            <div class="col s12">
+                                <p class="left-align">
+                                    <a href="{{ route('news.create') }}" class="btn-floating btn-small orange pulse"><i
+                                            class="material-icons ">add</i></a>
+                                </p>
+                            </div>
+                        @endcan
+                    @endif
 
                 </div>
             </div>

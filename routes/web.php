@@ -1,13 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Livewire\AboutEditor\{AddBannerContent, AddInfoListContent, AddMainContent, EditBannerContent, EditInfoListContent, EditMainContent};
+
+use App\Livewire\Program\Programs;
+use App\Livewire\Other\{Home, Contact, AboutUs, Dashboard};
+use App\Livewire\ProgramEditor\{AddAdmissionInfo, EditAdmissionInfo};
 use App\Livewire\Events\{CreateEvent, EditEvent, ListEvents, ShowEvent};
 use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories};
-use App\Livewire\Program\Programs;
-use App\Livewire\Other\{Home, Contact, AboutUs};
-use App\Livewire\ProgramEditor\{AddAdmissionInfo, EditAdmissionInfo};
 use App\Livewire\HomeEditor\{AddAnnouncement, AddSliderInfo, AddMarketingInfo, EditAnnouncement, EditSliderInfo, EditMarketingInfo};
+use App\Livewire\AboutEditor\{AddBannerContent, AddInfoListContent, AddMainContent, EditBannerContent, EditInfoListContent, EditMainContent};
 
 Route::get('/', Home::class);
 Route::get('/contact', Contact::class);
@@ -18,6 +19,9 @@ Route::get('/news-story/{news_id}', NewsStory::class);
 Route::get('/events', ListEvents::class)->name('events.index');
 Route::get('/event/{event}', ShowEvent::class)->name('events.show');
 
+// Admin dashboard
+Route::get('/dashboard', Dashboard::class);
+
 // Home editor routes
 Route::get('/create-marketing-info', AddMarketingInfo::class);
 Route::get('/create-slider-info', AddSliderInfo::class);
@@ -27,14 +31,14 @@ Route::get('/create-announcement', AddAnnouncement::class)->name('home.create.an
 Route::get('/edit-announcement/{announcement_id}', EditAnnouncement::class)->name('home.edit.announcement');
 
 // News editor routes
-Route::get('/create-news-story', AddNewsStory::class);
+Route::get('/create-news-story', AddNewsStory::class)->name('news.create');
 Route::get('/edit-news-story/{news_id}', EditNewsStory::class);
 Route::get('/news-story/{news_id}', NewsStory::class);
 Route::get('/all-news-stories', AllNewsStories::class);
 
 // Program editor routes
 Route::get('/create-admission-info', AddAdmissionInfo::class);
-Route::get('/edit-admission-info/{admission_info_id}', EditAdmissionInfo::class);
+Route::get('/edit-admission-info/{admission_info_id}', EditAdmissionInfo::class)->name('admission-infor');
 
 // About editor routes
 Route::get('/about-us/add-banner-content', AddBannerContent::class)->name('about.add.banner-content');

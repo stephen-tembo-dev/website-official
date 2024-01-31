@@ -17,7 +17,7 @@ return new class extends Migration
             $table->longText('entry_requirements');
             $table->longText('how_to_apply');
             $table->longText('accomodation');
-            $table->string('category');
+            $table->bigInteger('category')->unique();
             $table->timestamps();
         });
     }
