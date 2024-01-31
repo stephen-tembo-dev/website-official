@@ -39,10 +39,10 @@
             <div class="nav-wrapper container">
                 <a href="/" class="brand-logo"><img class="responsive-img"
                         src="{{ asset('images/logo-white-zuct.png') }}" alt=""></a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
-                        class="material-icons">menu</i></a>
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i
+                        class="material-icons menu-icon">menu</i></a>
                 <ul class="right hide-on-med-and-down nav-options">
-                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Programs</a></li>
                     <li><a href="/all-news-stories">News</a></li>
                     <li><a href="{{ route('events.index') }}">Events</a></li>
                     <li><a href="/about-us">About</a></li>
@@ -70,7 +70,7 @@
                 <i class="material-icons menu-icon">menu</i>
             </a>
         </li>
-        <li><a href="/">Home</a></li>
+        <li><a href="#">Programs</a></li>
         <li><a href="/all-news-stories">News</a></li>
         <li><a href="{{ route('events.index') }}">Events</a></li>
         <li><a href="/about-us">About</a></li>
