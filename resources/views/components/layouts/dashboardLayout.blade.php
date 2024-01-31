@@ -10,18 +10,20 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/css/libs/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
     <link rel="icon" href="{{ URL::asset('/images/logo-white-zuct.png') }}" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+
 
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://balkangraph.com/js/latest/OrgChart.js"></script>
     <script src="{{ asset('js/main.js')}}"></script>
     <script src="{{ asset('js/init.js')}}"></script>
@@ -32,142 +34,124 @@
 
 <body>
 
-    <div>
+<!-- NAVBAR -->
+<header>
+	<nav>
+		<div class="nav-wrapper black">
+			<div class="row">
+				<div class="col s12">
+				
+					<a href="#" data-target="sidenav-1" class="left sidenav-trigger show-on-medium-and-up"><i class="material-icons white-text">menu</i></a>
+					<a href="/" class="brand-logo center"><img class="responsive-img" src="{{ asset('images/logo-white-zuct.png') }}" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</nav>
+</header>
+
+	
 
 
+<!-- RIGHT SIDEBAR	 -->
+<ul id="sidenav-1" class="sidenav">    
+	<li><a class="subheader">Administration</a></li>
 
-    <nav>
-    <div class="nav-wrapper">
-      <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
-      <a href="https://codepen.io/collection/nbBqgY/" class="brand-logo" target="_blank">Materialize Framework</a>
-      <ul class="right hide">
-        <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Sass</a></li>
-        <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Components</a></li>
-        <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Javascript</a></li>
-        <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Mobile</a></li>
-      </ul>
-      
-      <ul class="side-nav grey darken-2" id="mobile-demo">
-        
-        
-        <li class="sidenav-header blue">
-          <div class="row">
-            <div class="col s4">
-                <img src="https://gravatar.com/avatar/961997eb7fd5c22b3e12fb3c8ca14e11?s=80&d=https://codepen.io/assets/avatars/user-avatar-80x80-bdcd44a3bfb9a5fd01eb8b86f9e033fa1a9897c3a15b33adfc2649a002dab1b6.png" width="48px" height="48px" alt="" class="circle responsive-img valign profile-image">
-            </div>
-            <div class="col s8">
-                <a class="btn-flat dropdown-button waves-effect waves-light white-text" href="#" data-activates="profile-dropdown">Jay<i class="mdi-navigation-arrow-drop-down right"></i></a>
-                <ul id="profile-dropdown" class="dropdown-content">
-                    <li><a href="#"><i class="material-icons">person</i>Profile</a></li>
-                    <li><a href="#"><i class="material-icons">settings</i>Setting</a></li>
-                    <li><a href="#"><i class="material-icons">help</i>Help</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#"><i class="material-icons">lock</i>Lock</a></li>
-                    <li><a href="#"><i class="material-icons">exit_to_app</i>Logout</a></li>
-                </ul>
-            </div>
-          </div>
-        </li>
-        
-        <li class="blue">
-          <ul class="collapsible collapsible-accordion">
-              <li>
-                <a class="collapsible-header white-text waves-effect waves-blue "><i class="material-icons white-text ">language</i>Language <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
-                <div class="collapsible-body z-depth-3">
-                  <ul>
-                    <li><a class="waves-effect waves-blue" href="#">English</a></li>
-                    <li><a class="waves-effect waves-blue" href="#">العربية</a></li>
-                    <li><a class="waves-effect waves-blue" href="#">中文</a></li>
-                    <li><a class="waves-effect waves-blue" href="#">Čeština</a></li>
-                    <li><a class="waves-effect waves-blue" href="#">Nederlands</a></li>
-                    <li><a class="waves-effect waves-blue" href="#">Français</a></li>
-                    <li><a class="waves-effect waves-blue" href="#">Deutsch</a></li>
-                    <li><a class="waves-effect waves-blue" href="#">한국어</a></li>
-                    <li><a class="waves-effect waves-blue" href="#">Português</a></li>
-                    <li><a class="waves-effect waves-blue" href="#">Русский</a></li>
-                    <li><a class="waves-effect waves-blue" href="#">Español</a></li>
-                    <li><a class="waves-effect waves-blue" href="#">Svenska</a></li>
-                    <li><a class="waves-effect waves-blue" href="#">ภาษาไทย</a></li>
-                    <li><a class="waves-effect waves-blue" href="#">Türkçe</a></li>
-                    <li><div class="divider"></div></li>
-                  </ul>
-                </div>
-              </li>
-          </ul>
-        </li>
-        
-        
-        
-        <li class="white">
+    <li class="white">
           <ul class="collapsible collapsible-accordion">
             <li>
-              <a class="collapsible-header waves-effect waves-blue"><i class="material-icons">folder_special</i>Layouts <i class="material-icons right" style="margin-right:0;">arrow_drop_down</i></a>
+              <a class="collapsible-header waves-effect waves-blue"><i class="material-icons">full_screen</i>Home editor <i class="material-icons right" style="margin-right:0;">arrow_drop_down</i></a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">fullscreen</i>Full Screen<span class="new badge right yellow grey lighten-1" data-badge-caption="updated"></span></a></li>
-                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">swap_horiz</i>Horizontal Menu<span class="new badge right yellow darken-3"></span></a></li>
+                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>Slider</a></li>
+                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>Marketing</a></li>
+                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>Announcement</a></li>
                   <li><div class="divider"></div></li>
                 </ul>
               </div>
             </li>
           </ul>
         </li>
+
+
         <li class="white">
           <ul class="collapsible collapsible-accordion">
             <li>
-              <a class="collapsible-header waves-effect waves-blue"><i class="material-icons">folder_open</i>A submenu <i class="material-icons right" style="margin-right:0;">arrow_drop_down</i></a>
+              <a class="collapsible-header waves-effect waves-blue"><i class="material-icons">full_screen</i>Program editor <i class="material-icons right" style="margin-right:0;">arrow_drop_down</i></a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">fullscreen</i>Full Screen</a></li>
-                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">swap_horiz</i>Horizontal Menu</a></li>
+                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>Add admission info</a></li>
+                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i> Manage admission information</a></li>
                   <li><div class="divider"></div></li>
                 </ul>
               </div>
             </li>
           </ul>
         </li>
-        <li class="white"><a href="#" class="waves-effect waves-blue"><i class="material-icons">mail</i>Menu item</a></li>
-        <li class="white"><a href="#" class="waves-effect waves-blue"><i class="material-icons">call</i> Menu item</a></li>
-        <li class="white"><a href="#" class="waves-effect waves-blue"><i class="material-icons">android</i> Menu item</a></li>
-        <li class="white"><a href="#" class="waves-effect waves-blue"><i class="material-icons">dialpad</i> Menu item</a></li>
-        <li class="white"><div class="divider"></div></li>
-        <li class="white"><a href="#" class="waves-effect waves-blue"><i class="material-icons">language</i> Menu item<span class="new badge right yellow darken-3"></span></a></li>
-        
-        <li class="sidenav-footer grey darken-2">
-          <div class="row">  
-            <div class="social-icons">
-              <div class="col s2">
-                <a href="https://jay.holtslander.ca/?utm_source=codepen&utm_medium=pen-link"><i class="fa fa-lg fa-linkedin-square"></a></i>
+
+        <li class="white">
+          <ul class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header waves-effect waves-blue"><i class="material-icons">full_screen</i>News editor <i class="material-icons right" style="margin-right:0;">arrow_drop_down</i></a>
+              <div class="collapsible-body">
+                <ul>
+                <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>Add news</a></li>
+                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>Manage news</a></li>
+                  <li><div class="divider"></div></li>
+                </ul>
               </div>
-              <div class="col s2">
-                <a href="https://jay.holtslander.ca/?utm_source=codepen&utm_medium=pen-link"><i class="fa fa-lg fa-facebook-official"></a></i>
-              </div>
-              <div class="col s2">
-                <a href="https://jay.holtslander.ca/?utm_source=codepen&utm_medium=pen-link"><i class="fa fa-lg fa-twitter"></a></i>
-              </div>
-              <div class="col s2">
-                <a href="https://jay.holtslander.ca/?utm_source=codepen&utm_medium=pen-link"><i class="fa fa-lg fa-google-plus"></a></i>
-              </div>
-              <div class="col s2">
-                <a href="https://jay.holtslander.ca/?utm_source=codepen&utm_medium=pen-link"><i class="fa fa-lg fa-pinterest"></a></i>
-              </div>
-              <div class="col s2">
-                <a href="https://jay.holtslander.ca/?utm_source=codepen&utm_medium=pen-link"><i class="fa fa-lg fa-youtube"></a></i>
-              </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </li>
-      </ul>
-      
-    </div>
-  </nav>
 
-<div class="container">
-  <p>Sidenav inspiration. I ended up using this on <a href="https://jay.holtslander.ca/?utm_source=codepen&utm_medium=pen-link" target="_blank">my own website</a>.</p>
-</div>
 
-<!-- Gitter Chat Link -->
-<div class="fixed-action-btn"><a class="btn-floating btn-large red" href="https://gitter.im/Dogfalo/materialize" target="_blank"><i class="large material-icons">chat</i></a></div>
+        <li class="white">
+          <ul class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header waves-effect waves-blue"><i class="material-icons">full_screen</i>Events editor <i class="material-icons right" style="margin-right:0;">arrow_drop_down</i></a>
+              <div class="collapsible-body">
+                <ul>
+                <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>Add event</a></li>
+                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>Manage Events</a></li>
+                  <li><div class="divider"></div></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+
+    <li class="white">
+          <ul class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header waves-effect waves-blue"><i class="material-icons">full_screen</i>About editor <i class="material-icons right" style="margin-right:0;">arrow_drop_down</i></a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>Banner</a></li>
+                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>Mission & vision</a></li>
+                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>ZUT Biography</a></li>
+                  <li><div class="divider"></div></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+
+        <li class="white">
+          <ul class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header waves-effect waves-blue"><i class="material-icons">full_screen</i>System Access <i class="material-icons right" style="margin-right:0;">arrow_drop_down</i></a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>Users</a></li>
+                  <li><div class="divider"></div></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+    </ul>
+
 
 
 
