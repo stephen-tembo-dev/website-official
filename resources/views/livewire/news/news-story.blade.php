@@ -43,9 +43,9 @@
 
                     </div>
                     <div class="col m12 s12">
-                        @if($other_story->video_url)
+                        @if($story->video_url)
                         <div class="video-container">
-                            <iframe width="853" height="480" src="{{ $other_story->video_url }}"
+                            <iframe width="853" height="480" src="{{ $story->video_url }}"
                                 frameborder="0" allowfullscreen></iframe>
                         </div>
                         @endif
