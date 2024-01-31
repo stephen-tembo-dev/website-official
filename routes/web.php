@@ -1,13 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\AboutEditor\{AddBannerContent, AddInfoListContent, AddMainContent, EditBannerContent, EditInfoListContent, EditMainContent};
+use App\Livewire\Events\{CreateEvent, EditEvent, ListEvents, ShowEvent};
+use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories};
 use App\Livewire\Program\Programs;
 use App\Livewire\Other\{Home, Contact, AboutUs};
-use App\Livewire\ProgramEditor\{AddAdmissionInfo, EditAdmissionInfo };
-use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories};
+use App\Livewire\ProgramEditor\{AddAdmissionInfo, EditAdmissionInfo};
 use App\Livewire\HomeEditor\{AddAnnouncement, AddSliderInfo, AddMarketingInfo, EditAnnouncement, EditSliderInfo, EditMarketingInfo};
-use App\Livewire\AboutEditor\{AddBannerContent, AddInfoListContent, AddMainContent, EditBannerContent, EditInfoListContent, EditMainContent};
-
 
 Route::get('/', Home::class);
 Route::get('/contact', Contact::class);
@@ -15,6 +15,8 @@ Route::get('/about-us', AboutUs::class);
 Route::get('/programs/{category}', Programs::class);
 Route::get('/programs/{id}/{category}', Programs::class);
 Route::get('/news-story/{news_id}', NewsStory::class);
+Route::get('/events', ListEvents::class)->name('events.index');
+Route::get('/event/{event}', ShowEvent::class)->name('events.show');
 
 // Home editor routes
 Route::get('/create-marketing-info', AddMarketingInfo::class);
@@ -41,5 +43,9 @@ Route::get('/about-us/add-main-content', AddMainContent::class)->name('about.add
 Route::get('/about-us/edit-main-content/{mainContent}', EditMainContent::class)->name('about.edit.main-content');
 Route::get('/about-us/add-info-list-content', AddInfoListContent::class)->name('about.add.info-list-content');
 Route::get('/about-us/edit-info-list-content/{listContent}', EditInfoListContent::class)->name('about.edit.info-list-content');
+
+// Events editor routes
+Route::get('/events/create', CreateEvent::class)->name('events.create');
+Route::get('/events/edit/{event}', EditEvent::class)->name('events.edit');
 
 Auth::routes();
