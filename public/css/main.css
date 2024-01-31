@@ -23,9 +23,20 @@ nav ul a {
 }
 
 .brand-logo img {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    /* height: 70px; */
     margin-left: 0px;
+}
+
+@media screen and (min-width: 601px) {
+    .brand-logo img {
+        width: 67.5px;
+        transform: translateY(2.5px);
+    }
+}
+
+.menu-icon {
+    color: #000;
 }
 
 .apply-button {
@@ -58,19 +69,19 @@ nav ul a {
 }
 
 .mt {
-    margin-top: 50px;
+    margin-top: 50px !important;
 }
 
 .mt-sm {
-    margin-top: 25px;
+    margin-top: 25px !important;
 }
 
 .mb {
-    margin-bottom: 50px;
+    margin-bottom: 50px !important;
 }
 
 .mb-sm {
-    margin-bottom: 25px;
+    margin-bottom: 25px !important;
 }
 
 img {
@@ -80,6 +91,10 @@ img {
 nav {
     position: relative !important;
     z-index: 900;
+}
+
+.menu-icon {
+    color: #000;
 }
 
 #segment {

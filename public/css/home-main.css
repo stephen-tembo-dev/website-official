@@ -28,9 +28,20 @@ nav ul a {
 }
 
 .brand-logo img {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    /* height: 70px; */
     margin-left: 0px;
+}
+
+@media screen and (min-width: 601px) {
+    .brand-logo img {
+        width: 67.5px;
+        transform: translateY(2.5px);
+    }
+}
+
+.menu-icon {
+    color: #000;
 }
 
 .apply-button {
@@ -66,8 +77,16 @@ nav ul a {
     margin-top: 50px;
 }
 
+.mt-sm {
+    margin-top: 25px;
+}
+
 .mb {
     margin-bottom: 50px;
+}
+
+.mb-sm {
+    margin-bottom: 25px;
 }
 
 img {
@@ -166,7 +185,7 @@ nav {
 }
 
 .slider .slides li .caption {
-    top: 50% !important;
+    top: 35% !important;
     border: #dc7b12 solid 3px;
     border-radius: 2px;
     border-bottom: transparent !important;
@@ -248,7 +267,7 @@ nav {
     display: none;
 }
 
-@media screen and (min-width: 390px) {
+@media screen and (min-width: 360px) {
     .event-card__title {
         padding-bottom: 8px;
         margin-bottom: 8px;

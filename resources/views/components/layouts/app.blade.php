@@ -24,8 +24,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://balkangraph.com/js/latest/OrgChart.js"></script>
-    <script src="{{ asset('js/main.js')}}"></script>
-    <script src="{{ asset('js/init.js')}}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/init.js') }}"></script>
 
     <title>{{ $title ?? 'ZUT' }}</title>
 
@@ -40,46 +40,52 @@
                 <a href="/" class="brand-logo"><img class="responsive-img"
                         src="{{ asset('images/logo-white-zuct.png') }}" alt=""></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
-                        class="material-icons black-text">menu</i></a>
+                        class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down nav-options">
-                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Programs</a></li>
                     <li><a href="/all-news-stories">News</a></li>
-                    <li><a href="/events">Events</a></li>
+                    <li><a href="{{ route('events.index') }}">Events</a></li>
                     <li><a href="/about-us">About</a></li>
                     <li><a href="/contact">Contact</a></li>
                     @auth
-                    <li><a class="black-text" href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign
-                            out</a></li>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+                        <li><a class="black-text" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign
+                                out</a></li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     @else
-                    <li><a href="/login">Sign in</a></li>
+                        <li><a href="/login">Sign in</a></li>
                     @endauth
-                    <li><a class="btn white-text black apply-button" href="">apply now</a></li>
+                    <li><a class="btn white-text black apply-button" href="">Apply now</a></li>
                 </ul>
             </div>
         </nav>
 
     </div>
 
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="/">Home</a></li>
+    <ul class="sidenav" id="mobile-nav">
+        <li>
+            <a href="#" data-target="mobile-nav" class="sidenav-close">
+                <i class="material-icons menu-icon">menu</i>
+            </a>
+        </li>
+        <li><a href="#">Programs</a></li>
         <li><a href="/all-news-stories">News</a></li>
-        <li><a href="/events">Events</a></li>
+        <li><a href="{{ route('events.index') }}">Events</a></li>
         <li><a href="/about-us">About</a></li>
         <li><a href="/contact">Contact</a></li>
         @auth
-        <li><a class="black-text" href="{{ route('logout') }}"
-                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign out</a></li>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-        </form>
+            <li><a class="black-text" href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign
+                    out</a></li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         @else
-        <li><a href="/login">Sign in</a></li>
+            <li><a href="/login">Sign in</a></li>
         @endauth
-        <li><a class="btn white-text black apply-button" href="">apply now</a></li>
+        <li><a class="btn white-text black apply-button" href="">Apply now</a></li>
     </ul>
 
     <main>

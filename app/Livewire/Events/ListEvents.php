@@ -25,7 +25,7 @@ class ListEvents extends Component
     {
         return view('livewire.events.list-events', [
             'events' => Event::latest('created_at')
-                ->where('id', '!=', $this->event->id)
+                ->where('id', '!=', $this->event?->id)
                 ->paginate(3)
         ]);
     }

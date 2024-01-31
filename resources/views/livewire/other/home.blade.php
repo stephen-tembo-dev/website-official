@@ -52,16 +52,16 @@
 
             <!-- Announcements -->
 
-            <div class="row mt">
+            <div class="row mt-sm">
                 <div class="col s12 m12 wow fadeInLeft">
                     @if ($announcement)
                         <div @can('editor') class="edit-box" @endcan>
                             <div class="card-panel grey lighten-5 z-depth-4">
                                 <div class="row valign-wrapper">
-                                    <div class="col s2">
+                                    <div class="col m2 hide-on-small-only">
                                         <i class="material-icons medium red-text">campaign</i>
                                     </div>
-                                    <div class="col s10">
+                                    <div class="col m10">
                                         <div class="black-text light-deca flow-text">{{ $announcement->title }}
                                         </div>
                                         <span class="light-deca">{{ $announcement->text }}</span>
@@ -81,10 +81,10 @@
                         <div @can('editor') class="edit-box" @endcan>
                             <div class="card-panel grey lighten-5 z-depth-4">
                                 <div class="row valign-wrapper">
-                                    <div class="col s2">
+                                    <div class="col m2 hide-on-small-only">
                                         <i class="material-icons medium red-text">campaign</i>
                                     </div>
-                                    <div class="col s10">
+                                    <div class="col m10">
                                         <div class="black-text light-deca flow-text">Your Future
                                             Awaits</div>
                                         <span class="light-deca">The university is currently enrolling for the
@@ -110,7 +110,7 @@
 
         <div class="container">
 
-            <h5 class="grey-text lighten-3 mt heading"><b>our programs</b></h5>
+            <h5 class="grey-text lighten-3 mt heading"><b>Programs</b></h5>
 
             <div class="row wow fadeIn">
                 @foreach ($qualifications as $q)
@@ -187,44 +187,45 @@
 
             <!--- news -->
 
-            <h5 class="grey-text lighten-3 mt heading"><b>news</b></h5>
+            <h5 class="grey-text lighten-3 mt heading"><b>News</b></h5>
             <div id="news" class="section scrollspy">
                 <div class="row wow fadeIn">
-                @if(count($news) > 0)
-                    @foreach ($news as $story)
-                        <div class="col s12 m4">
-                            <div class="card ">
-                                <div class="card-image">
-                                    <img src="{{ asset('/storage/uploads/' . $story->image_path) }}" alt="Image">
-                                    <span class="card-title"></span>
-                                </div>
-                                <div class="card-content">
-                                    <p>
-                                        <b class="truncate">{{ $story->title }}</b><br>
-                                    <div class="light-deca">
-                                        <small class="grey-text">{{ $story->created_at->format('j M, Y') }}</small>
-                                        <br><br>
-                                        {{ \Illuminate\Support\Str::limit($story->text, 200, '...') }}
+                    @if (count($news) > 0)
+                        @foreach ($news as $story)
+                            <div class="col s12 m6 l4">
+                                <div class="card ">
+                                    <div class="card-image">
+                                        <img src="{{ asset('/storage/uploads/' . $story->image_path) }}"
+                                            alt="Image">
+                                        <span class="card-title"></span>
                                     </div>
-                                    </p>
-                                </div>
-                                <div class="card-action">
-                                    <a href="news-story/{{ $story->id }}"
-                                        class="btn btn-small black-text white apply-button" href="#">read
-                                        more</a>
+                                    <div class="card-content">
+                                        <p>
+                                            <b class="truncate">{{ $story->title }}</b><br>
+                                        <div class="light-deca">
+                                            <small class="grey-text">{{ $story->created_at->format('j M, Y') }}</small>
+                                            <br><br>
+                                            {{ \Illuminate\Support\Str::limit($story->text, 200, '...') }}
+                                        </div>
+                                        </p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a href="news-story/{{ $story->id }}"
+                                            class="btn btn-small black-text white apply-button" href="#">read
+                                            more</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
                     @else
-                    @can('editor')
-                        <div class="col s12">
-                            <p class="left-align">
-                                <a href="{{ route('news.create') }}" class="btn-floating btn-small orange pulse"
-                                    ><i class="material-icons ">add</i></a>
-                            </p>
-                        </div>
-                    @endcan
+                        @can('editor')
+                            <div class="col s12">
+                                <p class="left-align">
+                                    <a href="{{ route('news.create') }}" class="btn-floating btn-small orange pulse"><i
+                                            class="material-icons ">add</i></a>
+                                </p>
+                            </div>
+                        @endcan
                     @endif
 
                 </div>
@@ -251,7 +252,7 @@
                                 $venue = strlen($event->venue) < 35 ? $event->venue : str()->limit($event->venue, 35);
                             @endphp
 
-                            <div class="col s12 l4">
+                            <div class="col s12 m6 l4 mb-sm">
                                 <div @can('editor') class="edit-box" @endcan>
                                     <div class="event-card">
                                         <a href="{{ route('events.show', $event) }}" class="event-card__link">
@@ -296,11 +297,42 @@
                             </div>
                         @endforeach
                     @else
-                        <div class="col s12">
-                            <p class="left-align">
-                                <a href="{{ route('events.create') }}" class="btn-floating btn-small orange pulse"
-                                    ><i class="material-icons ">add</i></a>
-                            </p>
+                        <div class="col s12 m6 l4 mb-sm">
+                            <div @can('editor') class="edit-box" @endcan>
+                                <div class="event-card">
+                                    <a href="#" class="event-card__link">
+                                        <div class="event-card__image-box">
+                                            <img class="event-card__image"
+                                                src="https://placehold.co/1000x200@2x.png?text=No+Image&font=roboto">
+                                        </div>
+                                        <div class="event-card__content">
+                                            <div class="event-card__date">
+                                                <p class="event-card__day">{{ now()->format('d') }}</p>
+                                                <p class="event-card__month">{{ now()->format('M') }}</p>
+                                                {{-- <p class="event-card__year">2024</p> --}}
+                                            </div>
+                                            <div class="event-card__details">
+                                                <p class="event-card__title">Placeholder event title</p>
+                                                <div class="event-card__location">
+                                                    <i class="tiny material-icons">location_on</i>
+                                                    <span class="event-card__venue light-deca grey-text">
+                                                        Placeholder event venue
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- <div class="event-card__footer"></div> --}}
+                                    </a>
+                                </div>
+
+                                @can('editor')
+                                    <p class="right-align">
+                                        <a href="{{ route('events.create') }}"
+                                            class="btn-floating btn-small orange pulse" href=""><i
+                                                class="material-icons ">add</i></a>
+                                    </p>
+                                @endcan
+                            </div>
                         </div>
                     @endif
 

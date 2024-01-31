@@ -1,6 +1,6 @@
 <div>
 
-    <div class="container">
+    <div class="container mt">
 
         <h6 class="flow-text center wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><b>Get in
                 touch</b></h6>
@@ -8,7 +8,7 @@
             Whether you have questions or you would just like to say hello, contact us.
         </p>
 
-        <div class="container mt">
+        <div class="container mt-sm">
 
             <div class="row">
                 <div style="padding: 20px; border-radius: 19px; margin-top: 20px; visibility: visible; animation-name: fadeIn;"
@@ -17,7 +17,6 @@
                     <form wire:submit.prevent="processemail">
 
                         <div id="email_info">
-
 
                             <div class="row">
                                 <div class="input-field col m6 s12">
@@ -46,11 +45,9 @@
 
                             <div class="row">
                                 <div class="input-field col m12 s12">
-                                    <textarea id="message"
-                                        class="materialize-textarea">Hi, I would like to ...</textarea>
+                                    <textarea id="message" class="materialize-textarea">Hi, I would like to ...</textarea>
                                     <label for="message" class="active">Message</label>
                                 </div>
-
 
                             </div>
 
@@ -60,8 +57,6 @@
                             type="submit" name="action">Send
                             <i class="material-icons right">send</i>
                         </button>
-
-
 
                     </form>
                 </div>
@@ -73,16 +68,12 @@
             We'll get back to you in 1-2 business days.
         </p>
 
-
-
-        <div class="mt mb" style="margin-left:3%">
-            <iframe height="400px" class="container wow fadeIn z-depth-2 "
+        <div class="container mt mb">
+            <iframe height="400px" width="100%" class="wow fadeIn z-depth-2"
                 src="https://www.google.com/maps/embed/v1/place?q=Zambia+University+College+of+Technology+(ZUT),+Kalewa+Road,+Ndola,+Zambia&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
                 style="border: 0px; visibility: hidden; animation-name: none;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-
-
 
     </div>
 
