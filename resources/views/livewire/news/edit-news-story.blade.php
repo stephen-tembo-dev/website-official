@@ -70,13 +70,13 @@
 
 @script
 <script>
-$wire.on('news-story-updated', () => {
+$wire.on('news-info-updated', () => {
     M.toast({
         html: 'updated successfully'
     })
 });
 
-$wire.on('news-story-update-failed', () => {
+$wire.on('news-info-update-failed', () => {
     M.toast({
         html: 'update unsuccessful'
     })

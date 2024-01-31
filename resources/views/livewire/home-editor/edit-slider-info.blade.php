@@ -12,18 +12,18 @@
                             <div class="row">
                                 <div class="input-field col m12 s12">
                                     <input wire:model="sliderInfo.title" placeholder="Title" type="text"
-                                        class="validate" maxlength="70">
+                                        class="validate" maxlength="50">
                                     @error('sliderInfo.title') <span class="red-text">{{ $message }}</span> @enderror
                                 </div>
 
                                 <div class="input-field col m12 s12">
-                                    <textarea wire:model="sliderInfo.text" placeholder="Message"
+                                    <textarea wire:model="sliderInfo.text" placeholder="Message" maxlength="150"
                                         class="materialize-textarea"></textarea>
                                     @error('sliderInfo.text') <span class="red-text">{{ $message }}</span> @enderror
                                 </div>
 
                                 <div class="input-field col m12 s12">
-                                    <input wire:model="sliderInfo.button_name" placeholder="Button name" type="text"
+                                    <input wire:model="sliderInfo.button_name" placeholder="Button name" type="text" maxlength="20"
                                         class="validate">
                                     @error('sliderInfo.text') <span class="red-text">{{ $message }}</span> @enderror
                                 </div>

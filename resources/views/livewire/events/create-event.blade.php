@@ -5,13 +5,14 @@
 
         <div class="row">
             <div class="col m8 s12 white">
+            <div class="custom-form z-depth-1">
                 <form wire:submit.prevent="processInfo">
                     <div>
                         <div class="row">
                             <div class="col m12 s12">
                                 <label>Cover Image</label>
                                 <div class="file-field input-field">
-                                    <div class="btn">
+                                    <div class="btn btn-small grey">
                                         <span>File</span>
                                         <input wire:model="eventArr.image_path" type="file">
                                     </div>
@@ -62,7 +63,7 @@
 
                             <div class="input-field col s12">
                                 <textarea wire:model="eventArr.text" maxlength="2048" id="text" class="materialize-textarea"></textarea>
-                                <label for="text">Text</label>
+                                <label for="text">Description</label>
                                 @error('eventArr.text')
                                     <span class="red-text">{{ $message }}</span>
                                 @enderror
@@ -71,10 +72,11 @@
 
                         <button style="border-radius: 8px;" class="btn btn-small waves-effect waves-light black"
                             type="submit" name="action">
-                            Add Event
+                            Submit
                         </button>
                     </div>
                 </form>
+                </div>
             </div>
         </div>
     </div>

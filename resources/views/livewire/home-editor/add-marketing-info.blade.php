@@ -12,13 +12,13 @@
                             <div class="row">
                                 <div class="input-field col m12 s12">
                                     <input wire:model="marketingInfo.title" id="title" type="text" class="validate"
-                                        maxlength="70">
+                                        maxlength="50">
                                     <label class="active" for="title">Title</label>
                                     @error('marketingInfo.title') <span class="red-text">{{ $message }}</span> @enderror
                                 </div>
 
                                 <div class="input-field col m12 s12">
-                                    <textarea wire:model="marketingInfo.text" id="message"
+                                    <textarea wire:model="marketingInfo.text" id="message" maxlength="1000"
                                         class="materialize-textarea"></textarea>
                                     <label class="active" for="message">Message</label>
                                     @error('marketingInfo.text') <span class="red-text">{{ $message }}</span> @enderror

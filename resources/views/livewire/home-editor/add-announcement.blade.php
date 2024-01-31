@@ -20,7 +20,7 @@
 
                             <div class="input-field col s12">
                                 <textarea wire:model="announcementArr.text" maxlength="2048" id="text" class="materialize-textarea"></textarea>
-                                <label for="text">Text</label>
+                                <label for="text">Anouncement</label>
                                 @error('announcementArr.text')
                                     <span class="red-text">{{ $message }}</span>
                                 @enderror

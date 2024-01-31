@@ -2,6 +2,7 @@
 
 namespace App\Livewire\HomeEditor;
 
+use Illuminate\Support\Facades\Redirect;
 use App\Models\Home\HomeAnnouncement;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
@@ -30,6 +31,10 @@ class AddAnnouncement extends Component
 
             // give user feedback
             $this->dispatch('announcement-created');
+
+            // redirect to home
+            return Redirect::to('/');
+            
         } catch (\Exception $e) {
 
             // rollback DB changes
