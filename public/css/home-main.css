@@ -185,7 +185,7 @@ nav {
 }
 
 .slider .slides li .caption {
-    top: 50% !important;
+    top: 35% !important;
     border: #dc7b12 solid 3px;
     border-radius: 2px;
     border-bottom: transparent !important;

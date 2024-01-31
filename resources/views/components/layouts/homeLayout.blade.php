@@ -63,10 +63,27 @@
     </div>
 
     <ul class="sidenav" id="mobile-nav">
-        <li><a href="/">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
+        <li>
+            <a href="#" data-target="mobile-nav" class="sidenav-close">
+                <i class="material-icons menu-icon">menu</i>
+            </a>
+        </li>
+        <li><a href="#">Programs</a></li>
+        <li><a href="/all-news-stories">News</a></li>
+        <li><a href="{{ route('events.index') }}">Events</a></li>
+        <li><a href="/about-us">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        @auth
+            <li><a class="black-text" href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign
+                    out</a></li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        @else
+            <li><a href="/login">Sign in</a></li>
+        @endauth
+        <li><a class="btn white-text black apply-button" href="">Apply now</a></li>
     </ul>
 
     <main>

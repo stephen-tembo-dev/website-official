@@ -10,8 +10,7 @@
                     </div>
 
                     <div>
-                        <h5 class="">ZUT
-                            {{ $event->title }}</h5>
+                        <h5 class="">{{ $event->title }}</h5>
 
                         <div class="mb-sm mt-sm">
                             <p>
