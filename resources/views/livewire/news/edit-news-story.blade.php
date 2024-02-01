@@ -11,13 +11,13 @@
                         <div>
                             <div class="row">
                                 <div class="input-field col m12 s12">
-                                    <input wire:model="newsInfo.title" placeholder="Title" id="title" type="text" class="validate"
+                                    <input wire:model="newsInfo.title" placeholder="Title" id="title" type="text" class="validate" required
                                         maxlength="70">
                                     @error('newsInfo.title') <span class="red-text">{{ $message }}</span> @enderror
                                 </div>
 
                                 <div class="input-field col m12 s12">
-                                    <textarea wire:model="newsInfo.text" placeholder="Message" id="message"
+                                    <textarea wire:model="newsInfo.text" placeholder="Message" id="message" required
                                         class="materialize-textarea"></textarea>
                                     @error('newsInfo.text') <span class="red-text">{{ $message }}</span> @enderror
                                 </div>
@@ -33,8 +33,8 @@
 
                             <div class="file-field input-field col m12 s12">
                                 <div class="btn btn-small grey">
-                                    <span>Photo</span>
-                                    <input wire:model="newsInfo.image_path" type="file">
+                                    <span>Photo - 2000 w x 1000 h</span>
+                                    <input wire:model="newsInfo.image_path" type="file" required>
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text">
@@ -45,7 +45,7 @@
 
                             <div class="file-field input-field col m12 s12">
                                 <div class="btn btn-small grey">
-                                    <span>Attachment</span>
+                                    <span>Attachment - 1mb</span>
                                     <input wire:model="newsInfo.attachment_path" type="file">
                                 </div>
                                 <div class="file-path-wrapper">
