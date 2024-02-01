@@ -6,6 +6,7 @@ use DB;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\Home\HomeAboutContent;
+use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class AddMarketingInfo extends Component
@@ -41,6 +42,10 @@ class AddMarketingInfo extends Component
 
             // give user feedback
             $this->dispatch('marketing-info-created');
+
+            // redirect to home
+            return Redirect::to('/');
+            
         } catch (\Exception $e) {
 
             // rollback DB changes

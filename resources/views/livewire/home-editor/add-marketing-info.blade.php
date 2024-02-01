@@ -11,21 +11,21 @@
                         <div>
                             <div class="row">
                                 <div class="input-field col m12 s12">
-                                    <input wire:model="marketingInfo.title" id="title" type="text" class="validate"
-                                        maxlength="70">
+                                    <input wire:model="marketingInfo.title" id="title" type="text" class="validate" required
+                                        maxlength="50">
                                     <label class="active" for="title">Title</label>
                                     @error('marketingInfo.title') <span class="red-text">{{ $message }}</span> @enderror
                                 </div>
 
                                 <div class="input-field col m12 s12">
-                                    <textarea wire:model="marketingInfo.text" id="message"
+                                    <textarea wire:model="marketingInfo.text" id="message" maxlength="1000" required
                                         class="materialize-textarea"></textarea>
                                     <label class="active" for="message">Message</label>
                                     @error('marketingInfo.text') <span class="red-text">{{ $message }}</span> @enderror
                                 </div>
 
                                 <div class="input-field col m12 s12">
-                                    <textarea wire:model="marketingInfo.video_url" id="url"
+                                    <textarea wire:model="marketingInfo.video_url" id="url" required
                                         class="materialize-textarea"></textarea>
                                     <label class="active" for="url">Video URL</label>
                                     @error('marketingInfo.video_url') <span class="red-text">{{ $message }}</span>
@@ -36,7 +36,7 @@
                             <div class="file-field input-field col m12 s12">
                                 <div class="btn btn-small grey">
                                     <span>File</span>
-                                    <input wire:model="marketingInfo.image_path" type="file">
+                                    <input wire:model="marketingInfo.image_path" type="file" required>
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text">

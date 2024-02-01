@@ -62,9 +62,9 @@
               <a class="collapsible-header waves-effect waves-blue"><i class="material-icons">full_screen</i>Home editor <i class="material-icons right" style="margin-right:0;">arrow_drop_down</i></a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>Slider</a></li>
-                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>Marketing</a></li>
-                  <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>Announcement</a></li>
+                  <li><a class="waves-effect waves-blue" href="/manage-slider"><i class="material-icons">link</i>Manage slider</a></li>
+                  <li><a class="waves-effect waves-blue" href="/edit-marketing-info"><i class="material-icons">link</i>Manage marketing</a></li>
+                  <li><a class="waves-effect waves-blue" href="/create-announcement"><i class="material-icons">link</i>Add Announcement</a></li>
                   <li><div class="divider"></div></li>
                 </ul>
               </div>

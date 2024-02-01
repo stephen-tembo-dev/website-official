@@ -6,6 +6,7 @@ use DB;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\Home\HomeAboutContent;
+use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class EditMarketingInfo extends Component
@@ -16,10 +17,10 @@ class EditMarketingInfo extends Component
     public $marketingInfo;
     public $info;
 
-    public function mount($info_id)
+    public function mount()
     {
-        $this->info = HomeAboutContent::find($info_id);
-        $this->marketingInfo = HomeAboutContent::find($info_id)->toArray();
+        $this->info = HomeAboutContent::latest()->first();
+        $this->marketingInfo = HomeAboutContent::latest()->first()->toArray();
     }
 
     public function updateInfo()
@@ -54,6 +55,10 @@ class EditMarketingInfo extends Component
 
             // give user feedback
             $this->dispatch('marketing-info-updated');
+
+            // redirect back
+            return Redirect::to('/');
+
         } catch (\Exception $e) {
 
             // rollback DB changes

@@ -11,14 +11,14 @@
                         <div>
                             <div class="row">
                                 <div class="input-field col m12 s12">
-                                    <input wire:model="newsInfo.title" id="title" type="text" class="validate"
+                                    <input required wire:model="newsInfo.title" id="title" type="text" class="validate"
                                         maxlength="70">
                                     <label class="active" for="title">Title</label>
                                     @error('newsInfo.title') <span class="red-text">{{ $message }}</span> @enderror
                                 </div>
 
                                 <div class="input-field col m12 s12">
-                                    <textarea wire:model="newsInfo.text" id="message"
+                                    <textarea required wire:model="newsInfo.text" id="message"
                                         class="materialize-textarea"></textarea>
                                     <label class="active" for="message">Message</label>
                                     @error('newsInfo.text') <span class="red-text">{{ $message }}</span> @enderror
@@ -35,11 +35,11 @@
 
                             <div class="file-field input-field col m12 s12">
                                 <div class="btn btn-small grey">
-                                    <span>Photo</span>
+                                    <span>Photo - 2000 w x 1000 h</span>
                                     <input wire:model="newsInfo.image_path" type="file">
                                 </div>
                                 <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text">
+                                    <input required class="file-path validate" type="text">
                                 </div>
                                 @error('newsInfo.image_path') <span class="red-text">{{ $message }}</span>
                                 @enderror
@@ -47,7 +47,7 @@
 
                             <div class="file-field input-field col m12 s12">
                                 <div class="btn btn-small grey">
-                                    <span>Attachment</span>
+                                    <span>Attachment - 1mb</span>
                                     <input wire:model="newsInfo.attachment_path" type="file">
                                 </div>
                                 <div class="file-path-wrapper">

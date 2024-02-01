@@ -7,6 +7,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\News\NewsStory;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\ImageManagerStatic as Image;
 use Livewire\Features\SupportFileUploads\WithFileUploads as SupportFileUploadsWithFileUploads;
 
@@ -50,6 +51,10 @@ class AddNewsStory extends Component
 
             // give user feedback
             $this->dispatch('news-info-created');
+
+            // redirect to home
+            return Redirect::to('/');
+
         } catch (\Exception $e) {
 
             // rollback DB changes
@@ -112,10 +117,7 @@ class AddNewsStory extends Component
         $rules = [
             'newsInfo.title' => 'required|max:70',
             'newsInfo.text' => 'required',
-            'newsInfo.video_url' => '',
             'newsInfo.image_path' => 'required',
-            'newsInfo.attachment_path' => '',
-
         ];
 
         $validated = $this->validate($rules);

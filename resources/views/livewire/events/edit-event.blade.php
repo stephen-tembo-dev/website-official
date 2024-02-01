@@ -5,6 +5,7 @@
 
         <div class="row">
             <div class="col m8 s12 white">
+            <div class="custom-form z-depth-1">
                 <form wire:submit.prevent="processInfo">
                     <div>
                         <div class="row">
@@ -75,6 +76,7 @@
                         </button>
                     </div>
                 </form>
+                </div>               
             </div>
         </div>
     </div>

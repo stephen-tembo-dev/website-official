@@ -6,6 +6,7 @@ use App\Models\General\Event;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class CreateEvent extends Component
@@ -42,6 +43,11 @@ class CreateEvent extends Component
 
             // give user feedback
             $this->dispatch('event-created');
+
+            // redirect to home
+            return Redirect::to('/');
+
+
         } catch (\Exception $e) {
 
             // rollback DB changes
