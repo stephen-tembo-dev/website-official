@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CheckIfViewer;
 use App\Livewire\Program\Programs;
 use App\Livewire\Other\{Home, Contact, AboutUs, Dashboard};
-use App\Livewire\ProgramEditor\{AddAdmissionInfo, EditAdmissionInfo};
+use App\Livewire\ProgramEditor\{AddAdmissionInfo, EditAdmissionInfo, ManageAdmissionInfo};
 use App\Livewire\Events\{CreateEvent, EditEvent, ListEvents, ShowEvent};
 use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories};
 use App\Livewire\HomeEditor\{AddAnnouncement, AddSliderInfo, AddMarketingInfo, EditAnnouncement, EditSliderInfo, EditMarketingInfo, ManageSlider};
@@ -44,6 +44,7 @@ Route::get('/edit-news-story/{news_id}', EditNewsStory::class);
 // Program editor routes
 Route::get('/create-admission-info', AddAdmissionInfo::class);
 Route::get('/edit-admission-info/{admission_info_id}', EditAdmissionInfo::class)->name('admission-infor');
+Route::get('/manage-admission-info', ManageAdmissionInfo::class);
 
 // About editor routes
 Route::get('/about-us/add-banner-content', AddBannerContent::class)->name('about.add.banner-content');
