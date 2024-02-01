@@ -5,7 +5,7 @@
                 <div class="newsbody mt mb wow fadeIn">
                     <div style="position: relative;">
                         <div
-                            style="width: 100%; height: 200px; background-image: url('{{ asset('/storage/uploads/' . $event->image_path) }}'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; border-radius: 8px;">
+                            style="width: 100%; height: 400px; background-image: url('{{ asset('/storage/uploads/' . $event->image_path) }}'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; border-radius: 8px;">
                         </div>
                     </div>
 

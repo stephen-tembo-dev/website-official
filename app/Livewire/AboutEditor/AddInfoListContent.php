@@ -30,6 +30,9 @@ class AddInfoListContent extends Component
 
             // give user feedback
             $this->dispatch('list-content-created');
+
+            // Redirect to home
+            redirect('/');
         } catch (\Exception $e) {
 
             // rollback DB changes

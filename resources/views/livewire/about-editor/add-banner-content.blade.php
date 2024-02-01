@@ -13,33 +13,33 @@
                                     <label>Cover Image</label>
                                     <div class="file-field input-field">
                                         <div class="btn">
-                                            <span>File</span>
-                                            <input wire:model="bannerContent.image_path" type="file">
+                                            <span>Image - 2:1</span>
+                                            <input wire:model="bannerContent.image_path" type="file" required>
                                         </div>
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text">
                                         </div>
                                         @error('bannerContent.image_path')
-                                        <span class="red-text">{{ $message }}</span>
+                                            <span class="red-text">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
 
                                 <div class="input-field col m12 s12">
-                                    <input wire:model="bannerContent.title" id="title" type="text" class="validate"
-                                        maxlength="70">
+                                    <input wire:model="bannerContent.title" id="title" type="text"
+                                        class="validate" maxlength="70" required>
                                     <label class="active" for="title">Title</label>
                                     @error('bannerContent.title')
-                                    <span class="red-text">{{ $message }}</span>
+                                        <span class="red-text">{{ $message }}</span>
                                     @enderror
                                 </div>
 
                                 <div class="input-field col m12 s12">
-                                    <input wire:model="bannerContent.caption" id="caption" type="text" class="validate"
-                                        maxlength="70">
+                                    <input wire:model="bannerContent.caption" id="caption" type="text"
+                                        class="validate" maxlength="70" required>
                                     <label class="active" for="caption">Caption</label>
                                     @error('bannerContent.caption')
-                                    <span class="red-text">{{ $message }}</span>
+                                        <span class="red-text">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -57,17 +57,17 @@
 </div>
 
 @script
-<script>
-$wire.on('banner-content-created', () => {
-    M.toast({
-        html: 'created successfully'
-    })
-});
+    <script>
+        $wire.on('banner-content-created', () => {
+            M.toast({
+                html: 'created successfully'
+            })
+        });
 
-$wire.on('banner-content-creation-failed', () => {
-    M.toast({
-        html: 'creation unsuccessful'
-    })
-});
-</script>
+        $wire.on('banner-content-creation-failed', () => {
+            M.toast({
+                html: 'creation unsuccessful'
+            })
+        });
+    </script>
 @endscript

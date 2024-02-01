@@ -46,8 +46,6 @@ class CreateEvent extends Component
 
             // redirect to home
             return Redirect::to('/');
-
-
         } catch (\Exception $e) {
 
             // rollback DB changes
