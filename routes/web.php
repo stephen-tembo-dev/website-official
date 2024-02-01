@@ -39,6 +39,7 @@ Route::group(['middleware' => ['auth', CheckIfViewer::class]], function () {
     // News editor routes
     Route::get('/create-news-story', AddNewsStory::class)->name('news.create');
     Route::get('/edit-news-story/{news_id}', EditNewsStory::class);
+    Route::get('/manage-news', ManageNews::class)->name('manage-news');
 
 
     // Program editor routes
