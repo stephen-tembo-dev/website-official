@@ -9,14 +9,13 @@ use App\Livewire\ProgramEditor\{AddAdmissionInfo, EditAdmissionInfo};
 use App\Livewire\Events\{CreateEvent, EditEvent, ListEvents, ManageEvents, ShowEvent};
 use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories};
 use App\Livewire\HomeEditor\{AddAnnouncement, AddSliderInfo, AddMarketingInfo, EditAnnouncement, EditSliderInfo, EditMarketingInfo, ManageSlider};
-use App\Livewire\AboutEditor\{AddBannerContent, AddInfoListContent, AddMainContent, EditBannerContent, EditInfoListContent, EditMainContent};
 
 Route::get('/', Home::class);
 Route::get('/contact', Contact::class);
 Route::get('/about-us', AboutUs::class);
 Route::get('/programs/{category}', Programs::class);
 Route::get('/programs/{id}/{category}', Programs::class);
-Route::get('/all-news-stories', AllNewsStories::class);
+Route::get('/all-news-stories', AllNewsStories::class)->name('news.index');
 Route::get('/news-story/{news_id}', NewsStory::class);
 Route::get('/events', ListEvents::class)->name('events.index');
 Route::get('/event/{event}', ShowEvent::class)->name('events.show');

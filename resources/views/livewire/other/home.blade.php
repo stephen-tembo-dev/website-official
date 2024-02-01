@@ -278,6 +278,10 @@
 
                         @endcan
                         @endif
+
+                        <div class="col s12 mt-sm center-align">
+                                <a href="{{ route('news.index') }}" class="waves-effect waves-light btn btn-small apply-button white black-text"><i class="material-icons black-text right">arrow_forward</i>All news stories</a>
+                            </div>
                    
 
                 </div>
@@ -389,7 +393,7 @@
                             @endif
 
                             <div class="col s12 mt-sm center-align">
-                                <a href="{{ route('events.index') }}">All Events &rarr;</a>
+                                <a href="{{ route('events.index') }}" class="waves-effect waves-light btn btn-small apply-button white black-text"><i class="material-icons black-text right">arrow_forward</i>All Events</a>
                             </div>
                 </div>
             </div>

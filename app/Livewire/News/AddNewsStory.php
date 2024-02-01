@@ -117,10 +117,7 @@ class AddNewsStory extends Component
         $rules = [
             'newsInfo.title' => 'required|max:70',
             'newsInfo.text' => 'required',
-            'newsInfo.video_url' => '',
             'newsInfo.image_path' => 'required',
-            'newsInfo.attachment_path' => '',
-
         ];
 
         $validated = $this->validate($rules);
