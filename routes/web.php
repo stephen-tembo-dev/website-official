@@ -16,6 +16,7 @@ Route::get('/contact', Contact::class);
 Route::get('/about-us', AboutUs::class);
 Route::get('/programs/{category}', Programs::class);
 Route::get('/programs/{id}/{category}', Programs::class);
+Route::get('/all-news-stories', AllNewsStories::class);
 Route::get('/news-story/{news_id}', NewsStory::class);
 Route::get('/events', ListEvents::class)->name('events.index');
 Route::get('/event/{event}', ShowEvent::class)->name('events.show');
@@ -37,8 +38,7 @@ Route::get('/edit-announcement/{announcement_id}', EditAnnouncement::class)->nam
 // News editor routes
 Route::get('/create-news-story', AddNewsStory::class)->name('news.create');
 Route::get('/edit-news-story/{news_id}', EditNewsStory::class);
-Route::get('/news-story/{news_id}', NewsStory::class);
-Route::get('/all-news-stories', AllNewsStories::class);
+
 
 // Program editor routes
 Route::get('/create-admission-info', AddAdmissionInfo::class);

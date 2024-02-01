@@ -62,7 +62,7 @@
             <!-- Announcements -->
 
             <div class="row mt-sm">
-                <div class="col s12 m12 wow fadeInLeft">
+                <div class="col s12 m12 wow fadeInUp">
                     @if (count($announcements) > 0)
                     <div @can('editor') class="edit-box" @endcan id="paginated-announcements">
                         @foreach($announcements as $announcement)
@@ -128,7 +128,7 @@
 
             <h5 class="grey-text lighten-3 mt heading"><b>Programs</b></h5>
 
-            <div class="row wow fadeIn">
+            <div class="row wow fadeInUp">
                 @foreach ($qualifications as $q)
                 <div class="col s12 m4">
                     <div class="card transparent z-depth-0">
@@ -209,8 +209,8 @@
             <!--- news -->
 
             <h5 class="grey-text lighten-3 mt heading"><b>News</b></h5>
-            <div id="news" class="section scrollspy">
-                <div class="row wow fadeIn">
+            <div id="news" class="section scrollspy wow fadeInUp">
+                <div class="row wow fadeInUp">
                     @if (count($news) > 0)
                     @foreach ($news as $story)
                     <div class="col s12 m6 l4">
