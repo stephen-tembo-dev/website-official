@@ -10,20 +10,19 @@
                         <div>
                             <div class="row">
                                 <div class="input-field col m12 s12">
-                                    <input wire:model="listContentArr.title" id="title" type="text" class="validate"
-                                        maxlength="70">
+                                    <input wire:model="listContentArr.title" id="title" type="text"
+                                        class="validate" maxlength="70" required>
                                     <label class="active" for="title">Title</label>
                                     @error('listContentArr.title')
-                                    <span class="red-text">{{ $message }}</span>
+                                        <span class="red-text">{{ $message }}</span>
                                     @enderror
                                 </div>
 
                                 <div class="input-field col s12">
-                                    <textarea wire:model="listContentArr.text" maxlength="2048" id="text"
-                                        class="materialize-textarea"></textarea>
+                                    <textarea wire:model="listContentArr.text" maxlength="2048" id="text" class="materialize-textarea" required></textarea>
                                     <label for="text">Text</label>
                                     @error('listContentArr.text')
-                                    <span class="red-text">{{ $message }}</span>
+                                        <span class="red-text">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -41,17 +40,17 @@
 </div>
 
 @script
-<script>
-$wire.on('list-content-updated', () => {
-    M.toast({
-        html: 'updated successfully'
-    })
-});
+    <script>
+        $wire.on('list-content-updated', () => {
+            M.toast({
+                html: 'updated successfully'
+            })
+        });
 
-$wire.on('list-content-update-failed', () => {
-    M.toast({
-        html: 'update unsuccessful'
-    })
-});
-</script>
+        $wire.on('list-content-update-failed', () => {
+            M.toast({
+                html: 'update unsuccessful'
+            })
+        });
+    </script>
 @endscript

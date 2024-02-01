@@ -39,6 +39,9 @@ class AddBannerContent extends Component
 
             // give user feedback
             $this->dispatch('banner-content-created');
+
+            // Redirect to home
+            redirect('/');
         } catch (\Exception $e) {
 
             // rollback DB changes

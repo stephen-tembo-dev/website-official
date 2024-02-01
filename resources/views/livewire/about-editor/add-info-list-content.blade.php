@@ -11,19 +11,18 @@
                             <div class="row">
                                 <div class="input-field col m12 s12">
                                     <input wire:model="listContent.title" id="title" type="text" class="validate"
-                                        maxlength="70">
+                                        maxlength="70" required>
                                     <label class="active" for="title">Title</label>
                                     @error('listContent.title')
-                                    <span class="red-text">{{ $message }}</span>
+                                        <span class="red-text">{{ $message }}</span>
                                     @enderror
                                 </div>
 
                                 <div class="input-field col s12">
-                                    <textarea wire:model="listContent.text" maxlength="2048" id="textarea2"
-                                        class="materialize-textarea"></textarea>
+                                    <textarea wire:model="listContent.text" maxlength="2048" id="textarea2" class="materialize-textarea" required></textarea>
                                     <label for="textarea2">Text</label>
                                     @error('listContent.text')
-                                    <span class="red-text">{{ $message }}</span>
+                                        <span class="red-text">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -41,17 +40,17 @@
 </div>
 
 @script
-<script>
-$wire.on('list-content-created', () => {
-    M.toast({
-        html: 'created successfully'
-    })
-});
+    <script>
+        $wire.on('list-content-created', () => {
+            M.toast({
+                html: 'created successfully'
+            })
+        });
 
-$wire.on('list-content-creation-failed', () => {
-    M.toast({
-        html: 'creation unsuccessful'
-    })
-});
-</script>
+        $wire.on('list-content-creation-failed', () => {
+            M.toast({
+                html: 'creation unsuccessful'
+            })
+        });
+    </script>
 @endscript
