@@ -11,13 +11,13 @@
                         <div>
                             <div class="row">
                                 <div class="input-field col m12 s12">
-                                    <input wire:model="sliderInfo.title" placeholder="Title" type="text"
+                                    <input wire:model="sliderInfo.title" placeholder="Title" type="text" required
                                         class="validate" maxlength="50">
                                     @error('sliderInfo.title') <span class="red-text">{{ $message }}</span> @enderror
                                 </div>
 
                                 <div class="input-field col m12 s12">
-                                    <textarea wire:model="sliderInfo.text" placeholder="Message" maxlength="150"
+                                    <textarea wire:model="sliderInfo.text" placeholder="Message" maxlength="150" required
                                         class="materialize-textarea"></textarea>
                                     @error('sliderInfo.text') <span class="red-text">{{ $message }}</span> @enderror
                                 </div>

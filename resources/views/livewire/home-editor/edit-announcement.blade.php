@@ -10,7 +10,7 @@
                     <div>
                         <div class="row">
                             <div class="input-field col m12 s12">
-                                <input wire:model="announcementArr.title" id="title" type="text" class="validate" placeholder="Title"
+                                <input wire:model="announcementArr.title" id="title" type="text" class="validate" placeholder="Title" required
                                     maxlength="70">
                                 @error('announcementArr.title')
                                     <span class="red-text">{{ $message }}</span>
@@ -18,7 +18,7 @@
                             </div>
 
                             <div class="input-field col s12">
-                                <textarea wire:model="announcementArr.text" maxlength="2048" id="text" class="materialize-textarea" placeholder="Anouncement"></textarea>
+                                <textarea wire:model="announcementArr.text" maxlength="2048" id="text" class="materialize-textarea" placeholder="Anouncement" required></textarea>
                                 @error('announcementArr.text')
                                     <span class="red-text">{{ $message }}</span>
                                 @enderror
