@@ -41,10 +41,10 @@ Route::group(['middleware' => ['auth', CheckIfViewer::class]], function () {
     Route::get('/edit-news-story/{news_id}', EditNewsStory::class);
 
 
-// Program editor routes
-Route::get('/create-admission-info', AddAdmissionInfo::class);
-Route::get('/edit-admission-info/{admission_info_id}', EditAdmissionInfo::class)->name('admission-infor');
-Route::get('/manage-admission-info', ManageAdmissionInfo::class);
+    // Program editor routes
+    Route::get('/create-admission-info', AddAdmissionInfo::class);
+    Route::get('/edit-admission-info/{admission_info_id}', EditAdmissionInfo::class)->name('admission-infor');
+    Route::get('/manage-admission-info', ManageAdmissionInfo::class);
 
     // About editor routes
     Route::get('/about-us/add-banner-content', AddBannerContent::class)->name('about.add.banner-content');
