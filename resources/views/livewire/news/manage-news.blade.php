@@ -1,6 +1,6 @@
 <div>
     <div class="container">
-        <table class="highlight striped responsive-table mt">
+        <table class="highlight striped responsive-table mt" id="paginated-news">
             <thead>
                 <tr>
                     <th>#</th>
@@ -20,5 +20,13 @@
                 @endforeach
             </tbody>
         </table>
+
+        <div class="center mb">
+            <br><br>
+            @if(count($news) > 0)
+            {{ $news->links(data: ['scrollTo' => '#paginated-news']) }}
+            @endif
+        </div>
+
     </div>
 </div>
