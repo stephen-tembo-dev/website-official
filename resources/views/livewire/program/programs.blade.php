@@ -14,7 +14,7 @@
                             @foreach($p['course_levels'] as $level)
                                 <p><b class="flow-text">{{ $level['name'] }}</b></p>
 
-                                <table class="highlight striped">
+                                <table class="highlight striped responsive-table">
                                     <thead>
                                     <tr>
                                         <th>Course</th>

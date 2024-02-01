@@ -8,7 +8,7 @@ use App\Livewire\Other\{Home, Contact, AboutUs, Dashboard};
 use App\Livewire\ProgramEditor\{AddAdmissionInfo, EditAdmissionInfo};
 use App\Livewire\Events\{CreateEvent, EditEvent, ListEvents, ShowEvent};
 use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories};
-use App\Livewire\HomeEditor\{AddAnnouncement, AddSliderInfo, AddMarketingInfo, EditAnnouncement, EditSliderInfo, EditMarketingInfo};
+use App\Livewire\HomeEditor\{AddAnnouncement, AddSliderInfo, AddMarketingInfo, EditAnnouncement, EditSliderInfo, EditMarketingInfo, ManageSlider};
 use App\Livewire\AboutEditor\{AddBannerContent, AddInfoListContent, AddMainContent, EditBannerContent, EditInfoListContent, EditMainContent};
 
 Route::get('/', Home::class);
@@ -34,6 +34,7 @@ Route::get('/edit-marketing-info', EditMarketingInfo::class);
 Route::get('/edit-slider-info/{slider_id}', EditSliderInfo::class);
 Route::get('/create-announcement', AddAnnouncement::class)->name('home.create.announcement');
 Route::get('/edit-announcement/{announcement_id}', EditAnnouncement::class)->name('home.edit.announcement');
+Route::get('/manage-slider', ManageSlider::class)->name('manage-slider');
 
 // News editor routes
 Route::get('/create-news-story', AddNewsStory::class)->name('news.create');
