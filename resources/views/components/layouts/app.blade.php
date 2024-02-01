@@ -39,23 +39,25 @@
             <div class="nav-wrapper container">
                 <a href="/" class="brand-logo"><img class="responsive-img"
                         src="{{ asset('images/logo-white-zuct.png') }}" alt=""></a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
-                        class="material-icons">menu</i></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down nav-options">
                     <li><a href="/">Home</a></li>
+                    @auth
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    @endauth
                     <li><a href="/all-news-stories">News</a></li>
                     <li><a href="{{ route('events.index') }}">Events</a></li>
                     <li><a href="/about-us">About</a></li>
                     <li><a href="/contact">Contact</a></li>
                     @auth
-                        <li><a class="black-text" href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign
-                                out</a></li>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
+                    <li><a class="black-text" href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign
+                            out</a></li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                     @else
-                        <li><a href="/login">Sign in</a></li>
+                    <li><a href="/login">Sign in</a></li>
                     @endauth
                     <li><a class="btn white-text black apply-button" href="">Apply now</a></li>
                 </ul>
@@ -71,19 +73,22 @@
             </a>
         </li>
         <li><a href="/">Home</a></li>
+        @auth
+        <li><a href="/dashboard">Dashboard</a></li>
+        @endauth
         <li><a href="/all-news-stories">News</a></li>
         <li><a href="{{ route('events.index') }}">Events</a></li>
         <li><a href="/about-us">About</a></li>
         <li><a href="/contact">Contact</a></li>
         @auth
-            <li><a class="black-text" href="{{ route('logout') }}"
-                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign
-                    out</a></li>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
+        <li><a class="black-text" href="{{ route('logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign
+                out</a></li>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
         @else
-            <li><a href="/login">Sign in</a></li>
+        <li><a href="/login">Sign in</a></li>
         @endauth
         <li><a class="btn white-text black apply-button" href="">Apply now</a></li>
     </ul>

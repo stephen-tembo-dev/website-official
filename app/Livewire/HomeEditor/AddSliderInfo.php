@@ -6,6 +6,7 @@ use DB;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\Home\HomeHeroContent;
+use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class AddSliderInfo extends Component
@@ -43,6 +44,10 @@ class AddSliderInfo extends Component
 
             // give user feedback
             $this->dispatch('slider-info-created'); 
+
+
+            // redirect to home
+            return Redirect::to('/');
 
         } catch (\Exception $e) {
 

@@ -1,7 +1,7 @@
 <div>
     <div class="container">
 
-    <p class="light-deca mt center"> <b>Hi, Lavu Mweemba</b></p>
+    <p class="light-deca mt center"> <b>Hi, {{Auth::user()->name}}</b></p>
 
         <div class="row mt">
 

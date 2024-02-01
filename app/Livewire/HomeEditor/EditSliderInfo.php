@@ -6,6 +6,7 @@ use DB;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\Home\HomeHeroContent;
+use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class EditSliderInfo extends Component
@@ -37,7 +38,7 @@ class EditSliderInfo extends Component
             if (is_object($this->sliderInfo['image_path'])) {
 
                 // reference for previous image
-                $previousImage = HomeHeroContent::find($this->info->id)->image_path;
+                $previousImage = HomeHeroContent::find($this->slider->id)->image_path;
 
                 // upload image
                 $this->uploadImage();
@@ -55,6 +56,9 @@ class EditSliderInfo extends Component
 
             // give user feedback
             $this->dispatch('slider-info-updated'); 
+
+            // redirect back
+            return Redirect::to('/');
 
         } catch (\Exception $e) {
 

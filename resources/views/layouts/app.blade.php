@@ -42,6 +42,9 @@
                         class="material-icons black-text">menu</i></a>
                 <ul class="right hide-on-med-and-down nav-options">
                     <li><a href="/">Home</a></li>
+                    @auth
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    @endauth
                     <li><a href="/all-news-stories">News</a></li>
                     <li><a href="/events">Events</a></li>
                     <li><a href="/about-us">About</a></li>
@@ -65,6 +68,9 @@
 
     <ul class="sidenav" id="mobile-demo">
         <li><a href="/">Home</a></li>
+        @auth
+        <li><a href="/dashboard">Dashboard</a></li>
+        @endauth
         <li><a href="/all-news-stories">News</a></li>
         <li><a href="/events">Events</a></li>
         <li><a href="/about-us">About</a></li>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Middleware\CheckIfViewer;
 use App\Livewire\Program\Programs;
 use App\Livewire\Other\{Home, Contact, AboutUs, Dashboard};
 use App\Livewire\ProgramEditor\{AddAdmissionInfo, EditAdmissionInfo};
@@ -15,9 +16,13 @@ Route::get('/contact', Contact::class);
 Route::get('/about-us', AboutUs::class);
 Route::get('/programs/{category}', Programs::class);
 Route::get('/programs/{id}/{category}', Programs::class);
+Route::get('/all-news-stories', AllNewsStories::class);
 Route::get('/news-story/{news_id}', NewsStory::class);
 Route::get('/events', ListEvents::class)->name('events.index');
 Route::get('/event/{event}', ShowEvent::class)->name('events.show');
+
+
+Route::group(['middleware' => ['auth', CheckIfViewer::class]], function () {
 
 // Admin dashboard
 Route::get('/dashboard', Dashboard::class);
@@ -25,7 +30,7 @@ Route::get('/dashboard', Dashboard::class);
 // Home editor routes
 Route::get('/create-marketing-info', AddMarketingInfo::class);
 Route::get('/create-slider-info', AddSliderInfo::class);
-Route::get('/edit-marketing-info/{info_id}', EditMarketingInfo::class);
+Route::get('/edit-marketing-info', EditMarketingInfo::class);
 Route::get('/edit-slider-info/{slider_id}', EditSliderInfo::class);
 Route::get('/create-announcement', AddAnnouncement::class)->name('home.create.announcement');
 Route::get('/edit-announcement/{announcement_id}', EditAnnouncement::class)->name('home.edit.announcement');
@@ -33,8 +38,7 @@ Route::get('/edit-announcement/{announcement_id}', EditAnnouncement::class)->nam
 // News editor routes
 Route::get('/create-news-story', AddNewsStory::class)->name('news.create');
 Route::get('/edit-news-story/{news_id}', EditNewsStory::class);
-Route::get('/news-story/{news_id}', NewsStory::class);
-Route::get('/all-news-stories', AllNewsStories::class);
+
 
 // Program editor routes
 Route::get('/create-admission-info', AddAdmissionInfo::class);
@@ -51,5 +55,7 @@ Route::get('/about-us/edit-info-list-content/{listContent}', EditInfoListContent
 // Events editor routes
 Route::get('/events/create', CreateEvent::class)->name('events.create');
 Route::get('/events/edit/{event}', EditEvent::class)->name('events.edit');
+
+});
 
 Auth::routes();

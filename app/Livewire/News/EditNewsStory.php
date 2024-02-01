@@ -6,6 +6,7 @@ use DB;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\News\NewsStory;
+use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class EditNewsStory extends Component
@@ -70,6 +71,9 @@ class EditNewsStory extends Component
 
             // give user feedback
             $this->dispatch('news-info-updated');
+
+            // redirect to home
+            return Redirect::to('/');
 
         } catch (\Exception $e) {
 

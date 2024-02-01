@@ -12,12 +12,12 @@
                             <div class="row">
                                 <div class="input-field col m12 s12">
                                     <input placeholder="Title" wire:model="marketingInfo.title" id="title" type="text"
-                                        class="validate" maxlength="70">
+                                        class="validate" maxlength="50">
                                     @error('marketingInfo.title') <span class="red-text">{{ $message }}</span> @enderror
                                 </div>
 
                                 <div class="input-field col m12 s12">
-                                    <textarea placeholder="Message" wire:model="marketingInfo.text" id="message"
+                                    <textarea placeholder="Message" wire:model="marketingInfo.text" id="message" maxlength="1000"
                                         class="materialize-textarea"></textarea>
                                     @error('marketingInfo.text') <span class="red-text">{{ $message }}</span> @enderror
                                 </div>
