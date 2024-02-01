@@ -42,6 +42,9 @@ class EditMainContent extends Component
 
             // give user feedback
             $this->dispatch('main-content-updated');
+
+            // Redirect to home
+            redirect('/');
         } catch (\Exception $e) {
 
             // rollback DB changes

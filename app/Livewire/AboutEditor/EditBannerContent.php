@@ -56,6 +56,9 @@ class EditBannerContent extends Component
 
             // give user feedback
             $this->dispatch('banner-content-updated');
+
+            // Redirect to home
+            redirect('/');
         } catch (\Exception $e) {
 
             // rollback DB changes

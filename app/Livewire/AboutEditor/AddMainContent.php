@@ -30,6 +30,9 @@ class AddMainContent extends Component
 
             // give user feedback
             $this->dispatch('main-content-created');
+
+            // Redirect to home
+            redirect('/');
         } catch (\Exception $e) {
 
             // rollback DB changes

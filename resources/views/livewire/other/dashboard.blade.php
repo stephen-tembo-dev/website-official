@@ -29,7 +29,7 @@
             <div class="col m4 s12">
                 <div class="card-panel dbrd-card align-center hoverable">
                     <p class="light-deca">Events</p>
-                    <h5>{{ $eventsCount }}</h5>
+                    <h5>{{ $eventsCount ?? 0 }}</h5>
                 </div>
             </div>
 
