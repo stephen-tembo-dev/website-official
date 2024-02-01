@@ -16,7 +16,7 @@ Route::get('/contact', Contact::class);
 Route::get('/about-us', AboutUs::class);
 Route::get('/programs/{category}', Programs::class);
 Route::get('/programs/{id}/{category}', Programs::class);
-Route::get('/all-news-stories', AllNewsStories::class);
+Route::get('/all-news-stories', AllNewsStories::class)->name('news.index');
 Route::get('/news-story/{news_id}', NewsStory::class);
 Route::get('/events', ListEvents::class)->name('events.index');
 Route::get('/event/{event}', ShowEvent::class)->name('events.show');
