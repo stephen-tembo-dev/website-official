@@ -34,7 +34,7 @@
                             <div class="file-field input-field col m12 s12">
                                 <div class="btn btn-small grey">
                                     <span>Photo - 2000 w x 1000 h</span>
-                                    <input wire:model="newsInfo.image_path" type="file" required>
+                                    <input wire:model="newsInfo.image_path" type="file" >
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text">

@@ -105,9 +105,9 @@
                         editor <i class="material-icons right" style="margin-right:0;">arrow_drop_down</i></a>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>Add
+                            <li><a class="waves-effect waves-blue" href="/create-news-story"><i class="material-icons">link</i>Add
                                     news</a></li>
-                            <li><a class="waves-effect waves-blue" href="#"><i
+                            <li><a class="waves-effect waves-blue" href="/manage-news"><i
                                         class="material-icons">link</i>Manage news</a></li>
                             <li>
                                 <div class="divider"></div>
