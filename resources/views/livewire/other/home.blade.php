@@ -131,20 +131,57 @@
             <h5 class="grey-text lighten-3 mt heading"><b>Programs</b></h5>
 
             <div class="row wow fadeInUp">
-                @foreach ($qualifications as $q)
+                @if (count($qualifications) > 0)
+                    @foreach ($qualifications as $q)
+                        <div class="col s12 m4">
+                            <div class="card transparent z-depth-0">
+                                <div class="card-image">
+                                    <img src="{{ asset('images/blue.jpg') }}">
+                                    <span class="card-title">{{ $q['name'] }}</span>
+                                </div>
+                                <div class="card-action">
+                                    <a href="/programs/{{ $q['id'] }}/{{ $q['name'] }}"
+                                        class="btn btn-small black-text white apply-button">view</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
                     <div class="col s12 m4">
                         <div class="card transparent z-depth-0">
                             <div class="card-image">
-                                <img src="{{ asset('images/blue.jpg') }}">
-                                <span class="card-title">{{ $q['name'] }}</span>
+                                <img src="{{ asset('images/placeholder.webp') }}">
+                                <span class="card-title black-text">Placeholder tite</span>
                             </div>
                             <div class="card-action">
-                                <a href="/programs/{{ $q['id'] }}/{{ $q['name'] }}"
-                                    class="btn btn-small black-text white apply-button">view</a>
+                                <a href="#" class="btn btn-small black-text white apply-button">view</a>
                             </div>
                         </div>
                     </div>
-                @endforeach
+                    <div class="col s12 m4">
+                        <div class="card transparent z-depth-0">
+                            <div class="card-image">
+                                <img src="{{ asset('images/placeholder.webp') }}">
+                                <span class="card-title black-text">Placeholder tite</span>
+                            </div>
+                            <div class="card-action">
+                                <a href="#" class="btn btn-small black-text white apply-button">view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="card transparent z-depth-0">
+                            <div class="card-image">
+                                <img src="{{ asset('images/placeholder.webp') }}">
+                                <span class="card-title black-text">Placeholder tite</span>
+                            </div>
+                            <div class="card-action">
+                                <a href="#" class="btn btn-small black-text white apply-button">view</a>
+                            </div>
+                        </div>
+                    </div>
+
+                @endif
 
             </div>
 
@@ -152,7 +189,7 @@
 
         <div class="container">
             <div class="row mt mb">
-                <div class="col s12 m6 l4 offset-l1">
+                <div class="col s12 m6">
                     <h5 class="mb-sm">Study at ZUT</h5>
                     <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem unde ab eum
                         corporis ratione enim neque veniam blanditiis natus laudantium consectetur quasi ex maiores
@@ -160,35 +197,35 @@
                     <div class="row mt-sm">
                         <div class="col s12 m6">
                             <ul class="">
-                                <li><a href="#" target="_blank" class="">Lorem, ipsum</a></li>
-                                <li><a href="#" target="_blank" class="">Lorem, ipsum</a></li>
-                                <li><a href="#" target="_blank" class="">Lorem, ipsum</a></li>
-                                <li><a href="#" target="_blank" class="">Lorem, ipsum</a></li>
-                                <li><a href="#" target="_blank" class="">Lorem, ipsum</a></li>
+                                <li><a href="#">Lorem, ipsum</a></li>
+                                <li><a href="#">Lorem, ipsum</a></li>
+                                <li><a href="#">Lorem, ipsum</a></li>
+                                <li><a href="#">Lorem, ipsum</a></li>
+                                <li><a href="#">Lorem, ipsum</a></li>
                             </ul>
                         </div>
                         <div class="col s12 m6">
                             <ul class="">
-                                <li><a href="#" target="_blank" class="">Lorem, ipsum</a></li>
-                                <li><a href="#" target="_blank" class="">Lorem, ipsum</a></li>
-                                <li><a href="#" target="_blank" class="">Lorem, ipsum</a></li>
-                                <li><a href="#" target="_blank" class="">Lorem, ipsum</a></li>
-                                <li><a href="#" target="_blank" class="">Lorem, ipsum</a></li>
+                                <li><a href="#">Lorem, ipsum</a></li>
+                                <li><a href="#">Lorem, ipsum</a></li>
+                                <li><a href="#">Lorem, ipsum</a></li>
+                                <li><a href="#">Lorem, ipsum</a></li>
+                                <li><a href="#">Lorem, ipsum</a></li>
                             </ul>
                         </div>
                     </div>
 
                 </div>
 
-                <div class="col s6 offset-l1 m6 center"><img src="{{ asset('images/placeholder.webp') }}"
-                        class="responsive-img"></div>
+                <div class="col m6 center"><img src="{{ asset('images/placeholder.webp') }}" class="responsive-img">
+                </div>
 
             </div>
         </div>
 
         <div wire:ignore @can('editor') class="edit-box" @endcan>
 
-            <div class="parallax-container">
+            <div class="parallax-container mt">
                 <div class="parallax">
                     @if ($pageInfo)
                         <img src="{{ asset('/storage/uploads/' . $pageInfo->image_path) }}">
