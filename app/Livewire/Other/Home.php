@@ -26,8 +26,8 @@ class Home extends Component
     {
 
         try {
-          //   $response = Http::get('http://127.0.0.1:8000/api/qualifications');
-           //  $this->qualifications = $response->json();
+            // $response = Http::get('http://127.0.0.1:8000/api/qualifications');
+            // $this->qualifications = $response->json();
 
             // dd($response->json());
             $this->pageInfo = HomeAboutContent::first();
@@ -35,7 +35,6 @@ class Home extends Component
 
 
             $this->news = NewsStory::latest()->take(3)->get();
-            $this->announcements = HomeAnnouncement::latest('created_at')->paginate(1);
             $this->events = Event::latest('created_at')->limit(3)->get();
         } catch (\Exception $e) {
             // handle exception
