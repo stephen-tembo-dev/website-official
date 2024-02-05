@@ -19,6 +19,7 @@
                         <td>
                             <img class="materialboxed" width="80px" height="50px"
                                 src="{{ asset('/storage/uploads/' . $event->image_path) }}" alt="">
+                        </td>
                         <td>{{ $event->title }}</td>
                         <td>{{ $event->time }}</td>
                         <td>{{ $event->venue }}</td>
