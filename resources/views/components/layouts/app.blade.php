@@ -35,6 +35,27 @@
 
     <div>
 
+        <!-- Dropdown for media -->
+        <ul id="dropdown-media" class="dropdown-content">
+            <li><a href="/all-news-stories">News</a></li>
+            <li><a href="{{ route('events.index') }}">Events</a></li>
+        </ul>
+
+        <!-- Dropdown for research -->
+        <ul id="dropdown-research" class="dropdown-content">
+            <li><a href="#">Publications</a></li>
+            <li><a href="#">Research department</a></li>
+            <li><a href="#">Research support</a></li>
+        </ul>
+
+        <!-- Dropdown for research -->
+        <ul id="dropdown-discover" class="dropdown-content">
+            <li><a href="{{ route('campus-life') }}">Campus life</a></li>
+            <li><a href="#">Library</a></li>
+            <li><a href="#">Admission</a></li>
+        </ul>
+
+
         <nav class="white z-depth-0">
             <div class="nav-wrapper container">
                 <a href="/" class="brand-logo"><img class="responsive-img"
@@ -42,12 +63,15 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down nav-options">
                     <li><a href="/">Home</a></li>
+                    <li><a href="/about-us">About</a></li>
                     @auth
                     <li><a href="/dashboard">Dashboard</a></li>
                     @endauth
-                    <li><a href="/all-news-stories">News</a></li>
-                    <li><a href="{{ route('events.index') }}">Events</a></li>
-                    <li><a href="/about-us">About</a></li>
+
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-media">Media<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-research">Research & innovation<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-discover">Discover<i class="material-icons right">arrow_drop_down</i></a></li>
+        
                     <li><a href="/contact">Contact</a></li>
                     @auth
                     <li><a class="black-text" href="{{ route('logout') }}"
