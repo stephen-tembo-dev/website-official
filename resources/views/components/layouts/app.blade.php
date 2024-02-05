@@ -43,7 +43,7 @@
 
         <!-- Dropdown for research -->
         <ul id="dropdown-research" class="dropdown-content">
-            <li><a href="#">Publications</a></li>
+            <li><a href="{{ route('publications.index') }}">Publications</a></li>
             <li><a href="#">Research department</a></li>
             <li><a href="#">Research support</a></li>
         </ul>
@@ -56,35 +56,39 @@
             <li><a href="https://www.zictcollege.ac.zm/login">Student portal</a></li>
         </ul>
 
-
         <nav class="white z-depth-0">
             <div class="nav-wrapper container">
                 <a href="/" class="brand-logo"><img class="responsive-img"
                         src="{{ asset('images/logo-white-zuct.png') }}" alt=""></a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
+                        class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down nav-options">
                     <li><a href="/">Home</a></li>
                     <li><a href="/about-us">About</a></li>
                     @auth
-                    <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/dashboard">Dashboard</a></li>
                     @endauth
 
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-media">Media<i class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-research">Research & innovation<i class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-discover">Discover<i class="material-icons right">arrow_drop_down</i></a></li>
-        
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-media">Media<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-research">Research &
+                            Innovation<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-discover">Discover<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+
                     <li><a href="/contact">Contact</a></li>
                     @auth
-                    <li><a class="black-text" href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign
-                            out</a></li>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+                        <li><a class="black-text" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign
+                                out</a></li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     @else
-                    <li><a href="/login">Sign in</a></li>
+                        <li><a href="/login">Sign in</a></li>
                     @endauth
-                    <li><a class="btn white-text black apply-button" href="https://www.zictcollege.ac.zm/register">Apply now</a></li>
+                    <li><a class="btn white-text black apply-button" href="https://www.zictcollege.ac.zm/register">Apply
+                            now</a></li>
                 </ul>
             </div>
         </nav>
@@ -99,21 +103,21 @@
         </li>
         <li><a href="/">Home</a></li>
         @auth
-        <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
         @endauth
         <li><a href="/all-news-stories">News</a></li>
         <li><a href="{{ route('events.index') }}">Events</a></li>
         <li><a href="/about-us">About</a></li>
         <li><a href="/contact">Contact</a></li>
         @auth
-        <li><a class="black-text" href="{{ route('logout') }}"
-                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign
-                out</a></li>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-        </form>
+            <li><a class="black-text" href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign
+                    out</a></li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         @else
-        <li><a href="/login">Sign in</a></li>
+            <li><a href="/login">Sign in</a></li>
         @endauth
         <li><a class="btn white-text black apply-button" href="">Apply now</a></li>
     </ul>
@@ -140,7 +144,8 @@
                     <h5 class="white-text">Links</h5>
                     <ul class="light-deca">
                         <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
-                        <li><a class="grey-text text-lighten-3" href="https://www.zictcollege.ac.zm/login">Student portal</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.zictcollege.ac.zm/login">Student
+                                portal</a></li>
                         <li><a class="grey-text text-lighten-3" href="{{ route('events.index') }}">Events</a></li>
                     </ul>
                 </div>

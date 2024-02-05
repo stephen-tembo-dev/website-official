@@ -11,6 +11,9 @@ use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories, M
 use App\Livewire\AboutEditor\{AddBannerContent, AddInfoListContent, AddMainContent, EditBannerContent, EditInfoListContent, EditMainContent};
 use App\Livewire\HomeEditor\{AddAnnouncement, AddSliderInfo, AddMarketingInfo, EditAnnouncement, EditSliderInfo, EditMarketingInfo, ManageSlider};
 use App\Livewire\Other\CampusLife;
+use App\Livewire\Publications\CreatePublication;
+use App\Livewire\Publications\EditPublication;
+use App\Livewire\Publications\ListPublications;
 
 Route::get('/', Home::class);
 Route::get('/contact', Contact::class);
@@ -22,7 +25,7 @@ Route::get('/news-story/{news_id}', NewsStory::class);
 Route::get('/events', ListEvents::class)->name('events.index');
 Route::get('/event/{event}', ShowEvent::class)->name('events.show');
 Route::get('/campus-life', CampusLife::class)->name('campus-life');
-
+Route::get('/publications', ListPublications::class)->name('publications.index');
 
 Route::group(['middleware' => ['auth', CheckIfViewer::class]], function () {
 
@@ -60,6 +63,10 @@ Route::group(['middleware' => ['auth', CheckIfViewer::class]], function () {
     Route::get('/events/create', CreateEvent::class)->name('events.create');
     Route::get('/events/edit/{event}', EditEvent::class)->name('events.edit');
     Route::get('/events/manage', ManageEvents::class)->name('events.manage');
+
+    // Publications editor routes
+    Route::get('/publications/create', CreatePublication::class)->name('publications.create');
+    Route::get('/publications/edit/{publication}', EditPublication::class)->name('publications.edit');
 });
 
 Auth::routes();
