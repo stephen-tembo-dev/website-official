@@ -47,11 +47,18 @@
             <li><a href="#">Research support</a></li>
         </ul>
 
-        <!-- Dropdown for research -->
+        <!-- Dropdown for discovery -->
         <ul id="dropdown-discover" class="dropdown-content">
             <li><a href="{{ route('campus-life') }}">Campus life</a></li>
             <li><a href="{{route('general-requirements')}}">Admission</a></li>
             <li><a href="https://www.zictcollege.ac.zm/login">Student portal</a></li>
+        </ul>
+
+        <!-- Dropdown for schools -->
+        <ul id="dropdown-schools" class="dropdown-content">
+            <li><a href="#">School of business</a></li>
+            <li><a href="#">School of ICT</a></li>
+            <li><a href="#">School of engineering</a></li>
         </ul>
 
 
@@ -68,6 +75,7 @@
                     @endauth
 
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown-media">Media<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-schools">Schools<i class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown-research">Research & innovation<i class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown-discover">Discover<i class="material-icons right">arrow_drop_down</i></a></li>
         

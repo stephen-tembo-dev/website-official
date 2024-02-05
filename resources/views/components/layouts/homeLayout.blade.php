@@ -55,6 +55,13 @@
             <li><a href="https://www.zictcollege.ac.zm/login">Student portal</a></li>
         </ul>
 
+        <!-- Dropdown for schools -->
+        <ul id="dropdown-schools" class="dropdown-content">
+            <li><a href="#">School of business</a></li>
+            <li><a href="#">School of ICT</a></li>
+            <li><a href="#">School of engineering</a></li>
+        </ul>
+
         <nav class="white z-depth-0">
             <div class="nav-wrapper container">
                 <a href="/" class="brand-logo"><img class="responsive-img"
@@ -69,6 +76,7 @@
                     @endauth                    
 
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown-media">Media<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-schools">Schools<i class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown-research">Research & innovation<i class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown-discover">Discover<i class="material-icons right">arrow_drop_down</i></a></li>
 
