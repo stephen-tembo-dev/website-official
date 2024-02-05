@@ -198,20 +198,19 @@
                     <div class="row mt-sm">
                         <div class="col s12 m6">
                             <ul class="light-deca">
-                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
-                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
-                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
-                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
-                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
+                                <li><a href="https://www.zictcollege.ac.zm/register">Apply online</a></li>
+                                <li><a href="{{route('campus-life')}}">Campus life</a></li>
+                                <li><a href="{{route('campus-life')}}">Student housing</a></li>
+                                <li><a href="#">Support services</a></li>
+                                <li><a href="#">Student FAQs</a></li>
                             </ul>
                         </div>
                         <div class="col s12 m6">
                             <ul class="light-deca">
-                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
-                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
-                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
-                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
-                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
+                                <li><a href="#">Key dates</a></li>
+                                <li><a href="{{route('campus-life')}}">Faculties</a></li>
+                                <li><a href="#">Scholarships</a></li>
+                                <li><a href="#">Admission requirements</a></li>
                             </ul>
                         </div>
                     </div>

@@ -53,6 +53,7 @@
             <li><a href="{{ route('campus-life') }}">Campus life</a></li>
             <li><a href="#">Library</a></li>
             <li><a href="#">Admission</a></li>
+            <li><a href="https://www.zictcollege.ac.zm/login">Student portal</a></li>
         </ul>
 
 
@@ -83,7 +84,7 @@
                     @else
                     <li><a href="/login">Sign in</a></li>
                     @endauth
-                    <li><a class="btn white-text black apply-button" href="">Apply now</a></li>
+                    <li><a class="btn white-text black apply-button" href="https://www.zictcollege.ac.zm/register">Apply now</a></li>
                 </ul>
             </div>
         </nav>
@@ -138,9 +139,9 @@
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Links</h5>
                     <ul class="light-deca">
-                        <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Student portal</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Announcements</a></li>
+                        <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.zictcollege.ac.zm/login">Student portal</a></li>
+                        <li><a class="grey-text text-lighten-3" href="{{ route('events.index') }}">Events</a></li>
                     </ul>
                 </div>
 

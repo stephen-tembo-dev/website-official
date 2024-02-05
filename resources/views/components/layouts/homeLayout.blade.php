@@ -53,7 +53,7 @@
             <li><a href="{{ route('campus-life') }}">Campus life</a></li>
             <li><a href="#">Library</a></li>
             <li><a href="#">Admission</a></li>
-            <li><a href="#">Student portal</a></li>
+            <li><a href="https://www.zictcollege.ac.zm/login">Student portal</a></li>
         </ul>
 
         <nav class="white z-depth-0">
@@ -84,7 +84,7 @@
                     @else
                         <li><a href="/login">Sign in</a></li>
                     @endauth
-                    <li><a class="btn white-text black apply-button" href="">Apply now</a></li>
+                    <li><a class="btn white-text black apply-button" href="https://www.zictcollege.ac.zm/register">Apply now</a></li>
                 </ul>
             </div>
         </nav>
