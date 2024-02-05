@@ -51,8 +51,7 @@
         <!-- Dropdown for research -->
         <ul id="dropdown-discover" class="dropdown-content">
             <li><a href="{{ route('campus-life') }}">Campus life</a></li>
-            <li><a href="#">Library</a></li>
-            <li><a href="#">Admission</a></li>
+            <li><a href="{{route('general-requirements')}}">Admission</a></li>
             <li><a href="https://www.zictcollege.ac.zm/login">Student portal</a></li>
         </ul>
 

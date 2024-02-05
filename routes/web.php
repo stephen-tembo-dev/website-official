@@ -4,16 +4,13 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Middleware\CheckIfViewer;
 use App\Livewire\Program\Programs;
-use App\Livewire\Other\{Home, Contact, AboutUs, Dashboard};
+use App\Livewire\Other\{Home, Contact, AboutUs, Dashboard, CampusLife, GeneralAdmissionRequirements};
 use App\Livewire\ProgramEditor\{AddAdmissionInfo, EditAdmissionInfo, ManageAdmissionInfo};
 use App\Livewire\Events\{CreateEvent, EditEvent, ListEvents, ManageEvents, ShowEvent};
 use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories, ManageNews};
 use App\Livewire\AboutEditor\{AddBannerContent, AddInfoListContent, AddMainContent, EditBannerContent, EditInfoListContent, EditMainContent};
 use App\Livewire\HomeEditor\{AddAnnouncement, AddSliderInfo, AddMarketingInfo, EditAnnouncement, EditSliderInfo, EditMarketingInfo, ManageSlider};
-use App\Livewire\Other\CampusLife;
-use App\Livewire\Publications\CreatePublication;
-use App\Livewire\Publications\EditPublication;
-use App\Livewire\Publications\ListPublications;
+use App\Livewire\Publications\{CreatePublication, EditPublication, ListPublications};
 
 Route::get('/', Home::class);
 Route::get('/contact', Contact::class);
@@ -26,6 +23,7 @@ Route::get('/events', ListEvents::class)->name('events.index');
 Route::get('/event/{event}', ShowEvent::class)->name('events.show');
 Route::get('/campus-life', CampusLife::class)->name('campus-life');
 Route::get('/publications', ListPublications::class)->name('publications.index');
+Route::get('/admission-requirements', GeneralAdmissionRequirements::class)->name('general-requirements');
 
 Route::group(['middleware' => ['auth', CheckIfViewer::class]], function () {
 
