@@ -319,7 +319,7 @@
                     @else
                         <div class="col s12 m6 l4">
                             <div @can('editor') class="edit-box" @endcan>
-                                <div class="card ">
+                                <div class="card">
                                     <div class="card-image">
                                         <img src="{{ asset('images/placeholder.webp') }}" alt="Image">
                                         <span class="card-title"></span>
