@@ -204,9 +204,9 @@
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Links</h5>
                     <ul class="light-deca">
-                        <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Student portal</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Announcements</a></li>
+                    <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.zictcollege.ac.zm/login">Student portal</a></li>
+                        <li><a class="grey-text text-lighten-3" href="{{ route('events.index') }}">Events</a></li>
                     </ul>
                 </div>
 
