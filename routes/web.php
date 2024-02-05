@@ -10,6 +10,7 @@ use App\Livewire\Events\{CreateEvent, EditEvent, ListEvents, ManageEvents, ShowE
 use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories, ManageNews};
 use App\Livewire\AboutEditor\{AddBannerContent, AddInfoListContent, AddMainContent, EditBannerContent, EditInfoListContent, EditMainContent};
 use App\Livewire\HomeEditor\{AddAnnouncement, AddSliderInfo, AddMarketingInfo, EditAnnouncement, EditSliderInfo, EditMarketingInfo, ManageSlider};
+use App\Livewire\Pages\CampusLife;
 
 Route::get('/', Home::class);
 Route::get('/contact', Contact::class);
@@ -20,6 +21,7 @@ Route::get('/all-news-stories', AllNewsStories::class)->name('news.index');
 Route::get('/news-story/{news_id}', NewsStory::class);
 Route::get('/events', ListEvents::class)->name('events.index');
 Route::get('/event/{event}', ShowEvent::class)->name('events.show');
+Route::get('/campus-life', CampusLife::class)->name('campus-life');
 
 
 Route::group(['middleware' => ['auth', CheckIfViewer::class]], function () {
@@ -40,7 +42,6 @@ Route::group(['middleware' => ['auth', CheckIfViewer::class]], function () {
     Route::get('/create-news-story', AddNewsStory::class)->name('news.create');
     Route::get('/edit-news-story/{news_id}', EditNewsStory::class);
     Route::get('/manage-news', ManageNews::class)->name('manage-news');
-
 
     // Program editor routes
     Route::get('/create-admission-info', AddAdmissionInfo::class);

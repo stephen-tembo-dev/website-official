@@ -189,7 +189,7 @@
 
         <div class="container">
             <div class="row mt mb">
-                <div class="col s12 m6">
+                <div class="col s12 m6 l5">
                     <h5 class="mb-sm">Study at ZUT</h5>
                     <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem unde ab eum
                         corporis ratione enim neque veniam blanditiis natus laudantium consectetur quasi ex maiores
@@ -217,7 +217,7 @@
 
                 </div>
 
-                <div class="col m6 center"><img src="{{ asset('images/placeholder.webp') }}" class="responsive-img">
+                <div class="col m6 offset-l1 center"><img src="{{ asset('images/placeholder.webp') }}" class="responsive-img">
                 </div>
 
             </div>
