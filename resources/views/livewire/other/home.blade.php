@@ -191,26 +191,30 @@
             <div class="row mt mb">
                 <div class="col s12 m6 l5">
                     <h5 class="mb-sm">Study at ZUT</h5>
-                    <p class="light-deca">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem unde ab
-                        eum
-                        corporis ratione enim neque veniam blanditiis natus laudantium consectetur quasi ex maiores
-                        perferendis laborum quidem, mollitia ipsum iusto!</p>
+                    <p class="light-deca">Embark on a transformative educational journey at Zambia University College of
+                        Technology. Our commitment to excellence in technology and business education sets us apart.
+                        Explore our in-demand programs and join us at the forefront of innovation, where knowledge meets
+                        real-world impact. Your future as an innovator begins here.</p>
                     <div class="row mt-sm">
                         <div class="col s12 m6">
                             <ul class="light-deca">
-                                <li><a href="https://www.zictcollege.ac.zm/register">Apply online</a></li>
-                                <li><a href="{{route('campus-life')}}">Campus life</a></li>
-                                <li><a href="{{route('campus-life')}}">Student housing</a></li>
-                                <li><a href="#">Support services</a></li>
-                                <li><a href="#">Student FAQs</a></li>
+                                <li style="margin-bottom: 8px"><a href="https://www.zictcollege.ac.zm/register">Apply
+                                        online</a></li>
+                                <li style="margin-bottom: 8px"><a href="{{ route('campus-life') }}">Campus life</a>
+                                </li>
+                                <li style="margin-bottom: 8px"><a href="{{ route('campus-life') }}#tab2">Student
+                                        housing</a></li>
+                                <li style="margin-bottom: 8px"><a href="#">Support services</a></li>
+                                <li style="margin-bottom: 8px"><a href="#">Student FAQs</a></li>
                             </ul>
                         </div>
                         <div class="col s12 m6">
                             <ul class="light-deca">
-                                <li><a href="#">Key dates</a></li>
-                                <li><a href="{{route('campus-life')}}">Faculties</a></li>
-                                <li><a href="#">Scholarships</a></li>
-                                <li><a href="#">Admission requirements</a></li>
+                                <li style="margin-bottom: 8px"><a href="#">Key dates</a></li>
+                                <li style="margin-bottom: 8px"><a href="{{ route('campus-life') }}">Faculties</a>
+                                </li>
+                                <li style="margin-bottom: 8px"><a href="#">Scholarships</a></li>
+                                <li style="margin-bottom: 8px"><a href="#">Admission requirements</a></li>
                             </ul>
                         </div>
                     </div>
@@ -318,7 +322,7 @@
                     @else
                         <div class="col s12 m6 l4">
                             <div @can('editor') class="edit-box" @endcan>
-                                <div class="card ">
+                                <div class="card">
                                     <div class="card-image">
                                         <img src="{{ asset('images/placeholder.webp') }}" alt="Image">
                                         <span class="card-title"></span>
@@ -493,9 +497,11 @@
                     <div class="col l4 offset-l2 s12">
                         <h5 class="white-text">Links</h5>
                         <ul class="light-deca">
-                        <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
-                        <li><a class="grey-text text-lighten-3" href="https://www.zictcollege.ac.zm/login">Student portal</a></li>
-                        <li><a class="grey-text text-lighten-3" href="{{ route('events.index') }}">Events</a></li>
+                            <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
+                            <li><a class="grey-text text-lighten-3" href="https://www.zictcollege.ac.zm/login">Student
+                                    portal</a></li>
+                            <li><a class="grey-text text-lighten-3" href="{{ route('events.index') }}">Events</a>
+                            </li>
                         </ul>
                     </div>
 
