@@ -10,7 +10,7 @@ use App\Livewire\Events\{CreateEvent, EditEvent, ListEvents, ManageEvents, ShowE
 use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories, ManageNews};
 use App\Livewire\AboutEditor\{AddBannerContent, AddInfoListContent, AddMainContent, EditBannerContent, EditInfoListContent, EditMainContent};
 use App\Livewire\HomeEditor\{AddAnnouncement, AddSliderInfo, AddMarketingInfo, EditAnnouncement, EditSliderInfo, EditMarketingInfo, ManageSlider};
-use App\Livewire\Pages\CampusLife;
+use App\Livewire\Other\CampusLife;
 
 Route::get('/', Home::class);
 Route::get('/contact', Contact::class);

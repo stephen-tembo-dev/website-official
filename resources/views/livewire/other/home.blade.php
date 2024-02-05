@@ -197,27 +197,28 @@
                     <div class="row mt-sm">
                         <div class="col s12 m6">
                             <ul class="">
-                                <li><a href="#">Lorem, ipsum</a></li>
-                                <li><a href="#">Lorem, ipsum</a></li>
-                                <li><a href="#">Lorem, ipsum</a></li>
-                                <li><a href="#">Lorem, ipsum</a></li>
-                                <li><a href="#">Lorem, ipsum</a></li>
+                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
+                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
+                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
+                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
+                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
                             </ul>
                         </div>
                         <div class="col s12 m6">
                             <ul class="">
-                                <li><a href="#">Lorem, ipsum</a></li>
-                                <li><a href="#">Lorem, ipsum</a></li>
-                                <li><a href="#">Lorem, ipsum</a></li>
-                                <li><a href="#">Lorem, ipsum</a></li>
-                                <li><a href="#">Lorem, ipsum</a></li>
+                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
+                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
+                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
+                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
+                                <li style="margin-bottom: 8px"><a href="#">Test Link</a></li>
                             </ul>
                         </div>
                     </div>
 
                 </div>
 
-                <div class="col m6 offset-l1 center"><img src="{{ asset('images/placeholder.webp') }}" class="responsive-img">
+                <div class="col m6 offset-l1 center"><img src="{{ asset('images/study-at-zut.jpg') }}"
+                        class="responsive-img">
                 </div>
 
             </div>
