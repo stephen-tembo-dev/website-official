@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages;
+namespace App\Livewire\Other;
 
 use Livewire\Attributes\Layout;
 use Livewire\Component;
@@ -10,6 +10,6 @@ class CampusLife extends Component
     #[Layout('components.layouts.app')]
     public function render()
     {
-        return view('livewire.pages.campus-life');
+        return view('livewire.other.campus-life');
     }
 }
