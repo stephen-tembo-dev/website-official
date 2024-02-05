@@ -191,12 +191,12 @@
             <div class="row mt mb">
                 <div class="col s12 m6 l5">
                     <h5 class="mb-sm">Study at ZUT</h5>
-                    <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem unde ab eum
+                    <p class="light-deca">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem unde ab eum
                         corporis ratione enim neque veniam blanditiis natus laudantium consectetur quasi ex maiores
                         perferendis laborum quidem, mollitia ipsum iusto!</p>
                     <div class="row mt-sm">
                         <div class="col s12 m6">
-                            <ul class="">
+                            <ul class="light-deca">
                                 <li><a href="#">Lorem, ipsum</a></li>
                                 <li><a href="#">Lorem, ipsum</a></li>
                                 <li><a href="#">Lorem, ipsum</a></li>
@@ -205,7 +205,7 @@
                             </ul>
                         </div>
                         <div class="col s12 m6">
-                            <ul class="">
+                            <ul class="light-deca">
                                 <li><a href="#">Lorem, ipsum</a></li>
                                 <li><a href="#">Lorem, ipsum</a></li>
                                 <li><a href="#">Lorem, ipsum</a></li>
@@ -280,6 +280,8 @@
         </div>
 
         <div class="container">
+
+
 
             <!--- news -->
 
