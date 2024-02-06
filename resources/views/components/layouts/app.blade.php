@@ -51,17 +51,22 @@
         <!-- Dropdown for research -->
         <ul id="dropdown-discover" class="dropdown-content">
             <li><a href="{{ route('campus-life') }}">Campus life</a></li>
-            <li><a href="{{route('general-requirements')}}">Admission</a></li>
+            <li><a href="{{ route('general-requirements') }}">Admission</a></li>
             <li><a href="https://www.zictcollege.ac.zm/login">Student portal</a></li>
         </ul>
 
         <!-- Dropdown for schools -->
-        <ul id="dropdown-schools" class="dropdown-content">
-            <li><a href="#">School of business</a></li>
-            <li><a href="#">School of ICT</a></li>
-            <li><a href="#">School of engineering</a></li>
-        </ul>
+        <ul id="dropdown-schools" class="dropdown-content" style="min-width: 300px">
+            @php
+                $schools = \Illuminate\Support\Facades\Http::get('http://127.0.0.1:8081/api/schools')->json();
+            @endphp
 
+            @if (count($schools) > 0)
+                @foreach ($schools as $school)
+                    <li><a href="{{ route('schools.show', $school['slug']) }}">{{ $school['name'] }}</a></li>
+                @endforeach
+            @endif
+        </ul>
 
         <nav class="white z-depth-0">
             <div class="nav-wrapper container">
@@ -76,11 +81,15 @@
                         <li><a href="/dashboard">Dashboard</a></li>
                     @endauth
 
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-media">Media<i class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-schools">Schools<i class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-research">Research & innovation<i class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-discover">Discover<i class="material-icons right">arrow_drop_down</i></a></li>
-        
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-media">Media<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-schools">Schools<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-research">Research &
+                            innovation<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-discover">Discover<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+
                     <li><a href="/contact">Contact</a></li>
                     @auth
                         <li><a class="black-text" href="{{ route('logout') }}"

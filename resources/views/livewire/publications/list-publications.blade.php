@@ -32,21 +32,21 @@
                             <td>{{ str()->limit($publication->title, 75) ?? 'N/A' }}</td>
                             <td>{{ $publication->author ?? 'N/A' }}</td>
                             <td>{{ $publication->year ?? 'N/A' }}</td>
-                            <td><a href="{{ $publication->url ?? '#' }}">Publication link</a></td>
+                            <td><a target="_blank" href="{{ $publication->url ?? '#' }}">Publication link</a></td>
                             </td>
                             <td>{{ $publication->created_at->format('d M Y H:i') ?? 'N/A' }}</td>
                             @can('editor')
                                 <td>
+                                    <a href="{{ route('publications.edit', $publication->id) }}"
+                                        class="btn btn-floating btn-small white">
+                                        <i class="material-icons black-text">edit</i>
+                                    </a>
                                     @if ($index === 1)
                                         <a href="{{ route('publications.create') }}"
                                             class="btn btn-floating btn-small white">
                                             <i class="material-icons black-text">add</i>
                                         </a>
                                     @endif
-                                    <a href="{{ route('publications.edit', $publication->id) }}"
-                                        class="btn btn-floating btn-small white">
-                                        <i class="material-icons black-text">edit</i>
-                                    </a>
                                 </td>
                             @endcan
                         </tr>

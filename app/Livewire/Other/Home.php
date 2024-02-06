@@ -26,8 +26,8 @@ class Home extends Component
     {
 
         try {
-            // $response = Http::get('http://127.0.0.1:8000/api/qualifications');
-            // $this->qualifications = $response->json();
+            $response = Http::get('http://127.0.0.1:8081/api/qualifications');
+            $this->qualifications = $response->json();
 
             // dd($response->json());
             $this->pageInfo = HomeAboutContent::first();

@@ -11,6 +11,7 @@ use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories, M
 use App\Livewire\AboutEditor\{AddBannerContent, AddInfoListContent, AddMainContent, EditBannerContent, EditInfoListContent, EditMainContent};
 use App\Livewire\HomeEditor\{AddAnnouncement, AddSliderInfo, AddMarketingInfo, EditAnnouncement, EditSliderInfo, EditMarketingInfo, ManageSlider};
 use App\Livewire\Publications\{CreatePublication, EditPublication, ListPublications};
+use App\Livewire\Schools\{ShowDepartment, ShowSchool};
 
 Route::get('/', Home::class);
 Route::get('/contact', Contact::class);
@@ -24,6 +25,8 @@ Route::get('/event/{event}', ShowEvent::class)->name('events.show');
 Route::get('/campus-life', CampusLife::class)->name('campus-life');
 Route::get('/publications', ListPublications::class)->name('publications.index');
 Route::get('/admission-requirements', GeneralAdmissionRequirements::class)->name('general-requirements');
+Route::get('/schools/{slug}', ShowSchool::class)->name('schools.show');
+Route::get('/departments/{schoolSlug}/{departmentSlug}', ShowDepartment::class)->name('departments.show');
 
 Route::group(['middleware' => ['auth', CheckIfViewer::class]], function () {
 
