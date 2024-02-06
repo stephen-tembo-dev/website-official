@@ -14,7 +14,7 @@ class Programs extends Component
     public function mount($id,$category)
     {
         try {
-            $response = Http::get('http://127.0.0.1:8000/api/get-programs/'.$id);
+            $response = Http::get('http://127.0.0.1:8081/api/get-programs/'.$id);
             $this->programs = $response->json();
             $this->category = $category;
 

@@ -22,7 +22,7 @@ class AddAdmissionInfo extends Component
     public function mount()
     {
         // make API call to get categories
-          $response = Http::get('http://127.0.0.1:8000/api/qualifications');
+          $response = Http::get('http://127.0.0.1:8081/api/qualifications');
           $this->categories = $response->json();
 
     }
