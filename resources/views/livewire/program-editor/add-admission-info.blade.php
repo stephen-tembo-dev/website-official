@@ -14,6 +14,7 @@
                                 <div class="input-field col s12">
                                     <select wire:model="admissionInfo.category">
                                         <option value="" disabled selected>Select Category</option>
+                                        <option value="" selected>Select Category</option>
                                         @foreach($categories as $category)
                                           <option value="{{$category['id']}}">{{$category['name']}}</option>
                                         @endforeach

@@ -9,21 +9,7 @@
                     <form wire:submit.prevent="processInfo">
                         <div>
                             <div class="row">
-                                <div class="col m12 s12">
-                                    <label>Cover Image</label>
-                                    <div class="file-field input-field">
-                                        <div class="btn btn-small grey">
-                                            <span>Image - 3:2</span>
-                                            <input wire:model="eventArr.image_path" type="file" required>
-                                        </div>
-                                        <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text">
-                                        </div>
-                                        @error('eventArr.image_path')
-                                            <span class="red-text">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
+
 
                                 <div class="input-field col m12 s12">
                                     <input wire:model="eventArr.title" id="title" type="text" class="validate"
@@ -70,6 +56,22 @@
                                     @enderror
                                 </div>
                             </div>
+
+                            <div class="col m12 s12">
+                                    <label>Cover Image</label>
+                                    <div class="file-field input-field">
+                                        <div class="btn btn-small grey">
+                                            <span>Image - 1000 w x 500 h</span>
+                                            <input wire:model="eventArr.image_path" type="file" required>
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text">
+                                        </div>
+                                        @error('eventArr.image_path')
+                                            <span class="red-text">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
 
                             <button style="border-radius: 8px;" class="btn btn-small waves-effect waves-light black"
                                 type="submit" name="action">

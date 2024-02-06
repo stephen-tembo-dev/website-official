@@ -35,7 +35,7 @@
 
                             <div class="file-field input-field col m12 s12">
                                 <div class="btn btn-small grey">
-                                    <span>File</span>
+                                    <span>Photo - 2000 w x 1000 h</span>
                                     <input wire:model="marketingInfo.image_path" type="file" required>
                                 </div>
                                 <div class="file-path-wrapper">
