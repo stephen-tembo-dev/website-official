@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Middleware\CheckIfViewer;
 use App\Livewire\Program\Programs;
-use App\Livewire\Other\{Home, Contact, AboutUs, Dashboard, CampusLife, GeneralAdmissionRequirements};
+use App\Livewire\Other\{Home, Contact, AboutUs, Dashboard, CampusLife, GeneralAdmissionRequirements, ResearchDepartment};
 use App\Livewire\ProgramEditor\{AddAdmissionInfo, EditAdmissionInfo, ManageAdmissionInfo};
 use App\Livewire\Events\{CreateEvent, EditEvent, ListEvents, ManageEvents, ShowEvent};
 use App\Livewire\News\{AddNewsStory, EditNewsStory, NewsStory, AllNewsStories, ManageNews};
@@ -27,6 +27,7 @@ Route::get('/publications', ListPublications::class)->name('publications.index')
 Route::get('/admission-requirements', GeneralAdmissionRequirements::class)->name('general-requirements');
 Route::get('/schools/{slug}', ShowSchool::class)->name('schools.show');
 Route::get('/departments/{schoolSlug}/{departmentSlug}', ShowDepartment::class)->name('departments.show');
+Route::get('/departments/research', ResearchDepartment::class)->name('departments.research');
 
 Route::group(['middleware' => ['auth', CheckIfViewer::class]], function () {
 
