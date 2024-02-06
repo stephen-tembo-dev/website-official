@@ -2,12 +2,15 @@
     <div class="container">
         <div class="mt">
             <form wire:submit.prevent="search">
-                <div>
-                    <div class="input-field inline">
+                <div class="row">
+                    <div class="input-field col s12 m6">
                         <i class="material-icons prefix">search</i>
                         <input id="search" type="text" wire:model.live.debounce.500ms="search" class="validate">
                         {{-- <label for="search">Search</label> --}}
                     </div>
+                </div>
+                <div>
+
                 </div>
             </form>
         </div>
