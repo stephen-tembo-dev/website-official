@@ -43,8 +43,8 @@ class EditInfoListContent extends Component
             // give user feedback
             $this->dispatch('list-content-updated');
 
-            // Redirect to home
-            redirect('/');
+            // Redirect to about page
+            redirect(route('about.index'));
         } catch (\Exception $e) {
 
             // rollback DB changes

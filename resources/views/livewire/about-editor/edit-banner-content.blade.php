@@ -14,7 +14,7 @@
                                     <div class="file-field input-field">
                                         <div class="btn">
                                             <span>Image - 2:1</span>
-                                            <input wire:model="bannerContent.image_path" type="file" required>
+                                            <input wire:model="bannerContent.image_path" type="file">
                                         </div>
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text">

@@ -1,20 +1,23 @@
 <?php
 
-namespace App\Livewire\AboutEditor;
+namespace App\Livewire\CampusLife;
 
-use App\Models\About\AboutBanner;
+use App\Enums\CampusLifeItemType;
+use App\Models\CampusLife\CampusLifeItem;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 use Intervention\Image\ImageManagerStatic as Image;
 
-class AddBannerContent extends Component
+class CreateCampusLifeItem extends Component
 {
     use WithFileUploads;
 
-    public $bannerContent = [
+    public $itemArr = [
         'title' => '',
-        'caption'  => '',
+        'text'  => '',
+        'type' => CampusLifeItemType::General->value,
         'image_path' => ''
     ];
 
@@ -38,10 +41,10 @@ class AddBannerContent extends Component
             DB::commit();
 
             // give user feedback
-            $this->dispatch('banner-content-created');
+            $this->dispatch('campus-life-item-created');
 
             // Redirect to about page
-            redirect(route('about.index'));
+            redirect(route('campus-life.index'));
         } catch (\Exception $e) {
 
             // rollback DB changes
@@ -50,22 +53,22 @@ class AddBannerContent extends Component
             dd($e);
 
             // give user feedback
-            $this->dispatch('banner-content-creation-failed');
+            $this->dispatch('campus-life-item-creation-failed');
         }
     }
 
     private function create()
     {
-        return AboutBanner::create($this->bannerContent);
+        return CampusLifeItem::create($this->itemArr);
     }
 
     private function uploadImage()
     {
         // image object
-        $image = Image::make($this->bannerContent['image_path']->getRealPath());
+        $image = Image::make($this->itemArr['image_path']->getRealPath());
 
         // construct unique image name
-        $imageName = time() . '-' . $this->bannerContent['image_path']->getClientOriginalName();
+        $imageName = time() . '-' . $this->itemArr['image_path']->getClientOriginalName();
 
         // construct path to save image to
         $imagePath = 'app/public/uploads/' . $imageName;
@@ -74,15 +77,16 @@ class AddBannerContent extends Component
         $image->save(storage_path($imagePath), 100, 'webp');
 
         // update array with property with image name
-        $this->bannerContent['image_path'] = $imageName;
+        $this->itemArr['image_path'] = $imageName;
     }
 
     private function validateInfo()
     {
         $rules = [
-            'bannerContent.title' => 'required|max:70',
-            'bannerContent.caption' => 'required',
-            'bannerContent.image_path' => 'required',
+            'itemArr.title' => 'required|max:100',
+            'itemArr.text' => 'required|max:255',
+            'itemArr.type' => ['required', Rule::in(CampusLifeItemType::toArray())],
+            'itemArr.image_path' => 'required',
         ];
 
         $validated = $this->validate($rules);
@@ -92,6 +96,6 @@ class AddBannerContent extends Component
 
     public function render()
     {
-        return view('livewire.about-editor.add-banner-content');
+        return view('livewire.campus-life.create-campus-life-item');
     }
 }

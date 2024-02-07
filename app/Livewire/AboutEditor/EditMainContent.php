@@ -43,8 +43,8 @@ class EditMainContent extends Component
             // give user feedback
             $this->dispatch('main-content-updated');
 
-            // Redirect to home
-            redirect('/');
+            // Redirect to about page
+            redirect(route('about.index'));
         } catch (\Exception $e) {
 
             // rollback DB changes

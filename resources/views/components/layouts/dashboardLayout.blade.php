@@ -85,9 +85,11 @@
                             style="margin-right:0;">arrow_drop_down</i></a>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a class="waves-effect waves-blue" href="/create-admission-info"><i class="material-icons">link</i>Add
+                            <li><a class="waves-effect waves-blue" href="/create-admission-info"><i
+                                        class="material-icons">link</i>Add
                                     admission info</a></li>
-                            <li><a class="waves-effect waves-blue" href="/manage-admission-info"><i class="material-icons">link</i>
+                            <li><a class="waves-effect waves-blue" href="/manage-admission-info"><i
+                                        class="material-icons">link</i>
                                     Manage admission information</a></li>
                             <li>
                                 <div class="divider"></div>
@@ -105,7 +107,8 @@
                         editor <i class="material-icons right" style="margin-right:0;">arrow_drop_down</i></a>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a class="waves-effect waves-blue" href="/create-news-story"><i class="material-icons">link</i>Add
+                            <li><a class="waves-effect waves-blue" href="/create-news-story"><i
+                                        class="material-icons">link</i>Add
                                     news</a></li>
                             <li><a class="waves-effect waves-blue" href="/manage-news"><i
                                         class="material-icons">link</i>Manage news</a></li>
@@ -167,6 +170,28 @@
             <ul class="collapsible collapsible-accordion">
                 <li>
                     <a class="collapsible-header waves-effect waves-blue"><i
+                            class="material-icons">full_screen</i>Campus life editor <i class="material-icons right"
+                            style="margin-right:0;">arrow_drop_down</i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li>
+                                <a class="waves-effect waves-blue"
+                                    href="{{ route('campus-life.create-campus-life-item') }}">
+                                    <i class="material-icons">link</i> Add campus life item</a>
+                            </li>
+                            <li>
+                                <div class="divider"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li class="white">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header waves-effect waves-blue"><i
                             class="material-icons">full_screen</i>System Access <i class="material-icons right"
                             style="margin-right:0;">arrow_drop_down</i></a>
                     <div class="collapsible-body">
@@ -204,8 +229,9 @@
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Links</h5>
                     <ul class="light-deca">
-                    <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
-                        <li><a class="grey-text text-lighten-3" href="https://www.zictcollege.ac.zm/login">Student portal</a></li>
+                        <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.zictcollege.ac.zm/login">Student
+                                portal</a></li>
                         <li><a class="grey-text text-lighten-3" href="{{ route('events.index') }}">Events</a></li>
                     </ul>
                 </div>
