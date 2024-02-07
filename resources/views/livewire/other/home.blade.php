@@ -214,7 +214,7 @@
                                 <li style="margin-bottom: 8px"><a href="{{ route('campus-life') }}">Faculties</a>
                                 </li>
                                 <li style="margin-bottom: 8px"><a href="#">Scholarships</a></li>
-                                <li style="margin-bottom: 8px"><a href="#">Admission requirements</a></li>
+                                <li style="margin-bottom: 8px"><a href="{{route('general-requirements') }}">Admission requirements</a></li>
                             </ul>
                         </div>
                     </div>
