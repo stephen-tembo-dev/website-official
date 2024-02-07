@@ -11,7 +11,7 @@
                         </div>
                     </div>
 
-                    <p class="center"><small>published on , {{$story->created_at->format('j M, Y')}}</small></p>
+                    <br><p class="center"><small>published on , {{$story->created_at->format('j M, Y')}}</small></p><br>
 
                     <p class="light-deca wow fadeInUp">
                         {!! nl2br($story->text) !!}

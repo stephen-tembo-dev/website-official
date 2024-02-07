@@ -55,10 +55,16 @@
         </ul>
 
         <!-- Dropdown for schools -->
-        <ul id="dropdown-schools" class="dropdown-content">
-            <li><a href="#">School of business</a></li>
-            <li><a href="#">School of ICT</a></li>
-            <li><a href="#">School of engineering</a></li>
+        <ul id="dropdown-schools" class="dropdown-content" style="min-width: 300px">
+            @php
+                $schools = \Illuminate\Support\Facades\Http::get('http://127.0.0.1:8081/api/schools')->json();
+            @endphp
+
+            @if (count($schools) > 0)
+                @foreach ($schools as $school)
+                    <li><a href="{{ route('schools.show', $school['slug']) }}">{{ $school['name'] }}</a></li>
+                @endforeach
+            @endif
         </ul>
 
 
