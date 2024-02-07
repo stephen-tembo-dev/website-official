@@ -19,7 +19,7 @@
                             <img src="{{ asset('images/default-avatar.png') }}" alt="Department head image"
                                 class="circle responsive-img" />
                             <div class="">
-                                <p>Mr. Lavu Mweemba</p>
+                                <p>Dr. John Doe</p>
                                 <p>BSc, MSc, PhD</p>
                                 <p>Head of Department</p>
 

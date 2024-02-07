@@ -303,11 +303,11 @@
                                     <div class="card-content">
                                         <p>
                                             <b class="truncate">{{ $story->title }}</b><br>
-                                        <div class="light-deca">
+                                        <div class="light-deca newsbody">
                                             <small
                                                 class="grey-text">{{ $story->created_at->format('j M, Y') }}</small>
                                             <br><br>
-                                            {{ \Illuminate\Support\Str::limit($story->text, 200, '...') }}
+                                            {{ \Illuminate\Support\Str::limit($story->text, 180, '...') }}
                                         </div>
                                         </p>
                                     </div>
