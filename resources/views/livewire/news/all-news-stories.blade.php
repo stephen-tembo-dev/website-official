@@ -55,7 +55,7 @@
         <div id="paginated-news" class="row wow fadeIn mb section scrollspy">
             @if(count($news) > 0)
             @foreach ($news as $story)
-            <div class="col s12 m3">
+            <div class="col s12 m4">
                 <div class="card ">
                     <div class="card-image">
                         <img src="{{ asset('/storage/uploads/' . $story->image_path) }}" alt="Image">
@@ -64,10 +64,10 @@
                     <div class="card-content">
                         <p>
                             <b class="truncate">{{ $story->title }}</b><br>
-                        <div class="light-deca">
+                        <div class="light-deca newsbody">
                             <small class="grey-text">{{ $story->created_at->format('j M, Y') }}</small>
                             <br><br>
-                            {{ \Illuminate\Support\Str::limit($story->text, 100, '...') }}
+                            {{ \Illuminate\Support\Str::limit($story->text, 180, '...') }}
                         </div>
                         </p>
                     </div>
@@ -96,7 +96,7 @@
                                     {{ now()->format('j M, Y') }}
                                 </small>
                                 <br><br>
-                                {{ \Illuminate\Support\Str::limit('Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem officia hic recusandae quis sequi blanditiis, fugit aliquid beatae architecto! Recusandae, asperiores. Eum deleniti dicta voluptas eveniet itaque maiores modi dolor.', 200, '...') }}
+                                {{ \Illuminate\Support\Str::limit('Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem officia hic recusandae quis sequi blanditiis, fugit aliquid beatae architecto! Recusandae, asperiores. Eum deleniti dicta voluptas eveniet itaque maiores modi dolor.', 180, '...') }}
                             </div>
                             </p>
                         </div>
