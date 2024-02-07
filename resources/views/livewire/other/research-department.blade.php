@@ -15,7 +15,21 @@
                     </div>
 
                     <div class="row mt-sm">
-                        <div class="col m12 s12">
+                        <div class="col s12 m2 offset-m5 center-align">
+                            <img src="{{ asset('images/default-avatar.png') }}" alt="Department head image"
+                                class="circle responsive-img" />
+                            <div class="">
+                                <p>Mr. Lavu Mweemba</p>
+                                <p>BSc, MSc, PhD</p>
+                                <p>Head of Department</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-sm">
+
+                        <div class="col s12">
                             <div class="light-deca wow fadeInUp">
                                 <div class="about-main-content">
                                     <p>
