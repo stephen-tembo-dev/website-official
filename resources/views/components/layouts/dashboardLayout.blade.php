@@ -85,9 +85,9 @@
                             style="margin-right:0;">arrow_drop_down</i></a>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>Add
+                            <li><a class="waves-effect waves-blue" href="/create-admission-info"><i class="material-icons">link</i>Add
                                     admission info</a></li>
-                            <li><a class="waves-effect waves-blue" href="#"><i class="material-icons">link</i>
+                            <li><a class="waves-effect waves-blue" href="/manage-admission-info"><i class="material-icons">link</i>
                                     Manage admission information</a></li>
                             <li>
                                 <div class="divider"></div>
