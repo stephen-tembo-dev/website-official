@@ -44,8 +44,7 @@
         <!-- Dropdown for research -->
         <ul id="dropdown-research" class="dropdown-content">
             <li><a href="{{ route('publications.index') }}">Publications</a></li>
-            <li><a href="#">Research department</a></li>
-            <li><a href="#">Research support</a></li>
+            <li><a href="{{ route('departments.research') }}">Research Department</a></li>
         </ul>
 
         <!-- Dropdown for research -->
