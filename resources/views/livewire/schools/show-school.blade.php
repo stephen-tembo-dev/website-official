@@ -38,7 +38,7 @@
                                                 <div class="card-image">
                                                     <span
                                                         style="display: inline-block; position: absolute; z-index: 4; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,.125) 40%)">&nbsp;</span>
-                                                    <img src="{{ asset('images/study-at-zut.jpg') }}">
+                                                    <img src="{{ asset('images/facilities-1.jpg') }}">
                                                     <span style="z-index: 5; text-shadow: 2px 2px 4px rgba(0,0,0,.5)"
                                                         class="card-title">{{ $department['name'] }}</span>
                                                 </div>
